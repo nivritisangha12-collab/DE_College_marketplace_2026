@@ -22,12 +22,12 @@
 
 | Role | Name | Enrollment No. | GitHub Username |
 |------|------|----------------|-----------------|
-| Group Lead | | | |
-| Member 2 | | | |
-| Member 3 | | | |
-| Member 4 | | | |
+| Group Lead | Ankur Agarwal | 2501010063 | agarwalankur1605|
+| Member 2 | Nivriti | 2501010664 | nivritisangha12 |
+| Member 3 | Thanniru Sairam | 2501010626 | Sairam789123 |
+| Member 4 | Mukund Hari Mittal | 2501010285 | Mukund Hari Mittal |
 
-**Team No.:** ____ · **Section:** ____ · **Repository URL:** ____
+**Team No.:** T0113 · **Section:** B · **Repository URL:** (https://github.com/edusatyaki/DBMS-Blinkit-Grocery-Delivery)
 
 ---
 
