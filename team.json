@@ -1,1 +1,29 @@
-
+{
+  "team_number": "T0113",
+  "team": [
+    {
+      "role": "Group Lead",
+      "name": "Ankur Agarwal",
+      "enrollment_no": "2501010063",
+      "github_username": "agarwalankur1605"
+    },
+    {
+      "role": "Member 2",
+      "name": "Nivriti",
+      "enrollment_no": "2501010664",
+      "github_username": "nivritisangha12"
+    },
+    {
+      "role": "Member 3",
+      "name": "Thanniru Sairam",
+      "enrollment_no": "2501010626",
+      "github_username": "Sairam789123"
+    },
+    {
+      "role": "Member 4",
+      "name": "Mukund Hari Mittal",
+      "enrollment_no": "2501010285",
+      "github_username": "Mukund Hari Mittal"
+    }
+  ]
+}
