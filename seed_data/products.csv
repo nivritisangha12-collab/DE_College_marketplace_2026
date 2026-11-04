@@ -1,0 +1,1501 @@
+product_id,sku,product_name,brand,category_id,pack_size,mrp,shelf_life_days,is_active
+1,BK10007919,Vim Detergent 1 kg,Vim,8,1 kg,164.00,,t
+2,BK10015838,Kurkure Bhujia 200 g,Kurkure,3,200 g,57.00,,t
+3,BK10023757,McCain French Fries 420 g,McCain,10,420 g,118.00,180,t
+4,BK10031676,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,58.00,5,t
+5,BK10039595,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,64.00,,t
+6,BK10047514,Colgate Shampoo 340 ml,Colgate,7,340 ml,305.00,,t
+7,BK10055433,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,125.00,4,t
+8,BK10063352,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,251.00,,t
+9,BK10071271,Real Energy Drink 250 ml,Real,4,250 ml,141.00,,t
+10,BK10079190,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,219.00,3,t
+11,BK10087109,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,226.00,,t
+12,BK10095028,Amul Curd 400 g,Amul,1,400 g,56.00,7,t
+13,BK10102947,Vim Dishwash Gel 750 ml,Vim,8,750 ml,183.00,,t
+14,BK10110866,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,39.00,,t
+15,BK10118785,McCain Frozen Peas 500 g,McCain,10,500 g,81.00,180,t
+16,BK10126704,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,110.00,5,t
+17,BK10134623,Yippee Poha Mix 180 g,Yippee,12,180 g,65.00,,t
+18,BK10142542,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,173.00,,t
+19,BK10150461,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,40.00,4,t
+20,BK10158380,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,959.00,,t
+21,BK10166299,Tropicana Orange Juice 1 L,Tropicana,4,1 L,128.00,,t
+22,BK10174218,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,90.00,3,t
+23,BK10182137,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,122.00,,t
+24,BK10190056,Amul Paneer 200 g,Amul,1,200 g,106.00,7,t
+25,BK10197975,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,104.00,,t
+26,BK10205894,Haldiram Potato Chips 52 g,Haldiram,3,52 g,18.00,,t
+27,BK10213813,McCain French Fries 420 g,McCain,10,420 g,168.00,180,t
+28,BK10221732,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,35.00,5,t
+29,BK10229651,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,58.00,,t
+30,BK10237570,Dove Toothpaste 150 g,Dove,7,150 g,86.00,,t
+31,BK10245489,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,48.00,4,t
+32,BK10253408,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,227.00,,t
+33,BK10261327,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,40.00,,t
+34,BK10269246,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,193.00,3,t
+35,BK10277165,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,213.00,,t
+36,BK10285084,Amul Toned Milk 500 ml,Amul,1,500 ml,32.00,7,t
+37,BK10293003,Vim Detergent 1 kg,Vim,8,1 kg,139.00,,t
+38,BK10300922,Bingo Bhujia 200 g,Bingo,3,200 g,47.00,,t
+39,BK10308841,McCain Frozen Peas 500 g,McCain,10,500 g,117.00,180,t
+40,BK10316760,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,50.00,5,f
+41,BK10324679,Yippee Poha Mix 180 g,Yippee,12,180 g,58.00,,t
+42,BK10332598,Nivea Shampoo 340 ml,Nivea,7,340 ml,251.00,,t
+43,BK10340517,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,29.00,4,t
+44,BK10348436,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,863.00,,t
+45,BK10356355,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,119.00,,t
+46,BK10364274,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,79.00,3,t
+47,BK10372193,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,309.00,,t
+48,BK10380112,Amul Butter 100 g,Amul,1,100 g,61.00,7,t
+49,BK10388031,Vim Dishwash Gel 750 ml,Vim,8,750 ml,153.00,,t
+50,BK10395950,Lays Namkeen 150 g,Lays,3,150 g,32.00,,t
+51,BK10403869,McCain French Fries 420 g,McCain,10,420 g,152.00,180,t
+52,BK10411788,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,94.00,5,t
+53,BK10419707,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,51.00,,t
+54,BK10427626,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,230.00,,t
+55,BK10435545,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,161.00,4,t
+56,BK10443464,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,203.00,,t
+57,BK10451383,Red Bull Orange Juice 1 L,Red Bull,4,1 L,107.00,,t
+58,BK10459302,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,276.00,3,t
+59,BK10467221,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,170.00,,t
+60,BK10475140,Amul Curd 400 g,Amul,1,400 g,45.00,7,t
+61,BK10483059,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,86.00,,t
+62,BK10490978,Kurkure Potato Chips 52 g,Kurkure,3,52 g,25.00,,t
+63,BK10498897,McCain Frozen Peas 500 g,McCain,10,500 g,105.00,180,t
+64,BK10506816,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,29.00,5,t
+65,BK10514735,Yippee Poha Mix 180 g,Yippee,12,180 g,51.00,,t
+66,BK10522654,Colgate Toothpaste 150 g,Colgate,7,150 g,116.00,,t
+67,BK10530573,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,52.00,4,t
+68,BK10538492,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,767.00,,t
+69,BK10546411,Real Soft Drink 750 ml,Real,4,750 ml,33.00,,t
+70,BK10554330,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,115.00,3,t
+71,BK10562249,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,182.00,,t
+72,BK10570168,Amul Paneer 200 g,Amul,1,200 g,85.00,7,t
+73,BK10578087,Vim Detergent 1 kg,Vim,8,1 kg,113.00,,t
+74,BK10586006,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,65.00,,t
+75,BK10593925,McCain French Fries 420 g,McCain,10,420 g,137.00,180,t
+76,BK10601844,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,41.00,5,t
+77,BK10609763,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,72.00,,t
+78,BK10617682,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,347.00,,t
+79,BK10625601,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,39.00,4,t
+80,BK10633520,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,179.00,,f
+81,BK10641439,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,159.00,,t
+82,BK10649358,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,250.00,3,t
+83,BK10657277,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,263.00,,t
+84,BK10665196,Amul Toned Milk 500 ml,Amul,1,500 ml,26.00,7,t
+85,BK10673115,Vim Dishwash Gel 750 ml,Vim,8,750 ml,206.00,,t
+86,BK10681034,Haldiram Namkeen 150 g,Haldiram,3,150 g,45.00,,t
+87,BK10688953,McCain Frozen Peas 500 g,McCain,10,500 g,94.00,180,t
+88,BK10696872,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,77.00,5,t
+89,BK10704791,Yippee Poha Mix 180 g,Yippee,12,180 g,74.00,,t
+90,BK10712710,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,198.00,,t
+91,BK10720629,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,23.00,4,t
+92,BK10728548,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,671.00,,t
+93,BK10736467,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,145.00,,t
+94,BK10744386,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,104.00,3,t
+95,BK10752305,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,143.00,,t
+96,BK10760224,Amul Butter 100 g,Amul,1,100 g,48.00,7,t
+97,BK10768143,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,118.00,,t
+98,BK10776062,Bingo Potato Chips 52 g,Bingo,3,52 g,21.00,,t
+99,BK10783981,McCain French Fries 420 g,McCain,10,420 g,121.00,180,t
+100,BK10791900,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,24.00,5,t
+101,BK10799819,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,66.00,,t
+102,BK10807738,Nivea Toothpaste 150 g,Nivea,7,150 g,99.00,,t
+103,BK10815657,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,127.00,4,t
+104,BK10823576,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,255.00,,t
+105,BK10831495,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,46.00,,t
+106,BK10839414,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,223.00,3,t
+107,BK10847333,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,151.00,,t
+108,BK10855252,Amul Curd 400 g,Amul,1,400 g,57.00,7,t
+109,BK10863171,Vim Detergent 1 kg,Vim,8,1 kg,158.00,,t
+110,BK10871090,Lays Bhujia 200 g,Lays,3,200 g,55.00,,t
+111,BK10879009,McCain Frozen Peas 500 g,McCain,10,500 g,83.00,180,t
+112,BK10886928,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,56.00,5,t
+113,BK10894847,Yippee Poha Mix 180 g,Yippee,12,180 g,67.00,,t
+114,BK10902766,Dettol Shampoo 340 ml,Dettol,7,340 ml,293.00,,t
+115,BK10910685,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,41.00,4,t
+116,BK10918604,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,975.00,,t
+117,BK10926523,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,136.00,,t
+118,BK10934442,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,92.00,3,t
+119,BK10942361,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,216.00,,t
+120,BK10950280,Amul Paneer 200 g,Amul,1,200 g,108.00,7,f
+121,BK10958199,Vim Dishwash Gel 750 ml,Vim,8,750 ml,177.00,,t
+122,BK10966118,Kurkure Namkeen 150 g,Kurkure,3,150 g,38.00,,t
+123,BK10974037,McCain French Fries 420 g,McCain,10,420 g,105.00,180,t
+124,BK10981956,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,106.00,5,t
+125,BK10989875,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,59.00,,t
+126,BK10997794,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,166.00,,t
+127,BK11005713,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,49.00,4,t
+128,BK11013632,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,231.00,,t
+129,BK11021551,Real Orange Juice 1 L,Real,4,1 L,124.00,,t
+130,BK11029470,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,197.00,3,t
+131,BK11037389,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,191.00,,t
+132,BK11045308,Amul Toned Milk 500 ml,Amul,1,500 ml,33.00,7,t
+133,BK11053227,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,100.00,,t
+134,BK11061146,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,18.00,,t
+135,BK11069065,McCain Frozen Peas 500 g,McCain,10,500 g,119.00,180,t
+136,BK11076984,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,34.00,5,t
+137,BK11084903,Yippee Poha Mix 180 g,Yippee,12,180 g,59.00,,t
+138,BK11092822,Himalaya Toothpaste 150 g,Himalaya,7,150 g,82.00,,t
+139,BK11100741,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,30.00,4,t
+140,BK11108660,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,879.00,,t
+141,BK11116579,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,39.00,,t
+142,BK11124498,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,81.00,3,t
+143,BK11132417,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,206.00,,t
+144,BK11140336,Amul Butter 100 g,Amul,1,100 g,63.00,7,t
+145,BK11148255,Vim Detergent 1 kg,Vim,8,1 kg,133.00,,t
+146,BK11156174,Haldiram Bhujia 200 g,Haldiram,3,200 g,45.00,,t
+147,BK11164093,McCain French Fries 420 g,McCain,10,420 g,155.00,180,t
+148,BK11172012,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,48.00,5,t
+149,BK11179931,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,52.00,,t
+150,BK11187850,Dove Shampoo 340 ml,Dove,7,340 ml,239.00,,t
+151,BK11195769,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,164.00,4,t
+152,BK11203688,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,207.00,,t
+153,BK11211607,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,114.00,,t
+154,BK11219526,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,280.00,3,t
+155,BK11227445,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,299.00,,t
+156,BK11235364,Amul Curd 400 g,Amul,1,400 g,46.00,7,t
+157,BK11243283,Vim Dishwash Gel 750 ml,Vim,8,750 ml,147.00,,t
+158,BK11251202,Bingo Namkeen 150 g,Bingo,3,150 g,50.00,,t
+159,BK11259121,McCain Frozen Peas 500 g,McCain,10,500 g,107.00,180,t
+160,BK11267040,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,90.00,5,f
+161,BK11274959,Yippee Poha Mix 180 g,Yippee,12,180 g,52.00,,t
+162,BK11282878,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,223.00,,t
+163,BK11290797,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,53.00,4,t
+164,BK11298716,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,783.00,,t
+165,BK11306635,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,102.00,,t
+166,BK11314554,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,117.00,3,t
+167,BK11322473,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,164.00,,t
+168,BK11330392,Amul Paneer 200 g,Amul,1,200 g,86.00,7,t
+169,BK11338311,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,82.00,,t
+170,BK11346230,Lays Potato Chips 52 g,Lays,3,52 g,24.00,,t
+171,BK11354149,McCain French Fries 420 g,McCain,10,420 g,139.00,180,t
+172,BK11362068,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,28.00,5,t
+173,BK11369987,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,45.00,,t
+174,BK11377906,Dettol Toothpaste 150 g,Dettol,7,150 g,112.00,,t
+175,BK11385825,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,40.00,4,t
+176,BK11393744,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,183.00,,t
+177,BK11401663,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,52.00,,t
+178,BK11409582,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,254.00,3,t
+179,BK11417501,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,175.00,,t
+180,BK11425420,Amul Toned Milk 500 ml,Amul,1,500 ml,26.00,7,t
+181,BK11433339,Vim Detergent 1 kg,Vim,8,1 kg,178.00,,t
+182,BK11441258,Kurkure Bhujia 200 g,Kurkure,3,200 g,63.00,,t
+183,BK11449177,McCain Frozen Peas 500 g,McCain,10,500 g,96.00,180,t
+184,BK11457096,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,40.00,5,t
+185,BK11465015,Yippee Poha Mix 180 g,Yippee,12,180 g,75.00,,t
+186,BK11472934,Colgate Shampoo 340 ml,Colgate,7,340 ml,335.00,,t
+187,BK11480853,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,24.00,4,t
+188,BK11488772,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,687.00,,t
+189,BK11496691,Real Energy Drink 250 ml,Real,4,250 ml,154.00,,t
+190,BK11504610,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,106.00,3,t
+191,BK11512529,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,252.00,,t
+192,BK11520448,Amul Butter 100 g,Amul,1,100 g,49.00,7,t
+193,BK11528367,Vim Dishwash Gel 750 ml,Vim,8,750 ml,200.00,,t
+194,BK11536286,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,43.00,,t
+195,BK11544205,McCain French Fries 420 g,McCain,10,420 g,124.00,180,t
+196,BK11552124,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,74.00,5,t
+197,BK11560043,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,67.00,,t
+198,BK11567962,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,191.00,,t
+199,BK11575881,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,130.00,4,t
+200,BK11583800,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,159.00,,f
+201,BK11591719,Tropicana Orange Juice 1 L,Tropicana,4,1 L,140.00,,t
+202,BK11599638,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,228.00,3,t
+203,BK11607557,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,137.00,,t
+204,BK11615476,Amul Curd 400 g,Amul,1,400 g,58.00,7,t
+205,BK11623395,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,114.00,,t
+206,BK11631314,Haldiram Potato Chips 52 g,Haldiram,3,52 g,20.00,,t
+207,BK11639233,McCain Frozen Peas 500 g,McCain,10,500 g,85.00,180,t
+208,BK11647152,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,38.00,5,t
+209,BK11655071,Yippee Poha Mix 180 g,Yippee,12,180 g,68.00,,t
+210,BK11662990,Dove Toothpaste 150 g,Dove,7,150 g,95.00,,t
+211,BK11670909,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,42.00,4,t
+212,BK11678828,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,991.00,,t
+213,BK11686747,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,44.00,,t
+214,BK11694666,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,94.00,3,t
+215,BK11702585,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,145.00,,t
+216,BK11710504,Amul Paneer 200 g,Amul,1,200 g,110.00,7,t
+217,BK11718423,Vim Detergent 1 kg,Vim,8,1 kg,153.00,,t
+218,BK11726342,Bingo Bhujia 200 g,Bingo,3,200 g,53.00,,t
+219,BK11734261,McCain French Fries 420 g,McCain,10,420 g,108.00,180,t
+220,BK11742180,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,54.00,5,t
+221,BK11750099,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,60.00,,t
+222,BK11758018,Nivea Shampoo 340 ml,Nivea,7,340 ml,281.00,,t
+223,BK11765937,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,31.00,4,t
+224,BK11773856,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,235.00,,t
+225,BK11781775,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,131.00,,t
+226,BK11789694,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,201.00,3,t
+227,BK11797613,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,335.00,,t
+228,BK11805532,Amul Toned Milk 500 ml,Amul,1,500 ml,34.00,7,t
+229,BK11813451,Vim Dishwash Gel 750 ml,Vim,8,750 ml,170.00,,t
+230,BK11821370,Lays Namkeen 150 g,Lays,3,150 g,36.00,,t
+231,BK11829289,McCain Frozen Peas 500 g,McCain,10,500 g,121.00,180,t
+232,BK11837208,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,103.00,5,t
+233,BK11845127,Yippee Poha Mix 180 g,Yippee,12,180 g,61.00,,t
+234,BK11853046,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,158.00,,t
+235,BK11860965,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,30.00,4,t
+236,BK11868884,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,895.00,,t
+237,BK11876803,Red Bull Orange Juice 1 L,Red Bull,4,1 L,119.00,,t
+238,BK11884722,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,83.00,3,t
+239,BK11892641,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,185.00,,t
+240,BK11900560,Amul Butter 100 g,Amul,1,100 g,64.00,7,f
+241,BK11908479,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,96.00,,t
+242,BK11916398,Kurkure Potato Chips 52 g,Kurkure,3,52 g,17.00,,t
+243,BK11924317,McCain French Fries 420 g,McCain,10,420 g,157.00,180,t
+244,BK11932236,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,32.00,5,t
+245,BK11940155,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,53.00,,t
+246,BK11948074,Colgate Toothpaste 150 g,Colgate,7,150 g,78.00,,t
+247,BK11955993,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,167.00,4,t
+248,BK11963912,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,211.00,,t
+249,BK11971831,Real Soft Drink 750 ml,Real,4,750 ml,37.00,,t
+250,BK11979750,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,175.00,3,t
+251,BK11987669,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,199.00,,t
+252,BK11995588,Amul Curd 400 g,Amul,1,400 g,47.00,7,t
+253,BK12003507,Vim Detergent 1 kg,Vim,8,1 kg,127.00,,t
+254,BK12011426,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,70.00,,t
+255,BK12019345,McCain Frozen Peas 500 g,McCain,10,500 g,109.00,180,t
+256,BK12027264,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,46.00,5,t
+257,BK12035183,Yippee Poha Mix 180 g,Yippee,12,180 g,53.00,,t
+258,BK12043102,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,377.00,,t
+259,BK12051021,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,54.00,4,t
+260,BK12058940,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,799.00,,t
+261,BK12066859,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,109.00,,t
+262,BK12074778,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,119.00,3,t
+263,BK12082697,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,289.00,,t
+264,BK12090616,Amul Paneer 200 g,Amul,1,200 g,88.00,7,t
+265,BK12098535,Vim Dishwash Gel 750 ml,Vim,8,750 ml,140.00,,t
+266,BK12106454,Haldiram Namkeen 150 g,Haldiram,3,150 g,49.00,,t
+267,BK12114373,McCain French Fries 420 g,McCain,10,420 g,142.00,180,t
+268,BK12122292,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,86.00,5,t
+269,BK12130211,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,46.00,,t
+270,BK12138130,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,216.00,,t
+271,BK12146049,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,41.00,4,t
+272,BK12153968,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,187.00,,t
+273,BK12161887,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,97.00,,t
+274,BK12169806,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,258.00,3,t
+275,BK12177725,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,158.00,,t
+276,BK12185644,Amul Toned Milk 500 ml,Amul,1,500 ml,27.00,7,t
+277,BK12193563,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,128.00,,t
+278,BK12201482,Bingo Potato Chips 52 g,Bingo,3,52 g,23.00,,t
+279,BK12209401,McCain Frozen Peas 500 g,McCain,10,500 g,98.00,180,t
+280,BK12217320,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,27.00,5,f
+281,BK12225239,Yippee Poha Mix 180 g,Yippee,12,180 g,76.00,,t
+282,BK12233158,Nivea Toothpaste 150 g,Nivea,7,150 g,108.00,,t
+283,BK12241077,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,24.00,4,t
+284,BK12248996,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,703.00,,t
+285,BK12256915,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,50.00,,t
+286,BK12264834,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,108.00,3,t
+287,BK12272753,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,168.00,,t
+288,BK12280672,Amul Butter 100 g,Amul,1,100 g,50.00,7,t
+289,BK12288591,Vim Detergent 1 kg,Vim,8,1 kg,172.00,,t
+290,BK12296510,Lays Bhujia 200 g,Lays,3,200 g,61.00,,t
+291,BK12304429,McCain French Fries 420 g,McCain,10,420 g,126.00,180,t
+292,BK12312348,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,38.00,5,t
+293,BK12320267,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,68.00,,t
+294,BK12328186,Dettol Shampoo 340 ml,Dettol,7,340 ml,323.00,,t
+295,BK12336105,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,133.00,4,t
+296,BK12344024,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,163.00,,t
+297,BK12351943,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,149.00,,t
+298,BK12359862,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,232.00,3,t
+299,BK12367781,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,242.00,,t
+300,BK12375700,Amul Curd 400 g,Amul,1,400 g,36.00,7,t
+301,BK12383619,Vim Dishwash Gel 750 ml,Vim,8,750 ml,193.00,,t
+302,BK12391538,Kurkure Namkeen 150 g,Kurkure,3,150 g,42.00,,t
+303,BK12399457,McCain Frozen Peas 500 g,McCain,10,500 g,86.00,180,t
+304,BK12407376,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,115.00,5,t
+305,BK12415295,Yippee Poha Mix 180 g,Yippee,12,180 g,69.00,,t
+306,BK12423214,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,184.00,,t
+307,BK12431133,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,43.00,4,t
+308,BK12439052,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,1007.00,,t
+309,BK12446971,Real Orange Juice 1 L,Real,4,1 L,136.00,,t
+310,BK12454890,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,96.00,3,t
+311,BK12462809,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,131.00,,t
+312,BK12470728,Amul Paneer 200 g,Amul,1,200 g,112.00,7,t
+313,BK12478647,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,110.00,,t
+314,BK12486566,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,20.00,,t
+315,BK12494485,McCain French Fries 420 g,McCain,10,420 g,111.00,180,t
+316,BK12502404,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,37.00,5,t
+317,BK12510323,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,61.00,,t
+318,BK12518242,Himalaya Toothpaste 150 g,Himalaya,7,150 g,91.00,,t
+319,BK12526161,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,32.00,4,t
+320,BK12534080,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,239.00,,f
+321,BK12541999,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,43.00,,t
+322,BK12549918,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,206.00,3,t
+323,BK12557837,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,138.00,,t
+324,BK12565756,Amul Toned Milk 500 ml,Amul,1,500 ml,34.00,7,t
+325,BK12573675,Vim Detergent 1 kg,Vim,8,1 kg,147.00,,t
+326,BK12581594,Haldiram Bhujia 200 g,Haldiram,3,200 g,51.00,,t
+327,BK12589513,McCain Frozen Peas 500 g,McCain,10,500 g,123.00,180,t
+328,BK12597432,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,52.00,5,t
+329,BK12605351,Yippee Poha Mix 180 g,Yippee,12,180 g,62.00,,t
+330,BK12613270,Dove Shampoo 340 ml,Dove,7,340 ml,269.00,,t
+331,BK12621189,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,30.00,4,t
+332,BK12629108,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,911.00,,t
+333,BK12637027,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,126.00,,t
+334,BK12644946,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,84.00,3,t
+335,BK12652865,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,325.00,,t
+336,BK12660784,Amul Butter 100 g,Amul,1,100 g,65.00,7,t
+337,BK12668703,Vim Dishwash Gel 750 ml,Vim,8,750 ml,163.00,,t
+338,BK12676622,Bingo Namkeen 150 g,Bingo,3,150 g,34.00,,t
+339,BK12684541,McCain French Fries 420 g,McCain,10,420 g,160.00,180,t
+340,BK12692460,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,99.00,5,t
+341,BK12700379,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,54.00,,t
+342,BK12708298,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,151.00,,t
+343,BK12716217,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,169.00,4,t
+344,BK12724136,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,215.00,,t
+345,BK12732055,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,114.00,,t
+346,BK12739974,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,180.00,3,t
+347,BK12747893,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,179.00,,t
+348,BK12755812,Amul Curd 400 g,Amul,1,400 g,48.00,7,t
+349,BK12763731,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,92.00,,t
+350,BK12771650,Lays Potato Chips 52 g,Lays,3,52 g,16.00,,t
+351,BK12779569,McCain Frozen Peas 500 g,McCain,10,500 g,111.00,180,t
+352,BK12787488,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,31.00,5,t
+353,BK12795407,Yippee Poha Mix 180 g,Yippee,12,180 g,55.00,,t
+354,BK12803326,Dettol Toothpaste 150 g,Dettol,7,150 g,122.00,,t
+355,BK12811245,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,55.00,4,t
+356,BK12819164,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,815.00,,t
+357,BK12827083,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,36.00,,t
+358,BK12835002,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,121.00,3,t
+359,BK12842921,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,192.00,,t
+360,BK12850840,Amul Paneer 200 g,Amul,1,200 g,90.00,7,f
+361,BK12858759,Vim Detergent 1 kg,Vim,8,1 kg,122.00,,t
+362,BK12866678,Kurkure Bhujia 200 g,Kurkure,3,200 g,68.00,,t
+363,BK12874597,McCain French Fries 420 g,McCain,10,420 g,144.00,180,t
+364,BK12882516,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,44.00,5,t
+365,BK12890435,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,48.00,,t
+366,BK12898354,Colgate Shampoo 340 ml,Colgate,7,340 ml,365.00,,t
+367,BK12906273,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,41.00,4,t
+368,BK12914192,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,191.00,,t
+369,BK12922111,Real Energy Drink 250 ml,Real,4,250 ml,104.00,,t
+370,BK12930030,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,263.00,3,t
+371,BK12937949,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,278.00,,t
+372,BK12945868,Amul Toned Milk 500 ml,Amul,1,500 ml,27.00,7,t
+373,BK12953787,Vim Dishwash Gel 750 ml,Vim,8,750 ml,134.00,,t
+374,BK12961706,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,47.00,,t
+375,BK12969625,McCain Frozen Peas 500 g,McCain,10,500 g,100.00,180,t
+376,BK12977544,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,83.00,5,t
+377,BK12985463,Yippee Poha Mix 180 g,Yippee,12,180 g,77.00,,t
+378,BK12993382,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,209.00,,t
+379,BK13001301,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,25.00,4,t
+380,BK13009220,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,719.00,,t
+381,BK13017139,Tropicana Orange Juice 1 L,Tropicana,4,1 L,152.00,,t
+382,BK13025058,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,109.00,3,t
+383,BK13032977,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,152.00,,t
+384,BK13040896,Amul Butter 100 g,Amul,1,100 g,51.00,7,t
+385,BK13048815,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,124.00,,t
+386,BK13056734,Haldiram Potato Chips 52 g,Haldiram,3,52 g,22.00,,t
+387,BK13064653,McCain French Fries 420 g,McCain,10,420 g,129.00,180,t
+388,BK13072572,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,26.00,5,t
+389,BK13080491,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,69.00,,t
+390,BK13088410,Dove Toothpaste 150 g,Dove,7,150 g,105.00,,t
+391,BK13096329,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,136.00,4,t
+392,BK13104248,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,167.00,,t
+393,BK13112167,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,48.00,,t
+394,BK13120086,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,237.00,3,t
+395,BK13128005,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,162.00,,t
+396,BK13135924,Amul Curd 400 g,Amul,1,400 g,37.00,7,t
+397,BK13143843,Vim Detergent 1 kg,Vim,8,1 kg,167.00,,t
+398,BK13151762,Bingo Bhujia 200 g,Bingo,3,200 g,58.00,,t
+399,BK13159681,McCain Frozen Peas 500 g,McCain,10,500 g,88.00,180,t
+400,BK13167600,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,36.00,5,f
+401,BK13175519,Yippee Poha Mix 180 g,Yippee,12,180 g,70.00,,t
+402,BK13183438,Nivea Shampoo 340 ml,Nivea,7,340 ml,311.00,,t
+403,BK13191357,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,44.00,4,t
+404,BK13199276,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,1023.00,,t
+405,BK13207195,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,144.00,,t
+406,BK13215114,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,98.00,3,t
+407,BK13223033,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,231.00,,t
+408,BK13230952,Amul Paneer 200 g,Amul,1,200 g,113.00,7,t
+409,BK13238871,Vim Dishwash Gel 750 ml,Vim,8,750 ml,186.00,,t
+410,BK13246790,Lays Namkeen 150 g,Lays,3,150 g,40.00,,t
+411,BK13254709,McCain French Fries 420 g,McCain,10,420 g,113.00,180,t
+412,BK13262628,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,112.00,5,t
+413,BK13270547,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,62.00,,t
+414,BK13278466,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,176.00,,t
+415,BK13286385,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,32.00,4,t
+416,BK13294304,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,243.00,,t
+417,BK13302223,Red Bull Orange Juice 1 L,Red Bull,4,1 L,131.00,,t
+418,BK13310142,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,210.00,3,t
+419,BK13318061,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,125.00,,t
+420,BK13325980,Amul Toned Milk 500 ml,Amul,1,500 ml,35.00,7,t
+421,BK13333899,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,106.00,,t
+422,BK13341818,Kurkure Potato Chips 52 g,Kurkure,3,52 g,19.00,,t
+423,BK13349737,McCain Frozen Peas 500 g,McCain,10,500 g,77.00,180,t
+424,BK13357656,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,35.00,5,t
+425,BK13365575,Yippee Poha Mix 180 g,Yippee,12,180 g,63.00,,t
+426,BK13373494,Colgate Toothpaste 150 g,Colgate,7,150 g,87.00,,t
+427,BK13381413,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,31.00,4,t
+428,BK13389332,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,927.00,,t
+429,BK13397251,Real Soft Drink 750 ml,Real,4,750 ml,41.00,,t
+430,BK13405170,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,86.00,3,t
+431,BK13413089,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,216.00,,t
+432,BK13421008,Amul Butter 100 g,Amul,1,100 g,66.00,7,t
+433,BK13428927,Vim Detergent 1 kg,Vim,8,1 kg,141.00,,t
+434,BK13436846,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,48.00,,t
+435,BK13444765,McCain French Fries 420 g,McCain,10,420 g,163.00,180,t
+436,BK13452684,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,50.00,5,t
+437,BK13460603,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,55.00,,t
+438,BK13468522,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,257.00,,t
+439,BK13476441,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,172.00,4,t
+440,BK13484360,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,219.00,,f
+441,BK13492279,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,121.00,,t
+442,BK13500198,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,184.00,3,t
+443,BK13508117,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,315.00,,t
+444,BK13516036,Amul Curd 400 g,Amul,1,400 g,49.00,7,t
+445,BK13523955,Vim Dishwash Gel 750 ml,Vim,8,750 ml,157.00,,t
+446,BK13531874,Haldiram Namkeen 150 g,Haldiram,3,150 g,33.00,,t
+447,BK13539793,McCain Frozen Peas 500 g,McCain,10,500 g,113.00,180,t
+448,BK13547712,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,95.00,5,t
+449,BK13555631,Yippee Poha Mix 180 g,Yippee,12,180 g,56.00,,t
+450,BK13563550,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,144.00,,t
+451,BK13571469,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,56.00,4,t
+452,BK13579388,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,831.00,,t
+453,BK13587307,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,109.00,,t
+454,BK13595226,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,123.00,3,t
+455,BK13603145,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,173.00,,t
+456,BK13611064,Amul Paneer 200 g,Amul,1,200 g,92.00,7,t
+457,BK13618983,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,88.00,,t
+458,BK13626902,Bingo Potato Chips 52 g,Bingo,3,52 g,25.00,,t
+459,BK13634821,McCain French Fries 420 g,McCain,10,420 g,147.00,180,t
+460,BK13642740,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,30.00,5,t
+461,BK13650659,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,49.00,,t
+462,BK13658578,Nivea Toothpaste 150 g,Nivea,7,150 g,118.00,,t
+463,BK13666497,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,42.00,4,t
+464,BK13674416,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,195.00,,t
+465,BK13682335,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,34.00,,t
+466,BK13690254,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,267.00,3,t
+467,BK13698173,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,185.00,,t
+468,BK13706092,Amul Toned Milk 500 ml,Amul,1,500 ml,28.00,7,t
+469,BK13714011,Vim Detergent 1 kg,Vim,8,1 kg,116.00,,t
+470,BK13721930,Lays Bhujia 200 g,Lays,3,200 g,66.00,,t
+471,BK13729849,McCain Frozen Peas 500 g,McCain,10,500 g,102.00,180,t
+472,BK13737768,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,42.00,5,t
+473,BK13745687,Yippee Poha Mix 180 g,Yippee,12,180 g,49.00,,t
+474,BK13753606,Dettol Shampoo 340 ml,Dettol,7,340 ml,353.00,,t
+475,BK13761525,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,25.00,4,t
+476,BK13769444,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,735.00,,t
+477,BK13777363,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,161.00,,t
+478,BK13785282,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,111.00,3,t
+479,BK13793201,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,268.00,,t
+480,BK13801120,Amul Butter 100 g,Amul,1,100 g,52.00,7,f
+481,BK13809039,Vim Dishwash Gel 750 ml,Vim,8,750 ml,210.00,,t
+482,BK13816958,Kurkure Namkeen 150 g,Kurkure,3,150 g,46.00,,t
+483,BK13824877,McCain French Fries 420 g,McCain,10,420 g,131.00,180,t
+484,BK13832796,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,79.00,5,t
+485,BK13840715,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,70.00,,t
+486,BK13848634,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,202.00,,t
+487,BK13856553,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,139.00,4,t
+488,BK13864472,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,171.00,,t
+489,BK13872391,Real Orange Juice 1 L,Real,4,1 L,148.00,,t
+490,BK13880310,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,241.00,3,t
+491,BK13888229,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,146.00,,t
+492,BK13896148,Amul Curd 400 g,Amul,1,400 g,38.00,7,t
+493,BK13904067,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,120.00,,t
+494,BK13911986,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,22.00,,t
+495,BK13919905,McCain Frozen Peas 500 g,McCain,10,500 g,90.00,180,t
+496,BK13927824,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,25.00,5,t
+497,BK13935743,Yippee Poha Mix 180 g,Yippee,12,180 g,71.00,,t
+498,BK13943662,Himalaya Toothpaste 150 g,Himalaya,7,150 g,101.00,,t
+499,BK13951581,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,45.00,4,t
+500,BK13959500,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,639.00,,t
+501,BK13967419,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,47.00,,t
+502,BK13975338,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,100.00,3,t
+503,BK13983257,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,155.00,,t
+504,BK13991176,Amul Paneer 200 g,Amul,1,200 g,115.00,7,t
+505,BK13999095,Vim Detergent 1 kg,Vim,8,1 kg,161.00,,t
+506,BK14007014,Haldiram Bhujia 200 g,Haldiram,3,200 g,56.00,,t
+507,BK14014933,McCain French Fries 420 g,McCain,10,420 g,116.00,180,t
+508,BK14022852,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,57.00,5,t
+509,BK14030771,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,63.00,,t
+510,BK14038690,Dove Shampoo 340 ml,Dove,7,340 ml,299.00,,t
+511,BK14046609,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,33.00,4,t
+512,BK14054528,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,247.00,,t
+513,BK14062447,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,139.00,,t
+514,BK14070366,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,215.00,3,t
+515,BK14078285,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,221.00,,t
+516,BK14086204,Amul Toned Milk 500 ml,Amul,1,500 ml,35.00,7,t
+517,BK14094123,Vim Dishwash Gel 750 ml,Vim,8,750 ml,180.00,,t
+518,BK14102042,Bingo Namkeen 150 g,Bingo,3,150 g,38.00,,t
+519,BK14109961,McCain Frozen Peas 500 g,McCain,10,500 g,79.00,180,t
+520,BK14117880,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,108.00,5,f
+521,BK14125799,Yippee Poha Mix 180 g,Yippee,12,180 g,64.00,,t
+522,BK14133718,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,169.00,,t
+523,BK14141637,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,19.00,4,t
+524,BK14149556,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,943.00,,t
+525,BK14157475,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,126.00,,t
+526,BK14165394,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,88.00,3,t
+527,BK14173313,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,194.00,,t
+528,BK14181232,Amul Butter 100 g,Amul,1,100 g,67.00,7,t
+529,BK14189151,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,102.00,,t
+530,BK14197070,Lays Potato Chips 52 g,Lays,3,52 g,18.00,,t
+531,BK14204989,McCain French Fries 420 g,McCain,10,420 g,165.00,180,t
+532,BK14212908,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,34.00,5,t
+533,BK14220827,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,57.00,,t
+534,BK14228746,Dettol Toothpaste 150 g,Dettol,7,150 g,84.00,,t
+535,BK14236665,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,175.00,4,t
+536,BK14244584,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,223.00,,t
+537,BK14252503,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,40.00,,t
+538,BK14260422,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,188.00,3,t
+539,BK14268341,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,209.00,,t
+540,BK14276260,Amul Curd 400 g,Amul,1,400 g,50.00,7,t
+541,BK14284179,Vim Detergent 1 kg,Vim,8,1 kg,136.00,,t
+542,BK14292098,Kurkure Bhujia 200 g,Kurkure,3,200 g,46.00,,t
+543,BK14300017,McCain Frozen Peas 500 g,McCain,10,500 g,115.00,180,t
+544,BK14307936,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,49.00,5,t
+545,BK14315855,Yippee Poha Mix 180 g,Yippee,12,180 g,57.00,,t
+546,BK14323774,Colgate Shampoo 340 ml,Colgate,7,340 ml,245.00,,t
+547,BK14331693,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,57.00,4,t
+548,BK14339612,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,847.00,,t
+549,BK14347531,Real Energy Drink 250 ml,Real,4,250 ml,116.00,,t
+550,BK14355450,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,77.00,3,t
+551,BK14363369,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,304.00,,t
+552,BK14371288,Amul Paneer 200 g,Amul,1,200 g,94.00,7,t
+553,BK14379207,Vim Dishwash Gel 750 ml,Vim,8,750 ml,150.00,,t
+554,BK14387126,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,51.00,,t
+555,BK14395045,McCain French Fries 420 g,McCain,10,420 g,150.00,180,t
+556,BK14402964,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,92.00,5,t
+557,BK14410883,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,50.00,,t
+558,BK14418802,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,227.00,,t
+559,BK14426721,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,43.00,4,t
+560,BK14434640,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,199.00,,f
+561,BK14442559,Tropicana Orange Juice 1 L,Tropicana,4,1 L,104.00,,t
+562,BK14450478,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,272.00,3,t
+563,BK14458397,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,167.00,,t
+564,BK14466316,Amul Toned Milk 500 ml,Amul,1,500 ml,28.00,7,t
+565,BK14474235,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,84.00,,t
+566,BK14482154,Haldiram Potato Chips 52 g,Haldiram,3,52 g,24.00,,t
+567,BK14490073,McCain Frozen Peas 500 g,McCain,10,500 g,104.00,180,t
+568,BK14497992,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,29.00,5,t
+569,BK14505911,Yippee Poha Mix 180 g,Yippee,12,180 g,50.00,,t
+570,BK14513830,Dove Toothpaste 150 g,Dove,7,150 g,114.00,,t
+571,BK14521749,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,26.00,4,t
+572,BK14529668,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,751.00,,t
+573,BK14537587,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,32.00,,t
+574,BK14545506,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,113.00,3,t
+575,BK14553425,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,179.00,,t
+576,BK14561344,Amul Butter 100 g,Amul,1,100 g,53.00,7,t
+577,BK14569263,Vim Detergent 1 kg,Vim,8,1 kg,181.00,,t
+578,BK14577182,Bingo Bhujia 200 g,Bingo,3,200 g,64.00,,t
+579,BK14585101,McCain French Fries 420 g,McCain,10,420 g,134.00,180,t
+580,BK14593020,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,41.00,5,t
+581,BK14600939,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,71.00,,t
+582,BK14608858,Nivea Shampoo 340 ml,Nivea,7,340 ml,341.00,,t
+583,BK14616777,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,141.00,4,t
+584,BK14624696,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,175.00,,t
+585,BK14632615,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,156.00,,t
+586,BK14640534,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,245.00,3,t
+587,BK14648453,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,257.00,,t
+588,BK14656372,Amul Curd 400 g,Amul,1,400 g,39.00,7,t
+589,BK14664291,Vim Dishwash Gel 750 ml,Vim,8,750 ml,203.00,,t
+590,BK14672210,Lays Namkeen 150 g,Lays,3,150 g,44.00,,t
+591,BK14680129,McCain Frozen Peas 500 g,McCain,10,500 g,92.00,180,t
+592,BK14688048,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,76.00,5,t
+593,BK14695967,Yippee Poha Mix 180 g,Yippee,12,180 g,73.00,,t
+594,BK14703886,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,194.00,,t
+595,BK14711805,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,46.00,4,t
+596,BK14719724,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,655.00,,t
+597,BK14727643,Red Bull Orange Juice 1 L,Red Bull,4,1 L,143.00,,t
+598,BK14735562,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,102.00,3,t
+599,BK14743481,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,140.00,,t
+600,BK14751400,Amul Paneer 200 g,Amul,1,200 g,72.00,7,f
+601,BK14759319,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,116.00,,t
+602,BK14767238,Kurkure Potato Chips 52 g,Kurkure,3,52 g,21.00,,t
+603,BK14775157,McCain French Fries 420 g,McCain,10,420 g,118.00,180,t
+604,BK14783076,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,38.00,5,t
+605,BK14790995,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,64.00,,t
+606,BK14798914,Colgate Toothpaste 150 g,Colgate,7,150 g,97.00,,t
+607,BK14806833,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,34.00,4,t
+608,BK14814752,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,251.00,,t
+609,BK14822671,Real Soft Drink 750 ml,Real,4,750 ml,45.00,,t
+610,BK14830590,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,219.00,3,t
+611,BK14838509,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,148.00,,t
+612,BK14846428,Amul Toned Milk 500 ml,Amul,1,500 ml,36.00,7,t
+613,BK14854347,Vim Detergent 1 kg,Vim,8,1 kg,155.00,,t
+614,BK14862266,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,54.00,,t
+615,BK14870185,McCain Frozen Peas 500 g,McCain,10,500 g,81.00,180,t
+616,BK14878104,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,55.00,5,t
+617,BK14886023,Yippee Poha Mix 180 g,Yippee,12,180 g,65.00,,t
+618,BK14893942,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,287.00,,t
+619,BK14901861,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,20.00,4,t
+620,BK14909780,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,959.00,,t
+621,BK14917699,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,134.00,,t
+622,BK14925618,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,90.00,3,t
+623,BK14933537,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,211.00,,t
+624,BK14941456,Amul Butter 100 g,Amul,1,100 g,68.00,7,t
+625,BK14949375,Vim Dishwash Gel 750 ml,Vim,8,750 ml,173.00,,t
+626,BK14957294,Haldiram Namkeen 150 g,Haldiram,3,150 g,37.00,,t
+627,BK14965213,McCain French Fries 420 g,McCain,10,420 g,168.00,180,t
+628,BK14973132,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,104.00,5,t
+629,BK14981051,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,58.00,,t
+630,BK14988970,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,162.00,,t
+631,BK14996889,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,178.00,4,t
+632,BK15004808,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,227.00,,t
+633,BK15012727,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,121.00,,t
+634,BK15020646,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,193.00,3,t
+635,BK15028565,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,188.00,,t
+636,BK15036484,Amul Curd 400 g,Amul,1,400 g,50.00,7,t
+637,BK15044403,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,98.00,,t
+638,BK15052322,Bingo Potato Chips 52 g,Bingo,3,52 g,17.00,,t
+639,BK15060241,McCain Frozen Peas 500 g,McCain,10,500 g,117.00,180,t
+640,BK15068160,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,33.00,5,f
+641,BK15076079,Yippee Poha Mix 180 g,Yippee,12,180 g,58.00,,t
+642,BK15083998,Nivea Toothpaste 150 g,Nivea,7,150 g,80.00,,t
+643,BK15091917,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,58.00,4,t
+644,BK15099836,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,863.00,,t
+645,BK15107755,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,38.00,,t
+646,BK15115674,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,79.00,3,t
+647,BK15123593,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,202.00,,t
+648,BK15131512,Amul Paneer 200 g,Amul,1,200 g,95.00,7,t
+649,BK15139431,Vim Detergent 1 kg,Vim,8,1 kg,130.00,,t
+650,BK15147350,Lays Bhujia 200 g,Lays,3,200 g,44.00,,t
+651,BK15155269,McCain French Fries 420 g,McCain,10,420 g,152.00,180,t
+652,BK15163188,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,47.00,5,t
+653,BK15171107,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,51.00,,t
+654,BK15179026,Dettol Shampoo 340 ml,Dettol,7,340 ml,383.00,,t
+655,BK15186945,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,44.00,4,t
+656,BK15194864,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,203.00,,t
+657,BK15202783,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,111.00,,t
+658,BK15210702,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,276.00,3,t
+659,BK15218621,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,294.00,,t
+660,BK15226540,Amul Toned Milk 500 ml,Amul,1,500 ml,29.00,7,t
+661,BK15234459,Vim Dishwash Gel 750 ml,Vim,8,750 ml,144.00,,t
+662,BK15242378,Kurkure Namkeen 150 g,Kurkure,3,150 g,50.00,,t
+663,BK15250297,McCain Frozen Peas 500 g,McCain,10,500 g,105.00,180,t
+664,BK15258216,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,88.00,5,t
+665,BK15266135,Yippee Poha Mix 180 g,Yippee,12,180 g,51.00,,t
+666,BK15274054,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,220.00,,t
+667,BK15281973,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,26.00,4,t
+668,BK15289892,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,767.00,,t
+669,BK15297811,Real Orange Juice 1 L,Real,4,1 L,100.00,,t
+670,BK15305730,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,115.00,3,t
+671,BK15313649,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,161.00,,t
+672,BK15321568,Amul Butter 100 g,Amul,1,100 g,55.00,7,t
+673,BK15329487,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,80.00,,t
+674,BK15337406,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,24.00,,t
+675,BK15345325,McCain French Fries 420 g,McCain,10,420 g,137.00,180,t
+676,BK15353244,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,28.00,5,t
+677,BK15361163,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,72.00,,t
+678,BK15369082,Himalaya Toothpaste 150 g,Himalaya,7,150 g,110.00,,t
+679,BK15377001,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,144.00,4,t
+680,BK15384920,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,179.00,,f
+681,BK15392839,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,51.00,,t
+682,BK15400758,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,250.00,3,t
+683,BK15408677,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,172.00,,t
+684,BK15416596,Amul Curd 400 g,Amul,1,400 g,40.00,7,t
+685,BK15424515,Vim Detergent 1 kg,Vim,8,1 kg,175.00,,t
+686,BK15432434,Haldiram Bhujia 200 g,Haldiram,3,200 g,62.00,,t
+687,BK15440353,McCain Frozen Peas 500 g,McCain,10,500 g,94.00,180,t
+688,BK15448272,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,39.00,5,t
+689,BK15456191,Yippee Poha Mix 180 g,Yippee,12,180 g,74.00,,t
+690,BK15464110,Dove Shampoo 340 ml,Dove,7,340 ml,329.00,,t
+691,BK15472029,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,47.00,4,t
+692,BK15479948,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,671.00,,t
+693,BK15487867,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,151.00,,t
+694,BK15495786,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,104.00,3,t
+695,BK15503705,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,247.00,,t
+696,BK15511624,Amul Paneer 200 g,Amul,1,200 g,74.00,7,t
+697,BK15519543,Vim Dishwash Gel 750 ml,Vim,8,750 ml,196.00,,t
+698,BK15527462,Bingo Namkeen 150 g,Bingo,3,150 g,42.00,,t
+699,BK15535381,McCain French Fries 420 g,McCain,10,420 g,121.00,180,t
+700,BK15543300,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,72.00,5,t
+701,BK15551219,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,66.00,,t
+702,BK15559138,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,187.00,,t
+703,BK15567057,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,35.00,4,t
+704,BK15574976,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,255.00,,t
+705,BK15582895,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,138.00,,t
+706,BK15590814,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,223.00,3,t
+707,BK15598733,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,134.00,,t
+708,BK15606652,Amul Toned Milk 500 ml,Amul,1,500 ml,37.00,7,t
+709,BK15614571,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,112.00,,t
+710,BK15622490,Lays Potato Chips 52 g,Lays,3,52 g,20.00,,t
+711,BK15630409,McCain Frozen Peas 500 g,McCain,10,500 g,83.00,180,t
+712,BK15638328,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,37.00,5,t
+713,BK15646247,Yippee Poha Mix 180 g,Yippee,12,180 g,67.00,,t
+714,BK15654166,Dettol Toothpaste 150 g,Dettol,7,150 g,93.00,,t
+715,BK15662085,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,20.00,4,t
+716,BK15670004,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,975.00,,t
+717,BK15677923,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,44.00,,t
+718,BK15685842,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,92.00,3,t
+719,BK15693761,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,141.00,,t
+720,BK15701680,Amul Butter 100 g,Amul,1,100 g,70.00,7,f
+721,BK15709599,Vim Detergent 1 kg,Vim,8,1 kg,150.00,,t
+722,BK15717518,Kurkure Bhujia 200 g,Kurkure,3,200 g,52.00,,t
+723,BK15725437,McCain French Fries 420 g,McCain,10,420 g,105.00,180,t
+724,BK15733356,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,53.00,5,t
+725,BK15741275,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,59.00,,t
+726,BK15749194,Colgate Shampoo 340 ml,Colgate,7,340 ml,275.00,,t
+727,BK15757113,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,181.00,4,t
+728,BK15765032,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,231.00,,t
+729,BK15772951,Real Energy Drink 250 ml,Real,4,250 ml,129.00,,t
+730,BK15780870,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,197.00,3,t
+731,BK15788789,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,330.00,,t
+732,BK15796708,Amul Curd 400 g,Amul,1,400 g,51.00,7,t
+733,BK15804627,Vim Dishwash Gel 750 ml,Vim,8,750 ml,167.00,,t
+734,BK15812546,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,35.00,,t
+735,BK15820465,McCain Frozen Peas 500 g,McCain,10,500 g,119.00,180,t
+736,BK15828384,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,101.00,5,t
+737,BK15836303,Yippee Poha Mix 180 g,Yippee,12,180 g,59.00,,t
+738,BK15844222,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,155.00,,t
+739,BK15852141,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,59.00,4,t
+740,BK15860060,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,879.00,,t
+741,BK15867979,Tropicana Orange Juice 1 L,Tropicana,4,1 L,116.00,,t
+742,BK15875898,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,81.00,3,t
+743,BK15883817,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,182.00,,t
+744,BK15891736,Amul Paneer 200 g,Amul,1,200 g,97.00,7,t
+745,BK15899655,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,94.00,,t
+746,BK15907574,Haldiram Potato Chips 52 g,Haldiram,3,52 g,16.00,,t
+747,BK15915493,McCain French Fries 420 g,McCain,10,420 g,155.00,180,t
+748,BK15923412,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,32.00,5,t
+749,BK15931331,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,52.00,,t
+750,BK15939250,Dove Toothpaste 150 g,Dove,7,150 g,76.00,,t
+751,BK15947169,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,44.00,4,t
+752,BK15955088,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,207.00,,t
+753,BK15963007,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,36.00,,t
+754,BK15970926,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,280.00,3,t
+755,BK15978845,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,196.00,,t
+756,BK15986764,Amul Toned Milk 500 ml,Amul,1,500 ml,30.00,7,t
+757,BK15994683,Vim Detergent 1 kg,Vim,8,1 kg,125.00,,t
+758,BK16002602,Bingo Bhujia 200 g,Bingo,3,200 g,69.00,,t
+759,BK16010521,McCain Frozen Peas 500 g,McCain,10,500 g,107.00,180,t
+760,BK16018440,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,45.00,5,f
+761,BK16026359,Yippee Poha Mix 180 g,Yippee,12,180 g,52.00,,t
+762,BK16034278,Nivea Shampoo 340 ml,Nivea,7,340 ml,371.00,,t
+763,BK16042197,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,27.00,4,t
+764,BK16050116,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,783.00,,t
+765,BK16058035,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,106.00,,t
+766,BK16065954,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,117.00,3,t
+767,BK16073873,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,283.00,,t
+768,BK16081792,Amul Butter 100 g,Amul,1,100 g,56.00,7,t
+769,BK16089711,Vim Dishwash Gel 750 ml,Vim,8,750 ml,137.00,,t
+770,BK16097630,Lays Namkeen 150 g,Lays,3,150 g,48.00,,t
+771,BK16105549,McCain French Fries 420 g,McCain,10,420 g,139.00,180,t
+772,BK16113468,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,85.00,5,t
+773,BK16121387,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,45.00,,t
+774,BK16129306,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,212.00,,t
+775,BK16137225,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,147.00,4,t
+776,BK16145144,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,183.00,,t
+777,BK16153063,Red Bull Orange Juice 1 L,Red Bull,4,1 L,155.00,,t
+778,BK16160982,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,254.00,3,t
+779,BK16168901,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,155.00,,t
+780,BK16176820,Amul Curd 400 g,Amul,1,400 g,41.00,7,t
+781,BK16184739,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,126.00,,t
+782,BK16192658,Kurkure Potato Chips 52 g,Kurkure,3,52 g,23.00,,t
+783,BK16200577,McCain Frozen Peas 500 g,McCain,10,500 g,96.00,180,t
+784,BK16208496,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,26.00,5,t
+785,BK16216415,Yippee Poha Mix 180 g,Yippee,12,180 g,75.00,,t
+786,BK16224334,Colgate Toothpaste 150 g,Colgate,7,150 g,106.00,,t
+787,BK16232253,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,48.00,4,t
+788,BK16240172,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,687.00,,t
+789,BK16248091,Real Soft Drink 750 ml,Real,4,750 ml,49.00,,t
+790,BK16256010,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,106.00,3,t
+791,BK16263929,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,165.00,,t
+792,BK16271848,Amul Paneer 200 g,Amul,1,200 g,76.00,7,t
+793,BK16279767,Vim Detergent 1 kg,Vim,8,1 kg,169.00,,t
+794,BK16287686,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,59.00,,t
+795,BK16295605,McCain French Fries 420 g,McCain,10,420 g,124.00,180,t
+796,BK16303524,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,37.00,5,t
+797,BK16311443,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,67.00,,t
+798,BK16319362,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,317.00,,t
+799,BK16327281,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,35.00,4,t
+800,BK16335200,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,159.00,,f
+801,BK16343119,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,146.00,,t
+802,BK16351038,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,228.00,3,t
+803,BK16358957,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,237.00,,t
+804,BK16366876,Amul Toned Milk 500 ml,Amul,1,500 ml,37.00,7,t
+805,BK16374795,Vim Dishwash Gel 750 ml,Vim,8,750 ml,190.00,,t
+806,BK16382714,Haldiram Namkeen 150 g,Haldiram,3,150 g,41.00,,t
+807,BK16390633,McCain Frozen Peas 500 g,McCain,10,500 g,85.00,180,t
+808,BK16398552,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,113.00,5,t
+809,BK16406471,Yippee Poha Mix 180 g,Yippee,12,180 g,68.00,,t
+810,BK16414390,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,180.00,,t
+811,BK16422309,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,21.00,4,t
+812,BK16430228,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,991.00,,t
+813,BK16438147,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,133.00,,t
+814,BK16446066,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,94.00,3,t
+815,BK16453985,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,128.00,,t
+816,BK16461904,Amul Butter 100 g,Amul,1,100 g,71.00,7,t
+817,BK16469823,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,108.00,,t
+818,BK16477742,Bingo Potato Chips 52 g,Bingo,3,52 g,19.00,,t
+819,BK16485661,McCain French Fries 420 g,McCain,10,420 g,108.00,180,t
+820,BK16493580,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,36.00,5,t
+821,BK16501499,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,60.00,,t
+822,BK16509418,Nivea Toothpaste 150 g,Nivea,7,150 g,89.00,,t
+823,BK16517337,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,113.00,4,t
+824,BK16525256,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,235.00,,t
+825,BK16533175,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,42.00,,t
+826,BK16541094,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,201.00,3,t
+827,BK16549013,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,219.00,,t
+828,BK16556932,Amul Curd 400 g,Amul,1,400 g,52.00,7,t
+829,BK16564851,Vim Detergent 1 kg,Vim,8,1 kg,144.00,,t
+830,BK16572770,Lays Bhujia 200 g,Lays,3,200 g,50.00,,t
+831,BK16580689,McCain Frozen Peas 500 g,McCain,10,500 g,121.00,180,t
+832,BK16588608,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,51.00,5,t
+833,BK16596527,Yippee Poha Mix 180 g,Yippee,12,180 g,61.00,,t
+834,BK16604446,Dettol Shampoo 340 ml,Dettol,7,340 ml,263.00,,t
+835,BK16612365,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,60.00,4,t
+836,BK16620284,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,895.00,,t
+837,BK16628203,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,124.00,,t
+838,BK16636122,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,83.00,3,t
+839,BK16644041,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,320.00,,t
+840,BK16651960,Amul Paneer 200 g,Amul,1,200 g,99.00,7,f
+841,BK16659879,Vim Dishwash Gel 750 ml,Vim,8,750 ml,160.00,,t
+842,BK16667798,Kurkure Namkeen 150 g,Kurkure,3,150 g,34.00,,t
+843,BK16675717,McCain French Fries 420 g,McCain,10,420 g,157.00,180,t
+844,BK16683636,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,97.00,5,t
+845,BK16691555,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,53.00,,t
+846,BK16699474,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,148.00,,t
+847,BK16707393,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,45.00,4,t
+848,BK16715312,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,211.00,,t
+849,BK16723231,Real Orange Juice 1 L,Real,4,1 L,112.00,,t
+850,BK16731150,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,175.00,3,t
+851,BK16739069,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,176.00,,t
+852,BK16746988,Amul Toned Milk 500 ml,Amul,1,500 ml,30.00,7,t
+853,BK16754907,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,90.00,,t
+854,BK16762826,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,26.00,,t
+855,BK16770745,McCain Frozen Peas 500 g,McCain,10,500 g,109.00,180,t
+856,BK16778664,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,31.00,5,t
+857,BK16786583,Yippee Poha Mix 180 g,Yippee,12,180 g,53.00,,t
+858,BK16794502,Himalaya Toothpaste 150 g,Himalaya,7,150 g,120.00,,t
+859,BK16802421,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,27.00,4,t
+860,BK16810340,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,799.00,,t
+861,BK16818259,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,35.00,,t
+862,BK16826178,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,119.00,3,t
+863,BK16834097,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,189.00,,t
+864,BK16842016,Amul Butter 100 g,Amul,1,100 g,57.00,7,t
+865,BK16849935,Vim Detergent 1 kg,Vim,8,1 kg,119.00,,t
+866,BK16857854,Haldiram Bhujia 200 g,Haldiram,3,200 g,67.00,,t
+867,BK16865773,McCain French Fries 420 g,McCain,10,420 g,142.00,180,t
+868,BK16873692,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,43.00,5,t
+869,BK16881611,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,46.00,,t
+870,BK16889530,Dove Shampoo 340 ml,Dove,7,340 ml,359.00,,t
+871,BK16897449,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,150.00,4,t
+872,BK16905368,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,187.00,,t
+873,BK16913287,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,101.00,,t
+874,BK16921206,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,258.00,3,t
+875,BK16929125,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,273.00,,t
+876,BK16937044,Amul Curd 400 g,Amul,1,400 g,41.00,7,t
+877,BK16944963,Vim Dishwash Gel 750 ml,Vim,8,750 ml,213.00,,t
+878,BK16952882,Bingo Namkeen 150 g,Bingo,3,150 g,46.00,,t
+879,BK16960801,McCain Frozen Peas 500 g,McCain,10,500 g,98.00,180,t
+880,BK16968720,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,81.00,5,f
+881,BK16976639,Yippee Poha Mix 180 g,Yippee,12,180 g,76.00,,t
+882,BK16984558,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,205.00,,t
+883,BK16992477,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,48.00,4,t
+884,BK17000396,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,703.00,,t
+885,BK17008315,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,150.00,,t
+886,BK17016234,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,108.00,3,t
+887,BK17024153,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,149.00,,t
+888,BK17032072,Amul Paneer 200 g,Amul,1,200 g,77.00,7,t
+889,BK17039991,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,122.00,,t
+890,BK17047910,Lays Potato Chips 52 g,Lays,3,52 g,22.00,,t
+891,BK17055829,McCain French Fries 420 g,McCain,10,420 g,126.00,180,t
+892,BK17063748,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,25.00,5,t
+893,BK17071667,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,68.00,,t
+894,BK17079586,Dettol Toothpaste 150 g,Dettol,7,150 g,103.00,,t
+895,BK17087505,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,36.00,4,t
+896,BK17095424,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,163.00,,t
+897,BK17103343,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,48.00,,t
+898,BK17111262,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,232.00,3,t
+899,BK17119181,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,158.00,,t
+900,BK17127100,Amul Toned Milk 500 ml,Amul,1,500 ml,23.00,7,t
+901,BK17135019,Vim Detergent 1 kg,Vim,8,1 kg,164.00,,t
+902,BK17142938,Kurkure Bhujia 200 g,Kurkure,3,200 g,57.00,,t
+903,BK17150857,McCain Frozen Peas 500 g,McCain,10,500 g,86.00,180,t
+904,BK17158776,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,58.00,5,t
+905,BK17166695,Yippee Poha Mix 180 g,Yippee,12,180 g,69.00,,t
+906,BK17174614,Colgate Shampoo 340 ml,Colgate,7,340 ml,305.00,,t
+907,BK17182533,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,21.00,4,t
+908,BK17190452,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,1007.00,,t
+909,BK17198371,Real Energy Drink 250 ml,Real,4,250 ml,141.00,,t
+910,BK17206290,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,96.00,3,t
+911,BK17214209,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,226.00,,t
+912,BK17222128,Amul Butter 100 g,Amul,1,100 g,72.00,7,t
+913,BK17230047,Vim Dishwash Gel 750 ml,Vim,8,750 ml,183.00,,t
+914,BK17237966,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,39.00,,t
+915,BK17245885,McCain French Fries 420 g,McCain,10,420 g,111.00,180,t
+916,BK17253804,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,110.00,5,t
+917,BK17261723,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,61.00,,t
+918,BK17269642,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,173.00,,t
+919,BK17277561,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,116.00,4,t
+920,BK17285480,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,239.00,,f
+921,BK17293399,Tropicana Orange Juice 1 L,Tropicana,4,1 L,128.00,,t
+922,BK17301318,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,206.00,3,t
+923,BK17309237,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,122.00,,t
+924,BK17317156,Amul Curd 400 g,Amul,1,400 g,53.00,7,t
+925,BK17325075,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,104.00,,t
+926,BK17332994,Haldiram Potato Chips 52 g,Haldiram,3,52 g,18.00,,t
+927,BK17340913,McCain Frozen Peas 500 g,McCain,10,500 g,123.00,180,t
+928,BK17348832,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,35.00,5,t
+929,BK17356751,Yippee Poha Mix 180 g,Yippee,12,180 g,62.00,,t
+930,BK17364670,Dove Toothpaste 150 g,Dove,7,150 g,86.00,,t
+931,BK17372589,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,61.00,4,t
+932,BK17380508,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,911.00,,t
+933,BK17388427,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,40.00,,t
+934,BK17396346,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,84.00,3,t
+935,BK17404265,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,213.00,,t
+936,BK17412184,Amul Paneer 200 g,Amul,1,200 g,101.00,7,t
+937,BK17420103,Vim Detergent 1 kg,Vim,8,1 kg,139.00,,t
+938,BK17428022,Bingo Bhujia 200 g,Bingo,3,200 g,47.00,,t
+939,BK17435941,McCain French Fries 420 g,McCain,10,420 g,160.00,180,t
+940,BK17443860,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,50.00,5,t
+941,BK17451779,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,54.00,,t
+942,BK17459698,Nivea Shampoo 340 ml,Nivea,7,340 ml,251.00,,t
+943,BK17467617,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,46.00,4,t
+944,BK17475536,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,215.00,,t
+945,BK17483455,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,119.00,,t
+946,BK17491374,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,180.00,3,t
+947,BK17499293,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,309.00,,t
+948,BK17507212,Amul Toned Milk 500 ml,Amul,1,500 ml,31.00,7,t
+949,BK17515131,Vim Dishwash Gel 750 ml,Vim,8,750 ml,153.00,,t
+950,BK17523050,Lays Namkeen 150 g,Lays,3,150 g,32.00,,t
+951,BK17530969,McCain Frozen Peas 500 g,McCain,10,500 g,111.00,180,t
+952,BK17538888,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,94.00,5,t
+953,BK17546807,Yippee Poha Mix 180 g,Yippee,12,180 g,55.00,,t
+954,BK17554726,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,230.00,,t
+955,BK17562645,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,28.00,4,t
+956,BK17570564,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,815.00,,t
+957,BK17578483,Red Bull Orange Juice 1 L,Red Bull,4,1 L,107.00,,t
+958,BK17586402,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,121.00,3,t
+959,BK17594321,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,170.00,,t
+960,BK17602240,Amul Butter 100 g,Amul,1,100 g,58.00,7,f
+961,BK17610159,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,86.00,,t
+962,BK17618078,Kurkure Potato Chips 52 g,Kurkure,3,52 g,25.00,,t
+963,BK17625997,McCain French Fries 420 g,McCain,10,420 g,144.00,180,t
+964,BK17633916,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,29.00,5,t
+965,BK17641835,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,48.00,,t
+966,BK17649754,Colgate Toothpaste 150 g,Colgate,7,150 g,116.00,,t
+967,BK17657673,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,153.00,4,t
+968,BK17665592,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,191.00,,t
+969,BK17673511,Real Soft Drink 750 ml,Real,4,750 ml,33.00,,t
+970,BK17681430,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,263.00,3,t
+971,BK17689349,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,182.00,,t
+972,BK17697268,Amul Curd 400 g,Amul,1,400 g,42.00,7,t
+973,BK17705187,Vim Detergent 1 kg,Vim,8,1 kg,113.00,,t
+974,BK17713106,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,65.00,,t
+975,BK17721025,McCain Frozen Peas 500 g,McCain,10,500 g,100.00,180,t
+976,BK17728944,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,41.00,5,t
+977,BK17736863,Yippee Poha Mix 180 g,Yippee,12,180 g,77.00,,t
+978,BK17744782,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,347.00,,t
+979,BK17752701,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,49.00,4,t
+980,BK17760620,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,719.00,,t
+981,BK17768539,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,159.00,,t
+982,BK17776458,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,109.00,3,t
+983,BK17784377,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,263.00,,t
+984,BK17792296,Amul Paneer 200 g,Amul,1,200 g,79.00,7,t
+985,BK17800215,Vim Dishwash Gel 750 ml,Vim,8,750 ml,206.00,,t
+986,BK17808134,Haldiram Namkeen 150 g,Haldiram,3,150 g,45.00,,t
+987,BK17816053,McCain French Fries 420 g,McCain,10,420 g,129.00,180,t
+988,BK17823972,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,77.00,5,t
+989,BK17831891,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,69.00,,t
+990,BK17839810,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,198.00,,t
+991,BK17847729,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,37.00,4,t
+992,BK17855648,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,167.00,,t
+993,BK17863567,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,145.00,,t
+994,BK17871486,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,237.00,3,t
+995,BK17879405,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,143.00,,t
+996,BK17887324,Amul Toned Milk 500 ml,Amul,1,500 ml,24.00,7,t
+997,BK17895243,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,118.00,,t
+998,BK17903162,Bingo Potato Chips 52 g,Bingo,3,52 g,21.00,,t
+999,BK17911081,McCain Frozen Peas 500 g,McCain,10,500 g,88.00,180,t
+1000,BK17919000,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,24.00,5,f
+1001,BK17926919,Yippee Poha Mix 180 g,Yippee,12,180 g,70.00,,t
+1002,BK17934838,Nivea Toothpaste 150 g,Nivea,7,150 g,99.00,,t
+1003,BK17942757,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,22.00,4,t
+1004,BK17950676,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,1023.00,,t
+1005,BK17958595,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,46.00,,t
+1006,BK17966514,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,98.00,3,t
+1007,BK17974433,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,151.00,,t
+1008,BK17982352,Amul Butter 100 g,Amul,1,100 g,73.00,7,t
+1009,BK17990271,Vim Detergent 1 kg,Vim,8,1 kg,158.00,,t
+1010,BK17998190,Lays Bhujia 200 g,Lays,3,200 g,55.00,,t
+1011,BK18006109,McCain French Fries 420 g,McCain,10,420 g,113.00,180,t
+1012,BK18014028,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,56.00,5,t
+1013,BK18021947,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,62.00,,t
+1014,BK18029866,Dettol Shampoo 340 ml,Dettol,7,340 ml,293.00,,t
+1015,BK18037785,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,119.00,4,t
+1016,BK18045704,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,243.00,,t
+1017,BK18053623,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,136.00,,t
+1018,BK18061542,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,210.00,3,t
+1019,BK18069461,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,216.00,,t
+1020,BK18077380,Amul Curd 400 g,Amul,1,400 g,54.00,7,t
+1021,BK18085299,Vim Dishwash Gel 750 ml,Vim,8,750 ml,177.00,,t
+1022,BK18093218,Kurkure Namkeen 150 g,Kurkure,3,150 g,38.00,,t
+1023,BK18101137,McCain Frozen Peas 500 g,McCain,10,500 g,77.00,180,t
+1024,BK18109056,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,106.00,5,t
+1025,BK18116975,Yippee Poha Mix 180 g,Yippee,12,180 g,63.00,,t
+1026,BK18124894,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,166.00,,t
+1027,BK18132813,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,62.00,4,t
+1028,BK18140732,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,927.00,,t
+1029,BK18148651,Real Orange Juice 1 L,Real,4,1 L,124.00,,t
+1030,BK18156570,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,86.00,3,t
+1031,BK18164489,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,191.00,,t
+1032,BK18172408,Amul Paneer 200 g,Amul,1,200 g,103.00,7,t
+1033,BK18180327,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,100.00,,t
+1034,BK18188246,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,18.00,,t
+1035,BK18196165,McCain French Fries 420 g,McCain,10,420 g,163.00,180,t
+1036,BK18204084,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,34.00,5,t
+1037,BK18212003,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,55.00,,t
+1038,BK18219922,Himalaya Toothpaste 150 g,Himalaya,7,150 g,82.00,,t
+1039,BK18227841,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,47.00,4,t
+1040,BK18235760,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,219.00,,f
+1041,BK18243679,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,39.00,,t
+1042,BK18251598,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,184.00,3,t
+1043,BK18259517,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,206.00,,t
+1044,BK18267436,Amul Toned Milk 500 ml,Amul,1,500 ml,31.00,7,t
+1045,BK18275355,Vim Detergent 1 kg,Vim,8,1 kg,133.00,,t
+1046,BK18283274,Haldiram Bhujia 200 g,Haldiram,3,200 g,45.00,,t
+1047,BK18291193,McCain Frozen Peas 500 g,McCain,10,500 g,113.00,180,t
+1048,BK18299112,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,48.00,5,t
+1049,BK18307031,Yippee Poha Mix 180 g,Yippee,12,180 g,56.00,,t
+1050,BK18314950,Dove Shampoo 340 ml,Dove,7,340 ml,239.00,,t
+1051,BK18322869,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,28.00,4,t
+1052,BK18330788,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,831.00,,t
+1053,BK18338707,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,114.00,,t
+1054,BK18346626,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,123.00,3,t
+1055,BK18354545,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,299.00,,t
+1056,BK18362464,Amul Butter 100 g,Amul,1,100 g,59.00,7,t
+1057,BK18370383,Vim Dishwash Gel 750 ml,Vim,8,750 ml,147.00,,t
+1058,BK18378302,Bingo Namkeen 150 g,Bingo,3,150 g,50.00,,t
+1059,BK18386221,McCain French Fries 420 g,McCain,10,420 g,147.00,180,t
+1060,BK18394140,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,90.00,5,t
+1061,BK18402059,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,49.00,,t
+1062,BK18409978,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,223.00,,t
+1063,BK18417897,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,155.00,4,t
+1064,BK18425816,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,195.00,,t
+1065,BK18433735,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,102.00,,t
+1066,BK18441654,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,267.00,3,t
+1067,BK18449573,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,164.00,,t
+1068,BK18457492,Amul Curd 400 g,Amul,1,400 g,43.00,7,t
+1069,BK18465411,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,82.00,,t
+1070,BK18473330,Lays Potato Chips 52 g,Lays,3,52 g,24.00,,t
+1071,BK18481249,McCain Frozen Peas 500 g,McCain,10,500 g,102.00,180,t
+1072,BK18489168,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,28.00,5,t
+1073,BK18497087,Yippee Poha Mix 180 g,Yippee,12,180 g,49.00,,t
+1074,BK18505006,Dettol Toothpaste 150 g,Dettol,7,150 g,112.00,,t
+1075,BK18512925,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,50.00,4,t
+1076,BK18520844,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,735.00,,t
+1077,BK18528763,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,52.00,,t
+1078,BK18536682,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,111.00,3,t
+1079,BK18544601,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,175.00,,t
+1080,BK18552520,Amul Paneer 200 g,Amul,1,200 g,81.00,7,f
+1081,BK18560439,Vim Detergent 1 kg,Vim,8,1 kg,178.00,,t
+1082,BK18568358,Kurkure Bhujia 200 g,Kurkure,3,200 g,63.00,,t
+1083,BK18576277,McCain French Fries 420 g,McCain,10,420 g,131.00,180,t
+1084,BK18584196,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,40.00,5,t
+1085,BK18592115,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,70.00,,t
+1086,BK18600034,Colgate Shampoo 340 ml,Colgate,7,340 ml,335.00,,t
+1087,BK18607953,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,38.00,4,t
+1088,BK18615872,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,171.00,,t
+1089,BK18623791,Real Energy Drink 250 ml,Real,4,250 ml,154.00,,t
+1090,BK18631710,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,241.00,3,t
+1091,BK18639629,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,252.00,,t
+1092,BK18647548,Amul Toned Milk 500 ml,Amul,1,500 ml,24.00,7,t
+1093,BK18655467,Vim Dishwash Gel 750 ml,Vim,8,750 ml,200.00,,t
+1094,BK18663386,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,43.00,,t
+1095,BK18671305,McCain Frozen Peas 500 g,McCain,10,500 g,90.00,180,t
+1096,BK18679224,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,74.00,5,t
+1097,BK18687143,Yippee Poha Mix 180 g,Yippee,12,180 g,71.00,,t
+1098,BK18695062,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,191.00,,t
+1099,BK18702981,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,22.00,4,t
+1100,BK18710900,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,639.00,,t
+1101,BK18718819,Tropicana Orange Juice 1 L,Tropicana,4,1 L,140.00,,t
+1102,BK18726738,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,100.00,3,t
+1103,BK18734657,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,137.00,,t
+1104,BK18742576,Amul Butter 100 g,Amul,1,100 g,74.00,7,t
+1105,BK18750495,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,114.00,,t
+1106,BK18758414,Haldiram Potato Chips 52 g,Haldiram,3,52 g,20.00,,t
+1107,BK18766333,McCain French Fries 420 g,McCain,10,420 g,116.00,180,t
+1108,BK18774252,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,38.00,5,t
+1109,BK18782171,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,63.00,,t
+1110,BK18790090,Dove Toothpaste 150 g,Dove,7,150 g,95.00,,t
+1111,BK18798009,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,122.00,4,t
+1112,BK18805928,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,247.00,,t
+1113,BK18813847,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,44.00,,t
+1114,BK18821766,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,215.00,3,t
+1115,BK18829685,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,145.00,,t
+1116,BK18837604,Amul Curd 400 g,Amul,1,400 g,55.00,7,t
+1117,BK18845523,Vim Detergent 1 kg,Vim,8,1 kg,153.00,,t
+1118,BK18853442,Bingo Bhujia 200 g,Bingo,3,200 g,53.00,,t
+1119,BK18861361,McCain Frozen Peas 500 g,McCain,10,500 g,79.00,180,t
+1120,BK18869280,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,54.00,5,f
+1121,BK18877199,Yippee Poha Mix 180 g,Yippee,12,180 g,64.00,,t
+1122,BK18885118,Nivea Shampoo 340 ml,Nivea,7,340 ml,281.00,,t
+1123,BK18893037,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,39.00,4,t
+1124,BK18900956,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,943.00,,t
+1125,BK18908875,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,131.00,,t
+1126,BK18916794,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,88.00,3,t
+1127,BK18924713,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,335.00,,t
+1128,BK18932632,Amul Paneer 200 g,Amul,1,200 g,104.00,7,t
+1129,BK18940551,Vim Dishwash Gel 750 ml,Vim,8,750 ml,170.00,,t
+1130,BK18948470,Lays Namkeen 150 g,Lays,3,150 g,36.00,,t
+1131,BK18956389,McCain French Fries 420 g,McCain,10,420 g,165.00,180,t
+1132,BK18964308,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,103.00,5,t
+1133,BK18972227,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,57.00,,t
+1134,BK18980146,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,158.00,,t
+1135,BK18988065,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,48.00,4,t
+1136,BK18995984,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,223.00,,t
+1137,BK19003903,Red Bull Orange Juice 1 L,Red Bull,4,1 L,119.00,,t
+1138,BK19011822,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,188.00,3,t
+1139,BK19019741,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,185.00,,t
+1140,BK19027660,Amul Toned Milk 500 ml,Amul,1,500 ml,32.00,7,t
+1141,BK19035579,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,96.00,,t
+1142,BK19043498,Kurkure Potato Chips 52 g,Kurkure,3,52 g,17.00,,t
+1143,BK19051417,McCain Frozen Peas 500 g,McCain,10,500 g,115.00,180,t
+1144,BK19059336,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,32.00,5,t
+1145,BK19067255,Yippee Poha Mix 180 g,Yippee,12,180 g,57.00,,t
+1146,BK19075174,Colgate Toothpaste 150 g,Colgate,7,150 g,78.00,,t
+1147,BK19083093,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,29.00,4,t
+1148,BK19091012,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,847.00,,t
+1149,BK19098931,Real Soft Drink 750 ml,Real,4,750 ml,37.00,,t
+1150,BK19106850,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,77.00,3,t
+1151,BK19114769,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,199.00,,t
+1152,BK19122688,Amul Butter 100 g,Amul,1,100 g,60.00,7,t
+1153,BK19130607,Vim Detergent 1 kg,Vim,8,1 kg,127.00,,t
+1154,BK19138526,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,70.00,,t
+1155,BK19146445,McCain French Fries 420 g,McCain,10,420 g,150.00,180,t
+1156,BK19154364,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,46.00,5,t
+1157,BK19162283,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,50.00,,t
+1158,BK19170202,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,377.00,,t
+1159,BK19178121,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,158.00,4,t
+1160,BK19186040,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,199.00,,f
+1161,BK19193959,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,109.00,,t
+1162,BK19201878,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,272.00,3,t
+1163,BK19209797,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,289.00,,t
+1164,BK19217716,Amul Curd 400 g,Amul,1,400 g,44.00,7,t
+1165,BK19225635,Vim Dishwash Gel 750 ml,Vim,8,750 ml,140.00,,t
+1166,BK19233554,Haldiram Namkeen 150 g,Haldiram,3,150 g,49.00,,t
+1167,BK19241473,McCain Frozen Peas 500 g,McCain,10,500 g,104.00,180,t
+1168,BK19249392,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,86.00,5,t
+1169,BK19257311,Yippee Poha Mix 180 g,Yippee,12,180 g,50.00,,t
+1170,BK19265230,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,216.00,,t
+1171,BK19273149,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,51.00,4,t
+1172,BK19281068,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,751.00,,t
+1173,BK19288987,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,97.00,,t
+1174,BK19296906,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,113.00,3,t
+1175,BK19304825,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,158.00,,t
+1176,BK19312744,Amul Paneer 200 g,Amul,1,200 g,83.00,7,t
+1177,BK19320663,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,128.00,,t
+1178,BK19328582,Bingo Potato Chips 52 g,Bingo,3,52 g,23.00,,t
+1179,BK19336501,McCain French Fries 420 g,McCain,10,420 g,134.00,180,t
+1180,BK19344420,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,27.00,5,t
+1181,BK19352339,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,71.00,,t
+1182,BK19360258,Nivea Toothpaste 150 g,Nivea,7,150 g,108.00,,t
+1183,BK19368177,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,38.00,4,t
+1184,BK19376096,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,175.00,,t
+1185,BK19384015,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,50.00,,t
+1186,BK19391934,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,245.00,3,t
+1187,BK19399853,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,168.00,,t
+1188,BK19407772,Amul Toned Milk 500 ml,Amul,1,500 ml,25.00,7,t
+1189,BK19415691,Vim Detergent 1 kg,Vim,8,1 kg,172.00,,t
+1190,BK19423610,Lays Bhujia 200 g,Lays,3,200 g,61.00,,t
+1191,BK19431529,McCain Frozen Peas 500 g,McCain,10,500 g,92.00,180,t
+1192,BK19439448,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,38.00,5,t
+1193,BK19447367,Yippee Poha Mix 180 g,Yippee,12,180 g,73.00,,t
+1194,BK19455286,Dettol Shampoo 340 ml,Dettol,7,340 ml,323.00,,t
+1195,BK19463205,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,23.00,4,t
+1196,BK19471124,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,655.00,,t
+1197,BK19479043,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,149.00,,t
+1198,BK19486962,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,102.00,3,t
+1199,BK19494881,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,242.00,,t
+1200,BK19502800,Amul Butter 100 g,Amul,1,100 g,46.00,7,f
+1201,BK19510719,Vim Dishwash Gel 750 ml,Vim,8,750 ml,193.00,,t
+1202,BK19518638,Kurkure Namkeen 150 g,Kurkure,3,150 g,42.00,,t
+1203,BK19526557,McCain French Fries 420 g,McCain,10,420 g,118.00,180,t
+1204,BK19534476,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,115.00,5,t
+1205,BK19542395,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,64.00,,t
+1206,BK19550314,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,184.00,,t
+1207,BK19558233,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,125.00,4,t
+1208,BK19566152,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,251.00,,t
+1209,BK19574071,Real Orange Juice 1 L,Real,4,1 L,136.00,,t
+1210,BK19581990,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,219.00,3,t
+1211,BK19589909,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,131.00,,t
+1212,BK19597828,Amul Curd 400 g,Amul,1,400 g,56.00,7,t
+1213,BK19605747,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,110.00,,t
+1214,BK19613666,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,20.00,,t
+1215,BK19621585,McCain Frozen Peas 500 g,McCain,10,500 g,81.00,180,t
+1216,BK19629504,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,37.00,5,t
+1217,BK19637423,Yippee Poha Mix 180 g,Yippee,12,180 g,65.00,,t
+1218,BK19645342,Himalaya Toothpaste 150 g,Himalaya,7,150 g,91.00,,t
+1219,BK19653261,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,40.00,4,t
+1220,BK19661180,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,959.00,,t
+1221,BK19669099,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,43.00,,t
+1222,BK19677018,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,90.00,3,t
+1223,BK19684937,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,138.00,,t
+1224,BK19692856,Amul Paneer 200 g,Amul,1,200 g,106.00,7,t
+1225,BK19700775,Vim Detergent 1 kg,Vim,8,1 kg,147.00,,t
+1226,BK19708694,Haldiram Bhujia 200 g,Haldiram,3,200 g,51.00,,t
+1227,BK19716613,McCain French Fries 420 g,McCain,10,420 g,168.00,180,t
+1228,BK19724532,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,52.00,5,t
+1229,BK19732451,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,58.00,,t
+1230,BK19740370,Dove Shampoo 340 ml,Dove,7,340 ml,269.00,,t
+1231,BK19748289,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,48.00,4,t
+1232,BK19756208,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,227.00,,t
+1233,BK19764127,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,126.00,,t
+1234,BK19772046,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,193.00,3,t
+1235,BK19779965,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,325.00,,t
+1236,BK19787884,Amul Toned Milk 500 ml,Amul,1,500 ml,32.00,7,t
+1237,BK19795803,Vim Dishwash Gel 750 ml,Vim,8,750 ml,163.00,,t
+1238,BK19803722,Bingo Namkeen 150 g,Bingo,3,150 g,34.00,,t
+1239,BK19811641,McCain Frozen Peas 500 g,McCain,10,500 g,117.00,180,t
+1240,BK19819560,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,99.00,5,f
+1241,BK19827479,Yippee Poha Mix 180 g,Yippee,12,180 g,58.00,,t
+1242,BK19835398,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,151.00,,t
+1243,BK19843317,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,29.00,4,t
+1244,BK19851236,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,863.00,,t
+1245,BK19859155,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,114.00,,t
+1246,BK19867074,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,79.00,3,t
+1247,BK19874993,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,179.00,,t
+1248,BK19882912,Amul Butter 100 g,Amul,1,100 g,61.00,7,t
+1249,BK19890831,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,92.00,,t
+1250,BK19898750,Lays Potato Chips 52 g,Lays,3,52 g,16.00,,t
+1251,BK19906669,McCain French Fries 420 g,McCain,10,420 g,152.00,180,t
+1252,BK19914588,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,31.00,5,t
+1253,BK19922507,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,51.00,,t
+1254,BK19930426,Dettol Toothpaste 150 g,Dettol,7,150 g,122.00,,t
+1255,BK19938345,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,161.00,4,t
+1256,BK19946264,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,203.00,,t
+1257,BK19954183,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,36.00,,t
+1258,BK19962102,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,276.00,3,t
+1259,BK19970021,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,192.00,,t
+1260,BK19977940,Amul Curd 400 g,Amul,1,400 g,45.00,7,t
+1261,BK19985859,Vim Detergent 1 kg,Vim,8,1 kg,122.00,,t
+1262,BK19993778,Kurkure Bhujia 200 g,Kurkure,3,200 g,68.00,,t
+1263,BK20001697,McCain Frozen Peas 500 g,McCain,10,500 g,105.00,180,t
+1264,BK20009616,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,44.00,5,t
+1265,BK20017535,Yippee Poha Mix 180 g,Yippee,12,180 g,51.00,,t
+1266,BK20025454,Colgate Shampoo 340 ml,Colgate,7,340 ml,365.00,,t
+1267,BK20033373,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,52.00,4,t
+1268,BK20041292,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,767.00,,t
+1269,BK20049211,Real Energy Drink 250 ml,Real,4,250 ml,104.00,,t
+1270,BK20057130,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,115.00,3,t
+1271,BK20065049,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,278.00,,t
+1272,BK20072968,Amul Paneer 200 g,Amul,1,200 g,85.00,7,t
+1273,BK20080887,Vim Dishwash Gel 750 ml,Vim,8,750 ml,134.00,,t
+1274,BK20088806,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,47.00,,t
+1275,BK20096725,McCain French Fries 420 g,McCain,10,420 g,137.00,180,t
+1276,BK20104644,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,83.00,5,t
+1277,BK20112563,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,72.00,,t
+1278,BK20120482,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,209.00,,t
+1279,BK20128401,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,39.00,4,t
+1280,BK20136320,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,179.00,,f
+1281,BK20144239,Tropicana Orange Juice 1 L,Tropicana,4,1 L,152.00,,t
+1282,BK20152158,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,250.00,3,t
+1283,BK20160077,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,152.00,,t
+1284,BK20167996,Amul Toned Milk 500 ml,Amul,1,500 ml,26.00,7,t
+1285,BK20175915,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,124.00,,t
+1286,BK20183834,Haldiram Potato Chips 52 g,Haldiram,3,52 g,22.00,,t
+1287,BK20191753,McCain Frozen Peas 500 g,McCain,10,500 g,94.00,180,t
+1288,BK20199672,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,26.00,5,t
+1289,BK20207591,Yippee Poha Mix 180 g,Yippee,12,180 g,74.00,,t
+1290,BK20215510,Dove Toothpaste 150 g,Dove,7,150 g,105.00,,t
+1291,BK20223429,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,23.00,4,t
+1292,BK20231348,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,671.00,,t
+1293,BK20239267,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,48.00,,t
+1294,BK20247186,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,104.00,3,t
+1295,BK20255105,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,162.00,,t
+1296,BK20263024,Amul Butter 100 g,Amul,1,100 g,48.00,7,t
+1297,BK20270943,Vim Detergent 1 kg,Vim,8,1 kg,167.00,,t
+1298,BK20278862,Bingo Bhujia 200 g,Bingo,3,200 g,58.00,,t
+1299,BK20286781,McCain French Fries 420 g,McCain,10,420 g,121.00,180,t
+1300,BK20294700,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,36.00,5,t
+1301,BK20302619,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,66.00,,t
+1302,BK20310538,Nivea Shampoo 340 ml,Nivea,7,340 ml,311.00,,t
+1303,BK20318457,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,127.00,4,t
+1304,BK20326376,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,255.00,,t
+1305,BK20334295,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,144.00,,t
+1306,BK20342214,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,223.00,3,t
+1307,BK20350133,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,231.00,,t
+1308,BK20358052,Amul Curd 400 g,Amul,1,400 g,57.00,7,t
+1309,BK20365971,Vim Dishwash Gel 750 ml,Vim,8,750 ml,186.00,,t
+1310,BK20373890,Lays Namkeen 150 g,Lays,3,150 g,40.00,,t
+1311,BK20381809,McCain Frozen Peas 500 g,McCain,10,500 g,83.00,180,t
+1312,BK20389728,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,112.00,5,t
+1313,BK20397647,Yippee Poha Mix 180 g,Yippee,12,180 g,67.00,,t
+1314,BK20405566,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,176.00,,t
+1315,BK20413485,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,41.00,4,t
+1316,BK20421404,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,975.00,,t
+1317,BK20429323,Red Bull Orange Juice 1 L,Red Bull,4,1 L,131.00,,t
+1318,BK20437242,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,92.00,3,t
+1319,BK20445161,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,125.00,,t
+1320,BK20453080,Amul Paneer 200 g,Amul,1,200 g,108.00,7,f
+1321,BK20460999,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,106.00,,t
+1322,BK20468918,Kurkure Potato Chips 52 g,Kurkure,3,52 g,19.00,,t
+1323,BK20476837,McCain French Fries 420 g,McCain,10,420 g,105.00,180,t
+1324,BK20484756,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,35.00,5,t
+1325,BK20492675,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,59.00,,t
+1326,BK20500594,Colgate Toothpaste 150 g,Colgate,7,150 g,87.00,,t
+1327,BK20508513,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,49.00,4,t
+1328,BK20516432,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,231.00,,t
+1329,BK20524351,Real Soft Drink 750 ml,Real,4,750 ml,41.00,,t
+1330,BK20532270,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,197.00,3,t
+1331,BK20540189,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,216.00,,t
+1332,BK20548108,Amul Toned Milk 500 ml,Amul,1,500 ml,33.00,7,t
+1333,BK20556027,Vim Detergent 1 kg,Vim,8,1 kg,141.00,,t
+1334,BK20563946,Too Yumm Bhujia 200 g,Too Yumm,3,200 g,48.00,,t
+1335,BK20571865,McCain Frozen Peas 500 g,McCain,10,500 g,119.00,180,t
+1336,BK20579784,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,50.00,5,t
+1337,BK20587703,Yippee Poha Mix 180 g,Yippee,12,180 g,59.00,,t
+1338,BK20595622,Himalaya Shampoo 340 ml,Himalaya,7,340 ml,257.00,,t
+1339,BK20603541,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,30.00,4,t
+1340,BK20611460,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,879.00,,t
+1341,BK20619379,Tropicana Energy Drink 250 ml,Tropicana,4,250 ml,121.00,,t
+1342,BK20627298,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,81.00,3,t
+1343,BK20635217,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,315.00,,t
+1344,BK20643136,Amul Butter 100 g,Amul,1,100 g,63.00,7,t
+1345,BK20651055,Vim Dishwash Gel 750 ml,Vim,8,750 ml,157.00,,t
+1346,BK20658974,Haldiram Namkeen 150 g,Haldiram,3,150 g,33.00,,t
+1347,BK20666893,McCain French Fries 420 g,McCain,10,420 g,155.00,180,t
+1348,BK20674812,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,95.00,5,t
+1349,BK20682731,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,52.00,,t
+1350,BK20690650,Dove Soap 4 x 100 g,Dove,7,4 x 100 g,144.00,,t
+1351,BK20698569,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,164.00,4,t
+1352,BK20706488,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,207.00,,t
+1353,BK20714407,Paper Boat Orange Juice 1 L,Paper Boat,4,1 L,109.00,,t
+1354,BK20722326,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,280.00,3,t
+1355,BK20730245,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,173.00,,t
+1356,BK20738164,Amul Curd 400 g,Amul,1,400 g,46.00,7,t
+1357,BK20746083,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,88.00,,t
+1358,BK20754002,Bingo Potato Chips 52 g,Bingo,3,52 g,25.00,,t
+1359,BK20761921,McCain Frozen Peas 500 g,McCain,10,500 g,107.00,180,t
+1360,BK20769840,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,30.00,5,f
+1361,BK20777759,Yippee Poha Mix 180 g,Yippee,12,180 g,52.00,,t
+1362,BK20785678,Nivea Toothpaste 150 g,Nivea,7,150 g,118.00,,t
+1363,BK20793597,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,53.00,4,t
+1364,BK20801516,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,783.00,,t
+1365,BK20809435,Coca-Cola Soft Drink 750 ml,Coca-Cola,4,750 ml,34.00,,t
+1366,BK20817354,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,117.00,3,t
+1367,BK20825273,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,185.00,,t
+1368,BK20833192,Amul Paneer 200 g,Amul,1,200 g,86.00,7,t
+1369,BK20841111,Vim Detergent 1 kg,Vim,8,1 kg,116.00,,t
+1370,BK20849030,Lays Bhujia 200 g,Lays,3,200 g,66.00,,t
+1371,BK20856949,McCain French Fries 420 g,McCain,10,420 g,139.00,180,t
+1372,BK20864868,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,42.00,5,t
+1373,BK20872787,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,45.00,,t
+1374,BK20880706,Dettol Shampoo 340 ml,Dettol,7,340 ml,353.00,,t
+1375,BK20888625,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,40.00,4,t
+1376,BK20896544,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,183.00,,t
+1377,BK20904463,Red Bull Energy Drink 250 ml,Red Bull,4,250 ml,161.00,,t
+1378,BK20912382,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,254.00,3,t
+1379,BK20920301,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,268.00,,t
+1380,BK20928220,Amul Toned Milk 500 ml,Amul,1,500 ml,26.00,7,t
+1381,BK20936139,Vim Dishwash Gel 750 ml,Vim,8,750 ml,210.00,,t
+1382,BK20944058,Kurkure Namkeen 150 g,Kurkure,3,150 g,46.00,,t
+1383,BK20951977,McCain Frozen Peas 500 g,McCain,10,500 g,96.00,180,t
+1384,BK20959896,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,79.00,5,t
+1385,BK20967815,Yippee Poha Mix 180 g,Yippee,12,180 g,75.00,,t
+1386,BK20975734,Colgate Soap 4 x 100 g,Colgate,7,4 x 100 g,202.00,,t
+1387,BK20983653,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,24.00,4,t
+1388,BK20991572,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,687.00,,t
+1389,BK20999491,Real Orange Juice 1 L,Real,4,1 L,148.00,,t
+1390,BK21007410,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,106.00,3,t
+1391,BK21015329,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,146.00,,t
+1392,BK21023248,Amul Butter 100 g,Amul,1,100 g,49.00,7,t
+1393,BK21031167,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,120.00,,t
+1394,BK21039086,Too Yumm Potato Chips 52 g,Too Yumm,3,52 g,22.00,,t
+1395,BK21047005,McCain French Fries 420 g,McCain,10,420 g,124.00,180,t
+1396,BK21054924,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,25.00,5,t
+1397,BK21062843,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,67.00,,t
+1398,BK21070762,Himalaya Toothpaste 150 g,Himalaya,7,150 g,101.00,,t
+1399,BK21078681,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,130.00,4,t
+1400,BK21086600,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,159.00,,f
+1401,BK21094519,Tropicana Soft Drink 750 ml,Tropicana,4,750 ml,47.00,,t
+1402,BK21102438,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,228.00,3,t
+1403,BK21110357,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,155.00,,t
+1404,BK21118276,Amul Curd 400 g,Amul,1,400 g,58.00,7,t
+1405,BK21126195,Vim Detergent 1 kg,Vim,8,1 kg,161.00,,t
+1406,BK21134114,Haldiram Bhujia 200 g,Haldiram,3,200 g,56.00,,t
+1407,BK21142033,McCain Frozen Peas 500 g,McCain,10,500 g,85.00,180,t
+1408,BK21149952,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,57.00,5,t
+1409,BK21157871,Yippee Poha Mix 180 g,Yippee,12,180 g,68.00,,t
+1410,BK21165790,Dove Shampoo 340 ml,Dove,7,340 ml,299.00,,t
+1411,BK21173709,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,42.00,4,t
+1412,BK21181628,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,991.00,,t
+1413,BK21189547,Paper Boat Energy Drink 250 ml,Paper Boat,4,250 ml,139.00,,t
+1414,BK21197466,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,94.00,3,t
+1415,BK21205385,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,221.00,,t
+1416,BK21213304,Amul Paneer 200 g,Amul,1,200 g,110.00,7,t
+1417,BK21221223,Vim Dishwash Gel 750 ml,Vim,8,750 ml,180.00,,t
+1418,BK21229142,Bingo Namkeen 150 g,Bingo,3,150 g,38.00,,t
+1419,BK21237061,McCain French Fries 420 g,McCain,10,420 g,108.00,180,t
+1420,BK21244980,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,108.00,5,t
+1421,BK21252899,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,60.00,,t
+1422,BK21260818,Nivea Soap 4 x 100 g,Nivea,7,4 x 100 g,169.00,,t
+1423,BK21268737,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,31.00,4,t
+1424,BK21276656,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,235.00,,t
+1425,BK21284575,Coca-Cola Orange Juice 1 L,Coca-Cola,4,1 L,126.00,,t
+1426,BK21292494,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,201.00,3,t
+1427,BK21300413,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,194.00,,t
+1428,BK21308332,Amul Toned Milk 500 ml,Amul,1,500 ml,34.00,7,t
+1429,BK21316251,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,102.00,,t
+1430,BK21324170,Lays Potato Chips 52 g,Lays,3,52 g,18.00,,t
+1431,BK21332089,McCain Frozen Peas 500 g,McCain,10,500 g,121.00,180,t
+1432,BK21340008,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,34.00,5,t
+1433,BK21347927,Yippee Poha Mix 180 g,Yippee,12,180 g,61.00,,t
+1434,BK21355846,Dettol Toothpaste 150 g,Dettol,7,150 g,84.00,,t
+1435,BK21363765,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,30.00,4,t
+1436,BK21371684,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,895.00,,t
+1437,BK21379603,Red Bull Soft Drink 750 ml,Red Bull,4,750 ml,40.00,,t
+1438,BK21387522,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,83.00,3,t
+1439,BK21395441,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,209.00,,t
+1440,BK21403360,Amul Butter 100 g,Amul,1,100 g,64.00,7,f
+1441,BK21411279,Vim Detergent 1 kg,Vim,8,1 kg,136.00,,t
+1442,BK21419198,Kurkure Bhujia 200 g,Kurkure,3,200 g,46.00,,t
+1443,BK21427117,McCain French Fries 420 g,McCain,10,420 g,157.00,180,t
+1444,BK21435036,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,49.00,5,t
+1445,BK21442955,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,53.00,,t
+1446,BK21450874,Colgate Shampoo 340 ml,Colgate,7,340 ml,245.00,,t
+1447,BK21458793,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,167.00,4,t
+1448,BK21466712,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,211.00,,t
+1449,BK21474631,Real Energy Drink 250 ml,Real,4,250 ml,116.00,,t
+1450,BK21482550,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,175.00,3,t
+1451,BK21490469,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,304.00,,t
+1452,BK21498388,Amul Curd 400 g,Amul,1,400 g,47.00,7,t
+1453,BK21506307,Vim Dishwash Gel 750 ml,Vim,8,750 ml,150.00,,t
+1454,BK21514226,Too Yumm Namkeen 150 g,Too Yumm,3,150 g,51.00,,t
+1455,BK21522145,McCain Frozen Peas 500 g,McCain,10,500 g,109.00,180,t
+1456,BK21530064,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,92.00,5,t
+1457,BK21537983,Yippee Poha Mix 180 g,Yippee,12,180 g,53.00,,t
+1458,BK21545902,Himalaya Soap 4 x 100 g,Himalaya,7,4 x 100 g,227.00,,t
+1459,BK21553821,Farm Fresh Banana 6 pcs,Farm Fresh,2,6 pcs,54.00,4,t
+1460,BK21561740,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,799.00,,t
+1461,BK21569659,Tropicana Orange Juice 1 L,Tropicana,4,1 L,104.00,,t
+1462,BK21577578,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,119.00,3,t
+1463,BK21585497,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,167.00,,t
+1464,BK21593416,Amul Paneer 200 g,Amul,1,200 g,88.00,7,t
+1465,BK21601335,Vim Toilet Cleaner 500 ml,Vim,8,500 ml,84.00,,t
+1466,BK21609254,Haldiram Potato Chips 52 g,Haldiram,3,52 g,24.00,,t
+1467,BK21617173,McCain French Fries 420 g,McCain,10,420 g,142.00,180,t
+1468,BK21625092,Harvest Gold Pav 6 pcs,Harvest Gold,5,6 pcs,29.00,5,t
+1469,BK21633011,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,46.00,,t
+1470,BK21640930,Dove Toothpaste 150 g,Dove,7,150 g,114.00,,t
+1471,BK21648849,Farm Fresh Onion 1 kg,Farm Fresh,2,1 kg,41.00,4,t
+1472,BK21656768,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,187.00,,t
+1473,BK21664687,Paper Boat Soft Drink 750 ml,Paper Boat,4,750 ml,32.00,,t
+1474,BK21672606,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,258.00,3,t
+1475,BK21680525,Tata Sampann Toor Dal 1 kg,Tata Sampann,6,1 kg,179.00,,t
+1476,BK21688444,Amul Toned Milk 500 ml,Amul,1,500 ml,27.00,7,t
+1477,BK21696363,Vim Detergent 1 kg,Vim,8,1 kg,181.00,,t
+1478,BK21704282,Bingo Bhujia 200 g,Bingo,3,200 g,64.00,,t
+1479,BK21712201,McCain Frozen Peas 500 g,McCain,10,500 g,98.00,180,t
+1480,BK21720120,Harvest Gold Bread 400 g,Harvest Gold,5,400 g,41.00,5,f
+1481,BK21728039,Yippee Poha Mix 180 g,Yippee,12,180 g,76.00,,t
+1482,BK21735958,Nivea Shampoo 340 ml,Nivea,7,340 ml,341.00,,t
+1483,BK21743877,Farm Fresh Tomato 500 g,Farm Fresh,2,500 g,24.00,4,t
+1484,BK21751796,Himalaya Baby Diapers M 56 pcs,Himalaya Baby,9,56 pcs,703.00,,t
+1485,BK21759715,Coca-Cola Energy Drink 250 ml,Coca-Cola,4,250 ml,156.00,,t
+1486,BK21767634,FreshToHome Eggs 12 pcs,FreshToHome,11,12 pcs,108.00,3,t
+1487,BK21775553,Tata Sampann Atta 5 kg,Tata Sampann,6,5 kg,257.00,,t
+1488,BK21783472,Amul Butter 100 g,Amul,1,100 g,50.00,7,t
+1489,BK21791391,Vim Dishwash Gel 750 ml,Vim,8,750 ml,203.00,,t
+1490,BK21799310,Lays Namkeen 150 g,Lays,3,150 g,44.00,,t
+1491,BK21807229,McCain French Fries 420 g,McCain,10,420 g,126.00,180,t
+1492,BK21815148,Harvest Gold Cake 250 g,Harvest Gold,5,250 g,76.00,5,t
+1493,BK21823067,Yippee Noodles 4 x 70 g,Yippee,12,4 x 70 g,68.00,,t
+1494,BK21830986,Dettol Soap 4 x 100 g,Dettol,7,4 x 100 g,194.00,,t
+1495,BK21838905,Farm Fresh Apple 4 pcs,Farm Fresh,2,4 pcs,133.00,4,t
+1496,BK21846824,Himalaya Baby Baby Wipes 72 pcs,Himalaya Baby,9,72 pcs,163.00,,t
+1497,BK21854743,Red Bull Orange Juice 1 L,Red Bull,4,1 L,143.00,,t
+1498,BK21862662,FreshToHome Chicken Curry Cut 500 g,FreshToHome,11,500 g,232.00,3,t
+1499,BK21870581,Tata Sampann Basmati Rice 1 kg,Tata Sampann,6,1 kg,140.00,,t
+1500,BK21878500,Amul Curd 400 g,Amul,1,400 g,36.00,7,t

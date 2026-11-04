@@ -1,0 +1,13 @@
+category_id,category_name,is_perishable
+1,Dairy,t
+2,Fruits & Vegetables,t
+3,Snacks,f
+4,Beverages,f
+5,Bakery,t
+6,Staples,f
+7,Personal Care,f
+8,Household,f
+9,Baby Care,f
+10,Frozen,t
+11,Meat & Eggs,t
+12,Instant Food,f
