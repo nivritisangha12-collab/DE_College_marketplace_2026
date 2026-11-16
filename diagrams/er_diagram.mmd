@@ -1,0 +1,15 @@
+erDiagram
+    CITIES ||--o{ CUSTOMERS : has
+    CITIES ||--o{ DARK_STORES : contains
+    CATEGORIES ||--o{ PRODUCTS : classifies
+    DARK_STORES ||--o{ RIDERS : employs
+    DARK_STORES ||--o{ STORE_INVENTORY : maintains
+    PRODUCTS ||--o{ STORE_INVENTORY : stocked_as
+    CUSTOMERS ||--o{ ORDERS : places
+    DARK_STORES ||--o{ ORDERS : processes
+    RIDERS ||--o{ ORDERS : delivers
+    ORDERS ||--o{ ORDER_ITEMS : contains
+    PRODUCTS ||--o{ ORDER_ITEMS : ordered
+    PRODUCTS ||--o{ ORDER_ITEMS : substituted_by
+    DARK_STORES ||--o{ INVENTORY_MOVEMENTS : records
+    PRODUCTS ||--o{ INVENTORY_MOVEMENTS : tracks
