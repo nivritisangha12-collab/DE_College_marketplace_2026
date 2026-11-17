@@ -1,0 +1,72 @@
+=== W02 run 1 ===
+Update on store_inventory si  (cost=4602.73..4659.12 rows=0 width=0) (actual time=9.711..9.711 rows=0.00 loops=1)
+  Buffers: shared hit=2428 dirtied=10
+  InitPlan 1
+    ->  Aggregate  (cost=4602.00..4602.01 rows=1 width=8) (actual time=9.479..9.479 rows=1.00 loops=1)
+          Buffers: shared hit=2352
+          ->  Seq Scan on orders  (cost=0.00..4602.00 rows=1 width=8) (actual time=9.452..9.476 rows=2.00 loops=1)
+                Filter: (((status)::text = ANY ('{PLACED,PACKING}'::text[])) AND (store_id = 43))
+                Rows Removed by Filter: 149998
+                Buffers: shared hit=2352
+  ->  Nested Loop  (cost=0.72..57.11 rows=3 width=24) (actual time=9.502..9.512 rows=5.00 loops=1)
+        Buffers: shared hit=2371
+        ->  Index Scan using order_items_pkey on order_items oi  (cost=0.42..15.51 rows=5 width=14) (actual time=9.495..9.495 rows=5.00 loops=1)
+              Index Cond: (order_id = (InitPlan 1).col1)
+              Index Searches: 1
+              Buffers: shared hit=2356
+        ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.29..8.31 rows=1 width=14) (actual time=0.003..0.003 rows=1.00 loops=5)
+              Index Cond: ((store_id = 43) AND (product_id = oi.product_id))
+              Index Searches: 5
+              Buffers: shared hit=15
+Planning:
+  Buffers: shared hit=300
+Planning Time: 0.453 ms
+Execution Time: 9.962 ms
+=== W02 run 2 ===
+Update on store_inventory si  (cost=4602.73..4659.12 rows=0 width=0) (actual time=10.409..10.409 rows=0.00 loops=1)
+  Buffers: shared hit=2428 dirtied=1
+  InitPlan 1
+    ->  Aggregate  (cost=4602.00..4602.01 rows=1 width=8) (actual time=10.213..10.213 rows=1.00 loops=1)
+          Buffers: shared hit=2352
+          ->  Seq Scan on orders  (cost=0.00..4602.00 rows=1 width=8) (actual time=10.150..10.200 rows=2.00 loops=1)
+                Filter: (((status)::text = ANY ('{PLACED,PACKING}'::text[])) AND (store_id = 43))
+                Rows Removed by Filter: 149998
+                Buffers: shared hit=2352
+  ->  Nested Loop  (cost=0.72..57.11 rows=3 width=24) (actual time=10.269..10.281 rows=5.00 loops=1)
+        Buffers: shared hit=2371
+        ->  Index Scan using order_items_pkey on order_items oi  (cost=0.42..15.51 rows=5 width=14) (actual time=10.255..10.256 rows=5.00 loops=1)
+              Index Cond: (order_id = (InitPlan 1).col1)
+              Index Searches: 1
+              Buffers: shared hit=2356
+        ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.29..8.31 rows=1 width=14) (actual time=0.005..0.005 rows=1.00 loops=5)
+              Index Cond: ((store_id = 43) AND (product_id = oi.product_id))
+              Index Searches: 5
+              Buffers: shared hit=15
+Planning:
+  Buffers: shared hit=300
+Planning Time: 0.374 ms
+Execution Time: 10.463 ms
+=== W02 run 3 ===
+Update on store_inventory si  (cost=4602.73..4659.12 rows=0 width=0) (actual time=9.606..9.607 rows=0.00 loops=1)
+  Buffers: shared hit=2428 dirtied=1
+  InitPlan 1
+    ->  Aggregate  (cost=4602.00..4602.01 rows=1 width=8) (actual time=9.465..9.465 rows=1.00 loops=1)
+          Buffers: shared hit=2352
+          ->  Seq Scan on orders  (cost=0.00..4602.00 rows=1 width=8) (actual time=9.437..9.461 rows=2.00 loops=1)
+                Filter: (((status)::text = ANY ('{PLACED,PACKING}'::text[])) AND (store_id = 43))
+                Rows Removed by Filter: 149998
+                Buffers: shared hit=2352
+  ->  Nested Loop  (cost=0.72..57.11 rows=3 width=24) (actual time=9.490..9.502 rows=5.00 loops=1)
+        Buffers: shared hit=2371
+        ->  Index Scan using order_items_pkey on order_items oi  (cost=0.42..15.51 rows=5 width=14) (actual time=9.480..9.480 rows=5.00 loops=1)
+              Index Cond: (order_id = (InitPlan 1).col1)
+              Index Searches: 1
+              Buffers: shared hit=2356
+        ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.29..8.31 rows=1 width=14) (actual time=0.004..0.004 rows=1.00 loops=5)
+              Index Cond: ((store_id = 43) AND (product_id = oi.product_id))
+              Index Searches: 5
+              Buffers: shared hit=15
+Planning:
+  Buffers: shared hit=300
+Planning Time: 0.354 ms
+Execution Time: 9.657 ms

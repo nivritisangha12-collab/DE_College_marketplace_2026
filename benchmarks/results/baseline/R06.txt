@@ -1,0 +1,45 @@
+=== R06 run 1 ===
+Limit  (cost=4227.02..4227.02 rows=1 width=55) (actual time=6.914..6.915 rows=1.00 loops=1)
+  Buffers: shared hit=2355
+  ->  Sort  (cost=4227.02..4227.03 rows=4 width=55) (actual time=6.914..6.914 rows=1.00 loops=1)
+        Sort Key: placed_at DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=2355
+        ->  Seq Scan on orders  (cost=0.00..4227.00 rows=4 width=55) (actual time=0.278..6.904 rows=9.00 loops=1)
+              Filter: (customer_id = 1027)
+              Rows Removed by Filter: 149991
+              Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.203 ms
+Execution Time: 6.929 ms
+=== R06 run 2 ===
+Limit  (cost=4227.02..4227.02 rows=1 width=55) (actual time=5.297..5.297 rows=1.00 loops=1)
+  Buffers: shared hit=2355
+  ->  Sort  (cost=4227.02..4227.03 rows=4 width=55) (actual time=5.296..5.296 rows=1.00 loops=1)
+        Sort Key: placed_at DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=2355
+        ->  Seq Scan on orders  (cost=0.00..4227.00 rows=4 width=55) (actual time=0.257..5.289 rows=9.00 loops=1)
+              Filter: (customer_id = 1027)
+              Rows Removed by Filter: 149991
+              Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.180 ms
+Execution Time: 5.311 ms
+=== R06 run 3 ===
+Limit  (cost=4227.02..4227.02 rows=1 width=55) (actual time=5.037..5.037 rows=1.00 loops=1)
+  Buffers: shared hit=2355
+  ->  Sort  (cost=4227.02..4227.03 rows=4 width=55) (actual time=5.037..5.037 rows=1.00 loops=1)
+        Sort Key: placed_at DESC
+        Sort Method: top-N heapsort  Memory: 25kB
+        Buffers: shared hit=2355
+        ->  Seq Scan on orders  (cost=0.00..4227.00 rows=4 width=55) (actual time=0.239..5.028 rows=9.00 loops=1)
+              Filter: (customer_id = 1027)
+              Rows Removed by Filter: 149991
+              Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=103
+Planning Time: 0.191 ms
+Execution Time: 5.053 ms

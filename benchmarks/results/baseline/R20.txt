@@ -1,0 +1,75 @@
+=== R20 run 1 ===
+WindowAgg  (cost=5357.02..5464.27 rows=721 width=68) (actual time=7.880..9.036 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2390
+  ->  GroupAggregate  (cost=5356.87..5453.46 rows=721 width=36) (actual time=7.850..9.019 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2390
+        ->  Gather Merge  (cost=5356.87..5439.04 rows=721 width=9) (actual time=7.818..8.708 rows=7815.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2390
+              ->  Sort  (cost=4356.86..4357.92 rows=424 width=9) (actual time=6.815..6.888 rows=3907.50 loops=2)
+                    Sort Key: ((orders.placed_at)::date)
+                    Sort Method: quicksort  Memory: 219kB
+                    Buffers: shared hit=2390
+                    Worker 0:  Sort Method: quicksort  Memory: 218kB
+                    ->  Parallel Seq Scan on orders  (cost=0.00..4338.35 rows=424 width=9) (actual time=6.052..6.671 rows=3907.50 loops=2)
+                          Filter: (((status)::text = 'DELIVERED'::text) AND ((placed_at)::date >= '2026-06-01'::date) AND ((placed_at)::date <= '2026-06-30'::date))
+                          Rows Removed by Filter: 71092
+                          Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=130
+Planning Time: 0.216 ms
+Execution Time: 9.073 ms
+=== R20 run 2 ===
+WindowAgg  (cost=5357.02..5464.27 rows=721 width=68) (actual time=7.642..8.773 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2390
+  ->  GroupAggregate  (cost=5356.87..5453.46 rows=721 width=36) (actual time=7.612..8.757 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2390
+        ->  Gather Merge  (cost=5356.87..5439.04 rows=721 width=9) (actual time=7.581..8.447 rows=7815.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2390
+              ->  Sort  (cost=4356.86..4357.92 rows=424 width=9) (actual time=6.609..6.682 rows=3907.50 loops=2)
+                    Sort Key: ((orders.placed_at)::date)
+                    Sort Method: quicksort  Memory: 219kB
+                    Buffers: shared hit=2390
+                    Worker 0:  Sort Method: quicksort  Memory: 218kB
+                    ->  Parallel Seq Scan on orders  (cost=0.00..4338.35 rows=424 width=9) (actual time=5.868..6.470 rows=3907.50 loops=2)
+                          Filter: (((status)::text = 'DELIVERED'::text) AND ((placed_at)::date >= '2026-06-01'::date) AND ((placed_at)::date <= '2026-06-30'::date))
+                          Rows Removed by Filter: 71092
+                          Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=130
+Planning Time: 0.199 ms
+Execution Time: 8.807 ms
+=== R20 run 3 ===
+WindowAgg  (cost=5357.02..5464.27 rows=721 width=68) (actual time=7.287..8.303 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2390
+  ->  GroupAggregate  (cost=5356.87..5453.46 rows=721 width=36) (actual time=7.259..8.289 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2390
+        ->  Gather Merge  (cost=5356.87..5439.04 rows=721 width=9) (actual time=7.228..7.977 rows=7815.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2390
+              ->  Sort  (cost=4356.86..4357.92 rows=424 width=9) (actual time=6.333..6.407 rows=3907.50 loops=2)
+                    Sort Key: ((orders.placed_at)::date)
+                    Sort Method: quicksort  Memory: 219kB
+                    Buffers: shared hit=2390
+                    Worker 0:  Sort Method: quicksort  Memory: 218kB
+                    ->  Parallel Seq Scan on orders  (cost=0.00..4338.35 rows=424 width=9) (actual time=5.596..6.198 rows=3907.50 loops=2)
+                          Filter: (((status)::text = 'DELIVERED'::text) AND ((placed_at)::date >= '2026-06-01'::date) AND ((placed_at)::date <= '2026-06-30'::date))
+                          Rows Removed by Filter: 71092
+                          Buffers: shared hit=2352
+Planning:
+  Buffers: shared hit=130
+Planning Time: 0.182 ms
+Execution Time: 8.335 ms
