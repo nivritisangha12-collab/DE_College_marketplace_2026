@@ -8,11 +8,55 @@
 
 | Path | What it is |
 |------|------------|
-| `README.md` | This project brief |
-| `seed_data.zip` | 10 CSV files (675,000 orders): the only input for Phase 2. Unzip it to get `seed_data/` |
-| `queries/workload_30.sql` | The 30 queries for Phase 3 (do not edit) |
-| `benchmarks/run_benchmark.sh` | Timing script: 3 runs per query, average, raw plans saved |
+| `README.md` | Project brief, specification, and local quickstart guide |
+| `seed_data.zip` | 10 CSV files (675,000 orders): the production export for Phase 2 |
+| `sql/01_schema.sql` | Relational DDL with primary/foreign keys and domain constraints |
+| `sql/02_load_data.sql` | Automated bulk data ingestion script using `\copy` and `ANALYZE` |
+| `queries/workload_30.sql` | The 30 benchmark queries for Phase 3 (25 reads, 5 writes; do not edit) |
+| `benchmarks/run_benchmark.sh` | Timing script: 3 runs per query, average/median, raw plans saved |
+| `benchmarks/results/baseline/` | Baseline execution plans and timing summary (`summary.csv`) |
+| `docs/01_problem_understanding.md` | Phase 1 problem analysis, query classification, and stakeholder mapping |
+| `docs/02_schema_design.md` | Phase 2 schema design, data dictionary, normal forms, and integrity checks |
+| `docs/03_baseline_timings.md` | Phase 3 baseline benchmark timing table and scan node analysis |
+| `diagrams/` | ER diagram source (`er_diagram.mmd`) and rendered image (`er_diagram.png`) |
+| `team.json` | Team identification, member roles, and metadata |
 | `CHECKPOINTS.md` | Checkpoint dates and the files each one needs (DE and AP repos) |
+
+## Local Setup & Quickstart
+
+### Prerequisites
+- **PostgreSQL 15+** installed and running locally
+- Command line utilities: `psql`, `bash`, `awk`, `grep`, `unzip`
+
+### 1. Database Initialization
+Create a dedicated PostgreSQL database for the project:
+```bash
+createdb blinkit_db
+```
+
+### 2. Apply Relational Schema
+Apply the DDL to create the `blinkit` schema, tables, and constraints:
+```bash
+psql -d blinkit_db -f sql/01_schema.sql
+```
+
+### 3. Unpack and Load Seed Data
+Unzip the dataset archive and ingest data into PostgreSQL:
+```bash
+unzip -q seed_data.zip
+psql -d blinkit_db -f sql/02_load_data.sql
+```
+*(Note: `seed_data/` is excluded from git commits via `.gitignore`.)*
+
+### 4. Run Benchmarks
+Execute the automated 30-query benchmark suite to capture baseline metrics:
+```bash
+chmod +x ./benchmarks/run_benchmark.sh
+./benchmarks/run_benchmark.sh blinkit_db baseline
+```
+Benchmark outputs are written to:
+- `benchmarks/results/baseline/summary.csv` (aggregated metrics)
+- `benchmarks/results/baseline/*.txt` (per-query raw plans with buffers)
 
 **Getting started:** **clone this repository and push it into your team's DE repo** (the DE repo you submitted in the form); the steps are in [`CHECKPOINTS.md`](CHECKPOINTS.md). Keep the structure shown in [Repository structure](#repository-structure-submit-exactly-this). Unzip `seed_data.zip` inside your project folder, but don't commit the CSV files. Deadlines are in [`CHECKPOINTS.md`](CHECKPOINTS.md). Then begin with Phase 1.
 
