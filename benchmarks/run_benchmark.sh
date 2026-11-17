@@ -12,6 +12,9 @@
 # WRITE queries (W*) run inside BEGIN ... ROLLBACK, so your data does not change.
 set -euo pipefail
 
+# -----------------------------------------------------------------------------
+# Configuration and Environment Setup
+# -----------------------------------------------------------------------------
 DB="${1:?database name required}"
 PHASE="${2:?phase required: before | after}"
 RUNS="${3:-3}"
@@ -22,13 +25,20 @@ SUMMARY="$OUT/summary.csv"
 mkdir -p "$OUT"
 echo "query_id,type,avg_ms,median_ms,min_ms,max_ms,scan_nodes" > "$SUMMARY"
 
+# -----------------------------------------------------------------------------
+# Workload Parsing
 # Split the workload file on "-- @ID" markers into one temp file per query
+# -----------------------------------------------------------------------------
 TMP="$(mktemp -d)"
 awk -v dir="$TMP" '
   /^-- @/ { id = ""; if ($2 ~ /^@[RW][0-9]+$/) { id = substr($2, 2); file = dir "/" id ".sql"; printf "" > file }; next }
   id != "" && !/^--/ { print >> file }
 ' "$WORKLOAD"
 
+# -----------------------------------------------------------------------------
+# Benchmark Execution Loop
+# Iterate through each extracted query, execute N runs, and record execution plans
+# -----------------------------------------------------------------------------
 for f in $(ls "$TMP"/*.sql | sort -V); do
   id="$(basename "$f" .sql)"
   type="READ"; [[ "$id" == W* ]] && type="WRITE"
@@ -36,6 +46,7 @@ for f in $(ls "$TMP"/*.sql | sort -V); do
   times=()
   : > "$OUT/$id.txt"
   for ((i = 1; i <= RUNS; i++)); do
+    # Wrap write operations in transactions that ROLLBACK to avoid mutating benchmark state
     if [[ "$type" == "WRITE" ]]; then
       sql="SET search_path TO blinkit; BEGIN; EXPLAIN (ANALYZE, BUFFERS) $query ROLLBACK;"
     else
@@ -47,9 +58,19 @@ for f in $(ls "$TMP"/*.sql | sort -V); do
     t="$(echo "$plan" | grep -oE 'Execution Time: [0-9.]+' | awk '{print $3}')"
     times+=("$t")
   done
+
+  # ---------------------------------------------------------------------------
+  # Metrics Computation
+  # Calculate sorted timings, median, and arithmetic mean across all runs
+  # ---------------------------------------------------------------------------
   sorted=($(printf '%s\n' "${times[@]}" | sort -g))
   median="${sorted[$((RUNS / 2))]}"
   avg="$(printf '%s\n' "${times[@]}" | awk '{ s += $1 } END { printf "%.3f", s / NR }')"
+
+  # ---------------------------------------------------------------------------
+  # Access Path Extraction
+  # Capture scan nodes in the plan (e.g. Seq Scan, Index Scan, Bitmap Index Scan)
+  # ---------------------------------------------------------------------------
   # every scan node in the last run's plan, e.g. "Seq Scan on orders | Index Scan using customers_pkey on customers"
   node="$(echo "$plan" | grep -oE '(Parallel )?(Seq Scan|Index Scan|Index Only Scan|Bitmap Heap Scan|Bitmap Index Scan)( Backward)?( using [a-z0-9_]+)? on [a-z0-9_]+' | sed -E 's/Parallel //; s/ Backward//' | awk '!seen[$0]++' | paste -sd'|' - | sed 's/|/ | /g' || true)"
   # grep exits 1 when nothing matches (e.g. a plain INSERT); don't let set -e abort the run
@@ -57,6 +78,8 @@ for f in $(ls "$TMP"/*.sql | sort -V); do
   echo "$id,$type,$avg,$median,${sorted[0]},${sorted[$((RUNS - 1))]},$node" >> "$SUMMARY"
   printf '%-4s %-5s avg %9s ms   %s\n' "$id" "$type" "$avg" "$node"
 done
+
+# Clean up temporary query files
 rm -rf "$TMP"
 echo "Workload: $WORKLOAD"
 echo "Saved raw plans and summary to $OUT"

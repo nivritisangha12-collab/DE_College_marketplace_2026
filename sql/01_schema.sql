@@ -1,18 +1,43 @@
+-- =============================================================================
+-- Blinkit 10-Minute Grocery Delivery Database: Relational Schema DDL
+--
+-- Schema: blinkit
+-- Description:
+--   Relational schema definition representing the dark-store delivery platform.
+--   Enforces entity integrity (PRIMARY KEY), referential integrity (FOREIGN KEY),
+--   uniqueness constraints (UNIQUE), and business domain invariants (CHECK).
+--
+-- Constraints Note:
+--   Per Phase 2 specification, only core constraints are defined at this stage.
+--   Secondary tuning indexes are deferred to Phase 4 for benchmark comparison.
+-- =============================================================================
+
 CREATE SCHEMA IF NOT EXISTS blinkit;
 SET search_path TO blinkit;
 
+-- -----------------------------------------------------------------------------
+-- 1. Master & Dimension Entities
+-- -----------------------------------------------------------------------------
+
+-- Cities: Metropolitan regions supported by the delivery network
 CREATE TABLE cities (
     city_id INT PRIMARY KEY,
     city_name VARCHAR(100) NOT NULL UNIQUE,
     state VARCHAR(100) NOT NULL
 );
 
+-- Categories: Product taxonomy classifying goods by perishability
 CREATE TABLE categories (
     category_id INT PRIMARY KEY,
     category_name VARCHAR(100) NOT NULL UNIQUE,
     is_perishable BOOLEAN NOT NULL
 );
 
+-- -----------------------------------------------------------------------------
+-- 2. Infrastructure & Operational Fleet
+-- -----------------------------------------------------------------------------
+
+-- Dark Stores: Local fulfillment micro-warehouses serving nearby coordinates
 CREATE TABLE dark_stores (
     store_id INT PRIMARY KEY,
     store_code VARCHAR(30) NOT NULL UNIQUE,
@@ -24,6 +49,11 @@ CREATE TABLE dark_stores (
     max_daily_orders INT NOT NULL CHECK (max_daily_orders > 0)
 );
 
+-- -----------------------------------------------------------------------------
+-- 3. Customer & Catalogue Management
+-- -----------------------------------------------------------------------------
+
+-- Customers: Registered customer accounts linked to operating cities
 CREATE TABLE customers (
     customer_id INT PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
@@ -33,6 +63,7 @@ CREATE TABLE customers (
     created_at TIMESTAMPTZ NOT NULL
 );
 
+-- Products: Master catalogue items with SKU codes, pack sizing, and MRP
 CREATE TABLE products (
     product_id INT PRIMARY KEY,
     sku VARCHAR(50) NOT NULL UNIQUE,
@@ -45,6 +76,7 @@ CREATE TABLE products (
     is_active BOOLEAN NOT NULL
 );
 
+-- Riders: Delivery personnel attached to specific dark store hubs
 CREATE TABLE riders (
     rider_id INT PRIMARY KEY,
     full_name VARCHAR(150) NOT NULL,
@@ -55,6 +87,11 @@ CREATE TABLE riders (
         CHECK (status IN ('ACTIVE','EXITED','ON_LEAVE'))
 );
 
+-- -----------------------------------------------------------------------------
+-- 4. Store Inventory
+-- -----------------------------------------------------------------------------
+
+-- Store Inventory: Localized product stock counts and selling prices per store
 CREATE TABLE store_inventory (
     store_id INT NOT NULL REFERENCES dark_stores(store_id),
     product_id INT NOT NULL REFERENCES products(product_id),
@@ -65,6 +102,11 @@ CREATE TABLE store_inventory (
     PRIMARY KEY (store_id, product_id)
 );
 
+-- -----------------------------------------------------------------------------
+-- 5. Orders & Line Items
+-- -----------------------------------------------------------------------------
+
+-- Orders: Header record for customer orders capturing fulfillment timeline and fee breakdown
 CREATE TABLE orders (
     order_id BIGINT PRIMARY KEY,
     customer_id INT NOT NULL REFERENCES customers(customer_id),
@@ -87,6 +129,7 @@ CREATE TABLE orders (
     CHECK (total_amount = subtotal + delivery_fee + handling_fee + small_cart_fee)
 );
 
+-- Order Items: Line items per order capturing requested vs delivered quantity and substitutions
 CREATE TABLE order_items (
     order_id BIGINT NOT NULL REFERENCES orders(order_id),
     product_id INT NOT NULL REFERENCES products(product_id),
@@ -99,6 +142,11 @@ CREATE TABLE order_items (
     PRIMARY KEY (order_id, product_id)
 );
 
+-- -----------------------------------------------------------------------------
+-- 6. Inventory Movements
+-- -----------------------------------------------------------------------------
+
+-- Inventory Movements: Stock adjustment ledger (restocks, damages, expiries, corrections)
 CREATE TABLE inventory_movements (
     movement_id BIGINT PRIMARY KEY,
     store_id INT NOT NULL REFERENCES dark_stores(store_id),
