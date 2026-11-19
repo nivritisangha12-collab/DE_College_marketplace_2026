@@ -1,0 +1,75 @@
+=== R03 run 1 ===
+Sort  (cost=180.37..180.42 rows=20 width=33) (actual time=0.160..0.161 rows=18.00 loops=1)
+  Sort Key: si.selling_price
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=140
+  ->  Nested Loop  (cost=13.55..179.94 rows=20 width=33) (actual time=0.030..0.141 rows=18.00 loops=1)
+        Buffers: shared hit=137
+        ->  Bitmap Heap Scan on products p  (cost=13.13..34.29 rows=31 width=28) (actual time=0.019..0.049 rows=31.00 loops=1)
+              Recheck Cond: ((product_name)::text ~~* '%milk%'::text)
+              Heap Blocks: exact=20
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_products_name_trgm  (cost=0.00..13.12 rows=31 width=0) (actual time=0.012..0.012 rows=31.00 loops=1)
+                    Index Cond: ((product_name)::text ~~* '%milk%'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=5
+        ->  Index Only Scan using idx_store_inventory_product on store_inventory si  (cost=0.42..4.70 rows=1 width=9) (actual time=0.003..0.003 rows=0.58 loops=31)
+              Index Cond: ((product_id = p.product_id) AND (store_id = 43))
+              Filter: (quantity_on_hand > 0)
+              Heap Fetches: 18
+              Index Searches: 31
+              Buffers: shared hit=112
+Planning:
+  Buffers: shared hit=339
+Planning Time: 1.971 ms
+Execution Time: 0.212 ms
+=== R03 run 2 ===
+Sort  (cost=180.37..180.42 rows=20 width=33) (actual time=0.149..0.149 rows=18.00 loops=1)
+  Sort Key: si.selling_price
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=140
+  ->  Nested Loop  (cost=13.55..179.94 rows=20 width=33) (actual time=0.028..0.132 rows=18.00 loops=1)
+        Buffers: shared hit=137
+        ->  Bitmap Heap Scan on products p  (cost=13.13..34.29 rows=31 width=28) (actual time=0.017..0.046 rows=31.00 loops=1)
+              Recheck Cond: ((product_name)::text ~~* '%milk%'::text)
+              Heap Blocks: exact=20
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_products_name_trgm  (cost=0.00..13.12 rows=31 width=0) (actual time=0.011..0.011 rows=31.00 loops=1)
+                    Index Cond: ((product_name)::text ~~* '%milk%'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=5
+        ->  Index Only Scan using idx_store_inventory_product on store_inventory si  (cost=0.42..4.70 rows=1 width=9) (actual time=0.003..0.003 rows=0.58 loops=31)
+              Index Cond: ((product_id = p.product_id) AND (store_id = 43))
+              Filter: (quantity_on_hand > 0)
+              Heap Fetches: 18
+              Index Searches: 31
+              Buffers: shared hit=112
+Planning:
+  Buffers: shared hit=339
+Planning Time: 1.039 ms
+Execution Time: 0.196 ms
+=== R03 run 3 ===
+Sort  (cost=180.37..180.42 rows=20 width=33) (actual time=0.161..0.162 rows=18.00 loops=1)
+  Sort Key: si.selling_price
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=140
+  ->  Nested Loop  (cost=13.55..179.94 rows=20 width=33) (actual time=0.031..0.142 rows=18.00 loops=1)
+        Buffers: shared hit=137
+        ->  Bitmap Heap Scan on products p  (cost=13.13..34.29 rows=31 width=28) (actual time=0.019..0.051 rows=31.00 loops=1)
+              Recheck Cond: ((product_name)::text ~~* '%milk%'::text)
+              Heap Blocks: exact=20
+              Buffers: shared hit=25
+              ->  Bitmap Index Scan on idx_products_name_trgm  (cost=0.00..13.12 rows=31 width=0) (actual time=0.012..0.012 rows=31.00 loops=1)
+                    Index Cond: ((product_name)::text ~~* '%milk%'::text)
+                    Index Searches: 1
+                    Buffers: shared hit=5
+        ->  Index Only Scan using idx_store_inventory_product on store_inventory si  (cost=0.42..4.70 rows=1 width=9) (actual time=0.003..0.003 rows=0.58 loops=31)
+              Index Cond: ((product_id = p.product_id) AND (store_id = 43))
+              Filter: (quantity_on_hand > 0)
+              Heap Fetches: 18
+              Index Searches: 31
+              Buffers: shared hit=112
+Planning:
+  Buffers: shared hit=339
+Planning Time: 1.093 ms
+Execution Time: 0.213 ms
