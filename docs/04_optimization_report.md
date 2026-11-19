@@ -14,6 +14,47 @@ The benchmarking methodology strictly mirrors the baseline protocol established 
 - **Measurement Standard:** `EXPLAIN (ANALYZE, BUFFERS)` executed for 3 consecutive iterations per query; average, median, minimum, and maximum execution times recorded.
 - **Write Safety:** Write operations (`W01`–`W05`) wrapped in `BEGIN ... ROLLBACK` transactions to prevent state mutations across runs.
 
+## 3. Comprehensive Benchmark Comparison Table
+
+The following metrics are pulled directly from the baseline repository artifact (`benchmarks/results/baseline/summary.csv`) and the newly measured optimization artifact (`benchmarks/results/optimized/summary.csv`).
+
+| Query ID | Type | Description | Baseline Avg (ms) | Optimized Avg (ms) | Baseline Med (ms) | Optimized Med (ms) | Speedup Factor | Latency Change (%) |
+|---|---|---|---:|---:|---:|---:|---:|---:|
+| **R01** | READ | Store assignment (nearest active dark store) | 0.074 | 0.086 | 0.074 | 0.085 | 0.86× | -16.2% |
+| **R02** | READ | Category page (Dairy in stock at store 43) | 0.355 | 0.411 | 0.329 | 0.389 | 0.86× | -15.8% |
+| **R03** | READ | Product search ("milk" wildcard in stock) | 0.837 | 0.207 | 0.800 | 0.212 | **4.04×** | +75.3% |
+| **R04** | READ | Product page (stock in Bengaluru stores) | 0.132 | 0.068 | 0.108 | 0.066 | **1.94×** | +48.5% |
+| **R05** | READ | Cart check (stock & price of 4 items) | 0.033 | 0.057 | 0.033 | 0.053 | 0.58× | -72.7% |
+| **R06** | READ | Order tracking (customer 1027's latest order) | 5.764 | 0.020 | 5.311 | 0.018 | **288.20×** | +99.7% |
+| **R07** | READ | Store screen (open unfulfilled orders) | 6.193 | 0.019 | 6.205 | 0.017 | **325.95×** | +99.7% |
+| **R08** | READ | SLA report (June 2026 late deliveries share) | 5.952 | 1.066 | 5.955 | 1.034 | **5.58×** | +82.1% |
+| **R09** | READ | Replenishment (products at or below reorder) | 0.247 | 0.206 | 0.248 | 0.189 | **1.20×** | +16.6% |
+| **R10** | READ | Wastage (units lost to damage/expiry per cat) | 4.776 | 0.686 | 4.765 | 0.678 | **6.96×** | +85.6% |
+| **R11** | READ | Rider performance (transit minutes per rider) | 5.027 | 0.114 | 5.000 | 0.112 | **44.10×** | +97.7% |
+| **R12** | READ | Recommendations (bought together with 1236) | 8.560 | 1.078 | 7.989 | 0.984 | **7.94×** | +87.4% |
+| **R13** | READ | Category team (active unused substitutes) | 18.577 | 34.889 | 18.482 | 34.993 | 0.53× | -87.8% |
+| **R14** | READ | Fill rate (short delivered order lines share) | 18.160 | 16.275 | 18.023 | 16.360 | **1.12×** | +10.4% |
+| **R15** | READ | Staffing (Bengaluru hourly order distribution) | 8.069 | 0.096 | 8.061 | 0.091 | **84.05×** | +98.8% |
+| **R16** | READ | Growth (monthly cohorts & repeat orders) | 29.045 | 21.418 | 29.070 | 21.625 | **1.36×** | +26.3% |
+| **R17** | READ | Finance (small-cart fees per city/month) | 28.989 | 9.757 | 29.072 | 9.750 | **2.97×** | +66.3% |
+| **R18** | READ | Dead stock (stock at 43 not sold in June) | 5.494 | 0.980 | 5.480 | 0.969 | **5.61×** | +82.2% |
+| **R19** | READ | Category report (June units sold for F&V) | 1844.289 | 16.688 | 1852.001 | 16.646 | **110.52×** | +99.1% |
+| **R20** | READ | Finance (June daily GMV and running total) | 8.738 | 1.428 | 8.807 | 1.393 | **6.12×** | +83.7% |
+| **R21** | READ | Store manager (active idle riders on 30 June) | 4.862 | 0.088 | 4.783 | 0.087 | **55.25×** | +98.2% |
+| **R22** | READ | Support console (pagination page 4,001) | 32.749 | 5.247 | 32.647 | 5.208 | **6.24×** | +84.0% |
+| **R23** | READ | Warehouse scanner (SKU barcode lookup) | 0.022 | 0.025 | 0.022 | 0.024 | 0.88× | -13.6% |
+| **R24** | READ | Supply chain (restocks per product at 43) | 2.842 | 0.046 | 2.808 | 0.045 | **61.78×** | +98.4% |
+| **R25** | READ | Loyalty (top 20 Mumbai customer spenders) | 13.182 | 9.315 | 13.061 | 9.160 | **1.42×** | +29.3% |
+| **W01** | WRITE | Checkout (new order placement at store 43) | 0.502 | 0.709 | 0.501 | 0.698 | 0.71× | -41.2% |
+| **W02** | WRITE | Packing stock deduction (latest order lines) | 10.027 | 0.240 | 9.962 | 0.207 | **41.78×** | +97.6% |
+| **W03** | WRITE | Rider dispatch (assign oldest packing order) | 11.130 | 0.299 | 11.125 | 0.277 | **37.22×** | +97.3% |
+| **W04** | WRITE | Nightly replenishment (top-up store 43 stock) | 0.785 | 1.167 | 0.736 | 0.891 | 0.67× | -48.7% |
+| **W05** | WRITE | Data retention (purge movements < 2026) | 70.999 | 29.648 | 21.706 | 28.322 | **2.39×** | +58.2% |
+| **Total** | — | **All 30 Workload Queries Combined** | **2,146.411** | **152.333** | **2,118.825** | **150.329** | **14.09×** | **+92.9%** |
+
+---
+
+
 ---
 
 ## 4. Indexing Strategy & Storage Analysis
