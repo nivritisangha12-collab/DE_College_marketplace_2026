@@ -39,3 +39,38 @@ CREATE INDEX idx_order_items_product_order
 -- Bottleneck: Sequential scan on customers when filtering by city_id.
 CREATE INDEX idx_customers_city
     ON customers (city_id, customer_id);
+
+-- -----------------------------------------------------------------------------
+-- 2. Multi-Column Composite Filtering and Sorting Indexes
+-- -----------------------------------------------------------------------------
+
+-- Target: R01 (Store Assignment)
+-- Bottleneck: Coordinate boundary filtering on dark_stores.
+CREATE INDEX idx_dark_stores_location
+    ON dark_stores (latitude, longitude);
+
+-- Target: R06, R16 (Customer Order Tracking and Cohort Grouping)
+-- Bottleneck: Filtering orders by customer_id and sorting placed_at descending.
+CREATE INDEX idx_orders_customer_placed
+    ON orders (customer_id, placed_at DESC);
+
+-- Target: R22 (Support Console Pagination)
+-- Bottleneck: Sorting orders by placed_at descending with high offset.
+CREATE INDEX idx_orders_placed_at_desc
+    ON orders (placed_at DESC, order_id);
+
+-- Target: R21 (Rider Delivery Activity)
+-- Bottleneck: Checking order deliveries per rider timestamp.
+CREATE INDEX idx_orders_rider_placed
+    ON orders (rider_id, placed_at);
+
+-- Target: R13, R14, R15, R17, R20 (Analytical Date Range Scans)
+-- Bottleneck: Broad table scans on placed_at date windows.
+CREATE INDEX idx_orders_placed_range
+    ON orders (placed_at)
+    INCLUDE (store_id, total_amount, small_cart_fee, status);
+
+-- Target: W05 (Movement Retention Purges)
+-- Bottleneck: Identifying movements prior to retention cutoff timestamp.
+CREATE INDEX idx_inv_movements_moved_at
+    ON inventory_movements (moved_at);
