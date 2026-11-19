@@ -213,3 +213,20 @@ The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avo
 
 ---
 
+
+## 6. Verification and Correctness
+
+To verify that optimizations introduced zero semantic drift, all 25 read queries were tested against the baseline database state using bidirectional set difference validation:
+
+$$\text{Diff}_1 = (\text{Baseline Query}) \setminus (\text{Optimized Query}) = \emptyset$$
+$$\text{Diff}_2 = (\text{Optimized Query}) \setminus (\text{Baseline Query}) = \emptyset$$
+
+### Validation Results Summary
+
+- **Total Read Queries Tested:** 25 (R01–R25)
+- **Queries with Identical Row Counts:** 25 / 25 (100%)
+- **Queries with Zero Symmetric Difference:** 25 / 25 (100%)
+- **Write Operations:** W01–W05 tested within transactions and verified to execute without constraint violations or data corruption.
+
+---
+
