@@ -74,3 +74,75 @@ CREATE INDEX idx_orders_placed_range
 -- Bottleneck: Identifying movements prior to retention cutoff timestamp.
 CREATE INDEX idx_inv_movements_moved_at
     ON inventory_movements (moved_at);
+
+-- -----------------------------------------------------------------------------
+-- 3. Highly Selective Partial and Specialized Covering Indexes
+-- -----------------------------------------------------------------------------
+
+-- Target: R03 (Catalogue Wildcard Search)
+-- Bottleneck: Wildcard ILIKE substring scan on product catalog.
+CREATE INDEX idx_products_name_trgm
+    ON products USING gin (product_name gin_trgm_ops);
+
+-- Target: R09, W04 (Inventory Reorder Thresholds)
+-- Bottleneck: Locating low-stock inventory entries across stores.
+CREATE INDEX idx_store_inventory_reorder
+    ON store_inventory (store_id, quantity_on_hand)
+    WHERE quantity_on_hand <= reorder_level;
+
+-- Target: R13 (Substitution Tracking)
+-- Bottleneck: Full scans of order items where substitute_product_id is predominantly NULL.
+CREATE INDEX idx_order_items_substitute
+    ON order_items (substitute_product_id)
+    WHERE substitute_product_id IS NOT NULL;
+
+-- Target: R07 (Store Open Orders Screen)
+-- Bottleneck: Scanning orders table for active unfulfilled orders.
+CREATE INDEX idx_orders_open_store
+    ON orders (store_id, placed_at)
+    WHERE status IN ('PLACED', 'PACKING', 'OUT_FOR_DELIVERY');
+
+-- Target: W02 (Packing Stock Deduction)
+-- Bottleneck: Locating latest order_id in PLACED or PACKING status.
+CREATE INDEX idx_orders_open_order_id
+    ON orders (store_id, order_id DESC)
+    WHERE status IN ('PLACED', 'PACKING');
+
+-- Target: W03 (Rider Dispatch Queue)
+-- Bottleneck: Locating oldest packing order in orders table.
+CREATE INDEX idx_orders_packing_min
+    ON orders (order_id)
+    WHERE status = 'PACKING';
+
+-- Target: R08, R20 (SLA Reporting & June GMV)
+-- Bottleneck: Aggregating SLA delivery timestamps for delivered orders.
+CREATE INDEX idx_orders_june_sla
+    ON orders (placed_at, store_id)
+    INCLUDE (delivered_at, promised_minutes)
+    WHERE status = 'DELIVERED';
+
+-- Target: R11 (Store Rider Transit Performance)
+-- Bottleneck: Calculating transit duration for delivered store orders.
+CREATE INDEX idx_orders_delivered_june
+    ON orders (store_id, placed_at, rider_id)
+    INCLUDE (delivered_at, picked_up_at)
+    WHERE status = 'DELIVERED';
+
+-- Target: R24 (Supply Chain Store Restocks)
+-- Bottleneck: Restock movement auditing per dark store.
+CREATE INDEX idx_inv_movements_store_restock
+    ON inventory_movements (store_id, moved_at, product_id, quantity)
+    WHERE movement_type = 'RESTOCK';
+
+-- Target: R10 (Wastage & Damage Aggregations)
+-- Bottleneck: Expiry and damage movements aggregation.
+CREATE INDEX idx_inv_movements_wastage
+    ON inventory_movements (moved_at, movement_type, product_id, quantity)
+    WHERE movement_type IN ('EXPIRY', 'DAMAGE');
+
+-- Target: R21, W03 (Active Rider Dispatch)
+-- Bottleneck: Selecting active home-store riders for assignment.
+CREATE INDEX idx_riders_store_active
+    ON riders (store_id, rider_id)
+    INCLUDE (full_name)
+    WHERE status = 'ACTIVE';
