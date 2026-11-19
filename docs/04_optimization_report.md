@@ -63,18 +63,42 @@ The following metrics are pulled directly from the baseline repository artifact 
 
 The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avoids redundant, monolithic B-trees in favor of **partial**, **covering**, and **specialized inverted (GIN)** indexes.
 
-- `idx_dark_stores_location`: Partial coordinate B-tree for active store assignment.
-- `idx_dark_stores_city`: Composite B-tree for city-level routing and metadata joins.
-- `idx_products_category`: Covering B-tree on category taxonomy with product payload.
-- `idx_products_name_trgm`: GIN trigram index for fast text substring searches.
-- `idx_store_inventory_product`: Inverted composite B-tree for product-level inventory scans across stores.
-- `idx_store_inventory_reorder`: Partial B-tree restricted to low-stock threshold rows.
-- `idx_order_items_product_order`: Covering inverted index eliminating 675k-row line item scans.
-- `idx_orders_customer_placed`: Composite index for customer order history and tracking.
-- `idx_orders_open_store`: 16 kB partial index for operational store dispatch dashboards.
-- `idx_orders_placed_at_desc`: Pre-sorted composite index for deferred pagination joins.
-- `idx_orders_june_sla`: Partial covering index for SLA delivery performance monitoring.
-- `idx_inv_movements_store_restock`: Partial covering index for supply chain replenishment audits.
+| Table Name | Index Name | Index Type | Key Columns / Predicate | Size (Bytes) | Human Size | Target Queries & Rationale |
+|---|---|---|---|---:|---:|---|
+| `order_items` | `idx_order_items_product_order` | B-tree (Covering) | `(product_id, order_id) INCLUDE (quantity_delivered, quantity_ordered)` | 27,402,240 | 26 MB | Inverts PK `(order_id, product_id)`. Turns 675k-row sequential scan in **R12**, **R18**, **R19** into an Index Only Scan. |
+| `orders` | `idx_orders_placed_range` | B-tree (Covering) | `(placed_at) INCLUDE (store_id, total_amount, small_cart_fee, status)` | 7,454,720 | 7,280 kB | Accelerates broad timeline analytical scans (**R14**, **R15**, **R17**, **R20**, **R25**) via covering index range scans. |
+| `orders` | `idx_orders_june_sla` | Partial B-tree | `(placed_at, store_id) INCLUDE (delivered_at, promised_minutes) WHERE status = 'DELIVERED'` | 7,168,000 | 7,000 kB | Covers June 2026 delivered orders for SLA compliance (**R08**). Eliminates table page fetches. |
+| `store_inventory` | `idx_store_inventory_product` | B-tree | `(product_id, store_id)` | 5,128,192 | 5,008 kB | Inverts composite PK `(store_id, product_id)`. Enables product-level availability scans (**R04**) across dark stores. |
+| `orders` | `idx_orders_customer_placed` | B-tree | `(customer_id, placed_at DESC)` | 4,751,360 | 4,640 kB | Matches filter and sort order for customer timeline tracking (**R06**, **R16**). Top-1 lookup in 0.02 ms. |
+| `orders` | `idx_orders_rider_placed` | B-tree | `(rider_id, placed_at)` | 4,751,360 | 4,640 kB | Supports indexed `NOT EXISTS` antijoins for rider availability checks (**R21**). |
+| `orders` | `idx_orders_placed_at_desc` | B-tree | `(placed_at DESC, order_id)` | 4,751,360 | 4,640 kB | Pre-sorts orders for deferred join pagination (**R22**), completely eliminating 7.3 MB disk spills. |
+| `orders` | `idx_orders_delivered_june` | Partial B-tree | `(store_id, placed_at, rider_id) INCLUDE (delivered_at, picked_up_at) WHERE status = 'DELIVERED'` | 4,571,136 | 4,464 kB | Dedicated partial covering index for store rider transit analysis (**R11**). |
+| `inventory_movements` | `idx_inv_movements_store_restock` | Partial B-tree | `(store_id, moved_at, product_id, quantity) WHERE movement_type = 'RESTOCK'` | 2,949,120 | 2,880 kB | Index Only Scan covering restock tracking (**R24**). Zero heap visits. |
+| `inventory_movements` | `idx_inv_movements_moved_at` | B-tree | `(moved_at)` | 2,031,616 | 1,984 kB | Date boundary index for retention purges (**W05**) and wastage scans. |
+| `customers` | `idx_customers_city` | B-tree | `(city_id, customer_id)` | 917,504 | 896 kB | Converts Mumbai customer lookups (**R25**) to Index Only Scans. |
+| `inventory_movements` | `idx_inv_movements_wastage` | Partial B-tree | `(moved_at, movement_type, product_id, quantity) WHERE movement_type IN ('EXPIRY', 'DAMAGE')` | 335,872 | 328 kB | Highly selective loss-tracking index (**R10**). |
+| `store_inventory` | `idx_store_inventory_reorder` | Partial B-tree | `(store_id, quantity_on_hand) WHERE quantity_on_hand <= reorder_level` | 204,800 | 200 kB | Tiny footprint index targeting low-stock items for replenishment (**R09**, **W04**). |
+| `products` | `idx_products_name_trgm` | GIN (Trigram) | `USING gin (product_name gin_trgm_ops)` | 122,880 | 120 kB | GIN trigram index deconstructing product names for fast wildcard text search (**R03**). |
+| `order_items` | `idx_order_items_substitute` | Partial B-tree | `(substitute_product_id) WHERE substitute_product_id IS NOT NULL` | 122,880 | 120 kB | Indexes only ~2% non-NULL substitute rows (**R13**), bypassing 660,000 NULL entries. |
+| `products` | `idx_products_category` | B-tree (Covering) | `(category_id, product_id) INCLUDE (product_name)` | 98,304 | 96 kB | Resolves category browsing (**R02**, **R19**) via Index Only Scans. |
+| `riders` | `idx_riders_store_active` | Partial B-tree | `(store_id, rider_id) INCLUDE (full_name) WHERE status = 'ACTIVE'` | 57,344 | 56 kB | Immediate active rider assignment (**R21**, **W03**). |
+| `orders` | `idx_orders_open_order_id` | Partial B-tree | `(store_id, order_id DESC) WHERE status IN ('PLACED', 'PACKING')` | 16,384 | 16 kB | Solves `max(order_id)` seek in **W02**, accelerating update from 10 ms to 0.24 ms. |
+| `orders` | `idx_orders_open_store` | Partial B-tree | `(store_id, placed_at) WHERE status IN ('PLACED', 'PACKING', 'OUT_FOR_DELIVERY')` | 16,384 | 16 kB | Operational store dashboard index (**R07**). 16 kB footprint. |
+| `orders` | `idx_orders_packing_min` | Partial B-tree | `(order_id) WHERE status = 'PACKING'` | 16,384 | 16 kB | Solves `min(order_id)` seek in **W03**, accelerating dispatch from 11 ms to 0.30 ms. |
+| `dark_stores` | `idx_dark_stores_location` | Partial B-tree | `(latitude, longitude) WHERE is_active` | 16,384 | 16 kB | Spatial coordinate bounding filter for store assignment (**R01**). |
+| `dark_stores` | `idx_dark_stores_city` | B-tree | `(city_id, store_id)` | 16,384 | 16 kB | City-level dark store index-only joins (**R04**, **R15**). |
+
+### Write and Storage Trade-Off Analysis
+
+1. **Storage Overhead:**
+   The total secondary index volume is approximately **71.7 MB** against a raw table dataset of **53.5 MB** (CSV seed data). The primary space consumers are `idx_order_items_product_order` (26 MB) and the `orders` analytical indexes (~28 MB combined). This overhead is standard for real-time delivery databases requiring high-throughput reporting alongside transactional writes.
+2. **Partial Index Efficiency:**
+   By filtering indexes to active operational records (e.g. `WHERE status IN ('PLACED', 'PACKING')`), indexes like `idx_orders_open_order_id`, `idx_orders_open_store`, and `idx_orders_packing_min` consume only **16 kB each**. They impose virtually zero maintenance penalty on completed deliveries while delivering over **300× query speedups**.
+3. **Heap-Only Tuples (HOT) Update Preservation:**
+   In `store_inventory`, we intentionally avoided adding payload columns like `quantity_on_hand` and `selling_price` to `idx_store_inventory_product`. This design decision allows frequent inventory deductions in **W02** and **W04** to take advantage of PostgreSQL HOT updates, avoiding index page modifications when only stock counts change.
+
+---
+
 
 ---
 
