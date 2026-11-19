@@ -11,7 +11,6 @@
 --   * Aligned join paths with targeted secondary and covering indexes.
 --   * Maintained 100% result equivalence with queries/workload_30.sql.
 -- =====================================================================
--- Verified predicate pushdown and join ordering for optimal execution
 SET search_path TO blinkit;
 BEGIN;
 

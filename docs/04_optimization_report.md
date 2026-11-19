@@ -17,8 +17,6 @@ This report documents the design, implementation, and empirical verification of 
 
 ---
 
----
-
 ## 2. Benchmark Environment & Methodology
 
 The benchmarking methodology strictly mirrors the baseline protocol established in Phase 3 to ensure rigorous scientific comparability.
@@ -30,6 +28,8 @@ The benchmarking methodology strictly mirrors the baseline protocol established 
 - **Harness:** `./benchmarks/run_benchmark.sh blinkit_db optimized 3 sql/06_optimized_queries.sql`
 - **Measurement Standard:** `EXPLAIN (ANALYZE, BUFFERS)` executed for 3 consecutive iterations per query; average, median, minimum, and maximum execution times recorded.
 - **Write Safety:** Write operations (`W01`–`W05`) wrapped in `BEGIN ... ROLLBACK` transactions to prevent state mutations across runs.
+
+---
 
 ## 3. Comprehensive Benchmark Comparison Table
 
@@ -68,9 +68,6 @@ The following metrics are pulled directly from the baseline repository artifact 
 | **W04** | WRITE | Nightly replenishment (top-up store 43 stock) | 0.785 | 1.167 | 0.736 | 0.891 | 0.67× | -48.7% |
 | **W05** | WRITE | Data retention (purge movements < 2026) | 70.999 | 29.648 | 21.706 | 28.322 | **2.39×** | +58.2% |
 | **Total** | — | **All 30 Workload Queries Combined** | **2,146.411** | **152.333** | **2,118.825** | **150.329** | **14.09×** | **+92.9%** |
-
----
-
 
 ---
 
@@ -113,9 +110,6 @@ The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avo
    By filtering indexes to active operational records (e.g. `WHERE status IN ('PLACED', 'PACKING')`), indexes like `idx_orders_open_order_id`, `idx_orders_open_store`, and `idx_orders_packing_min` consume only **16 kB each**. They impose virtually zero maintenance penalty on completed deliveries while delivering over **300× query speedups**.
 3. **Heap-Only Tuples (HOT) Update Preservation:**
    In `store_inventory`, we intentionally avoided adding payload columns like `quantity_on_hand` and `selling_price` to `idx_store_inventory_product`. This design decision allows frequent inventory deductions in **W02** and **W04** to take advantage of PostgreSQL HOT updates, avoiding index page modifications when only stock counts change.
-
----
-
 
 ---
 
@@ -301,9 +295,6 @@ The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avo
 
 ---
 
-
----
-
 ## 6. Verification and Correctness
 
 To verify that optimizations introduced zero semantic drift, all 25 read queries were tested against the baseline database state using bidirectional set difference validation:
@@ -320,3 +311,11 @@ $$\text{Diff}_2 = (\text{Optimized Query}) \setminus (\text{Baseline Query}) = \
 
 ---
 
+## 7. Deliverables Summary
+
+The Checkpoint 3 deliverables have been generated and validated at their exact repository locations:
+
+1. **`sql/05_indexes.sql`:** 22 idempotent index definitions (`CREATE INDEX IF NOT EXISTS`) featuring composite, partial, covering, and GIN trigram indexes with detailed technical comments.
+2. **`sql/06_optimized_queries.sql`:** Refactored workload queries maintaining exact query markers (`-- @R01` through `-- @W05`), eliminating N+1 subqueries, enabling sargable index seeks, and implementing deferred pagination joins.
+3. **`benchmarks/results/optimized/summary.csv`:** Real measured performance metrics produced by executing `./benchmarks/run_benchmark.sh blinkit_db optimized 3 sql/06_optimized_queries.sql`.
+4. **`docs/04_optimization_report.md`:** Comprehensive engineering and architectural report documenting before/after execution plans, index rationale, trade-off analysis, and comparative benchmarking.
