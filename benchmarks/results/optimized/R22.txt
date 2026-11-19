@@ -1,0 +1,63 @@
+=== R22 run 1 ===
+Sort  (cost=3339.39..3339.45 rows=25 width=39) (actual time=5.143..5.144 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=495
+  ->  Nested Loop  (cost=3127.26..3338.81 rows=25 width=39) (actual time=5.121..5.133 rows=25.00 loops=1)
+        Buffers: shared hit=492
+        ->  Limit  (cost=3126.84..3127.62 rows=25 width=16) (actual time=5.109..5.110 rows=25.00 loops=1)
+              Buffers: shared hit=392
+              ->  Index Only Scan using idx_orders_placed_at_desc on orders  (cost=0.42..4690.05 rows=150000 width=16) (actual time=0.009..3.484 rows=100025.00 loops=1)
+                    Heap Fetches: 78
+                    Index Searches: 1
+                    Buffers: shared hit=392
+        ->  Index Scan using orders_pkey on orders o  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=1.00 loops=25)
+              Index Cond: (order_id = orders.order_id)
+              Index Searches: 25
+              Buffers: shared hit=100
+Planning:
+  Buffers: shared hit=384
+Planning Time: 0.615 ms
+Execution Time: 5.163 ms
+=== R22 run 2 ===
+Sort  (cost=3339.39..3339.45 rows=25 width=39) (actual time=5.189..5.190 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=492
+  ->  Nested Loop  (cost=3127.26..3338.81 rows=25 width=39) (actual time=5.166..5.180 rows=25.00 loops=1)
+        Buffers: shared hit=489
+        ->  Limit  (cost=3126.84..3127.62 rows=25 width=16) (actual time=5.155..5.157 rows=25.00 loops=1)
+              Buffers: shared hit=389
+              ->  Index Only Scan using idx_orders_placed_at_desc on orders  (cost=0.42..4690.05 rows=150000 width=16) (actual time=0.005..3.496 rows=100025.00 loops=1)
+                    Heap Fetches: 75
+                    Index Searches: 1
+                    Buffers: shared hit=389
+        ->  Index Scan using orders_pkey on orders o  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=1.00 loops=25)
+              Index Cond: (order_id = orders.order_id)
+              Index Searches: 25
+              Buffers: shared hit=100
+Planning:
+  Buffers: shared hit=384
+Planning Time: 0.525 ms
+Execution Time: 5.208 ms
+=== R22 run 3 ===
+Sort  (cost=3339.39..3339.45 rows=25 width=39) (actual time=5.353..5.354 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=492
+  ->  Nested Loop  (cost=3127.26..3338.81 rows=25 width=39) (actual time=5.332..5.344 rows=25.00 loops=1)
+        Buffers: shared hit=489
+        ->  Limit  (cost=3126.84..3127.62 rows=25 width=16) (actual time=5.323..5.324 rows=25.00 loops=1)
+              Buffers: shared hit=389
+              ->  Index Only Scan using idx_orders_placed_at_desc on orders  (cost=0.42..4690.05 rows=150000 width=16) (actual time=0.005..3.601 rows=100025.00 loops=1)
+                    Heap Fetches: 75
+                    Index Searches: 1
+                    Buffers: shared hit=389
+        ->  Index Scan using orders_pkey on orders o  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=1.00 loops=25)
+              Index Cond: (order_id = orders.order_id)
+              Index Searches: 25
+              Buffers: shared hit=100
+Planning:
+  Buffers: shared hit=384
+Planning Time: 0.556 ms
+Execution Time: 5.371 ms

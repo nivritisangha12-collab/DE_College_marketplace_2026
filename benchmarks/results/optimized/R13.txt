@@ -1,0 +1,69 @@
+=== R13 run 1 ===
+Seq Scan on products p  (cost=14105.24..14143.99 rows=731 width=28) (actual time=35.306..35.306 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (hashed SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=5053
+  SubPlan 1
+    ->  Hash Join  (cost=497.14..14011.05 rows=37674 width=4) (actual time=0.632..33.748 rows=37086.00 loops=1)
+          Hash Cond: (oi.order_id = o.order_id)
+          Buffers: shared hit=5033
+          ->  Seq Scan on order_items oi  (cost=0.00..11742.00 rows=675000 width=12) (actual time=0.004..15.070 rows=675000.00 loops=1)
+                Buffers: shared hit=4992
+          ->  Hash  (cost=392.49..392.49 rows=8372 width=8) (actual time=0.617..0.617 rows=8241.00 loops=1)
+                Buckets: 16384  Batches: 1  Memory Usage: 450kB
+                Buffers: shared hit=41
+                ->  Index Only Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..392.49 rows=8372 width=8) (actual time=0.010..0.321 rows=8241.00 loops=1)
+                      Index Cond: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                      Heap Fetches: 78
+                      Index Searches: 1
+                      Buffers: shared hit=41
+Planning:
+  Buffers: shared hit=558
+Planning Time: 0.886 ms
+Execution Time: 35.330 ms
+=== R13 run 2 ===
+Seq Scan on products p  (cost=14105.24..14143.99 rows=731 width=28) (actual time=34.319..34.320 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (hashed SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=5049
+  SubPlan 1
+    ->  Hash Join  (cost=497.14..14011.05 rows=37674 width=4) (actual time=0.611..32.792 rows=37086.00 loops=1)
+          Hash Cond: (oi.order_id = o.order_id)
+          Buffers: shared hit=5029
+          ->  Seq Scan on order_items oi  (cost=0.00..11742.00 rows=675000 width=12) (actual time=0.004..14.657 rows=675000.00 loops=1)
+                Buffers: shared hit=4992
+          ->  Hash  (cost=392.49..392.49 rows=8372 width=8) (actual time=0.597..0.597 rows=8241.00 loops=1)
+                Buckets: 16384  Batches: 1  Memory Usage: 450kB
+                Buffers: shared hit=37
+                ->  Index Only Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..392.49 rows=8372 width=8) (actual time=0.008..0.296 rows=8241.00 loops=1)
+                      Index Cond: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                      Heap Fetches: 75
+                      Index Searches: 1
+                      Buffers: shared hit=37
+Planning:
+  Buffers: shared hit=557
+Planning Time: 0.828 ms
+Execution Time: 34.344 ms
+=== R13 run 3 ===
+Seq Scan on products p  (cost=14105.24..14143.99 rows=731 width=28) (actual time=34.969..34.969 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (hashed SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=5049
+  SubPlan 1
+    ->  Hash Join  (cost=497.14..14011.05 rows=37674 width=4) (actual time=0.587..33.426 rows=37086.00 loops=1)
+          Hash Cond: (oi.order_id = o.order_id)
+          Buffers: shared hit=5029
+          ->  Seq Scan on order_items oi  (cost=0.00..11742.00 rows=675000 width=12) (actual time=0.004..14.852 rows=675000.00 loops=1)
+                Buffers: shared hit=4992
+          ->  Hash  (cost=392.49..392.49 rows=8372 width=8) (actual time=0.573..0.574 rows=8241.00 loops=1)
+                Buckets: 16384  Batches: 1  Memory Usage: 450kB
+                Buffers: shared hit=37
+                ->  Index Only Scan using idx_orders_placed_at_desc on orders o  (cost=0.42..392.49 rows=8372 width=8) (actual time=0.008..0.289 rows=8241.00 loops=1)
+                      Index Cond: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                      Heap Fetches: 75
+                      Index Searches: 1
+                      Buffers: shared hit=37
+Planning:
+  Buffers: shared hit=557
+Planning Time: 0.812 ms
+Execution Time: 34.993 ms

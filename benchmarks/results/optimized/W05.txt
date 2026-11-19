@@ -1,0 +1,33 @@
+=== W05 run 1 ===
+Delete on inventory_movements  (cost=0.00..1901.00 rows=0 width=0) (actual time=39.952..39.952 rows=0.00 loops=1)
+  Buffers: shared hit=60941
+  ->  Seq Scan on inventory_movements  (cost=0.00..1901.00 rows=60031 width=6) (actual time=0.005..4.021 rows=60165.00 loops=1)
+        Filter: (moved_at < '2026-01-01 00:00:00+05:30'::timestamp with time zone)
+        Rows Removed by Filter: 29835
+        Buffers: shared hit=776
+Planning:
+  Buffers: shared hit=136
+Planning Time: 0.239 ms
+Execution Time: 39.986 ms
+=== W05 run 2 ===
+Delete on inventory_movements  (cost=0.00..1901.00 rows=0 width=0) (actual time=28.286..28.286 rows=0.00 loops=1)
+  Buffers: shared hit=60941
+  ->  Seq Scan on inventory_movements  (cost=0.00..1901.00 rows=60031 width=6) (actual time=0.006..4.176 rows=60165.00 loops=1)
+        Filter: (moved_at < '2026-01-01 00:00:00+05:30'::timestamp with time zone)
+        Rows Removed by Filter: 29835
+        Buffers: shared hit=776
+Planning:
+  Buffers: shared hit=136
+Planning Time: 0.245 ms
+Execution Time: 28.322 ms
+=== W05 run 3 ===
+Delete on inventory_movements  (cost=0.00..1901.00 rows=0 width=0) (actual time=20.600..20.601 rows=0.00 loops=1)
+  Buffers: shared hit=60941
+  ->  Seq Scan on inventory_movements  (cost=0.00..1901.00 rows=60031 width=6) (actual time=0.006..4.044 rows=60165.00 loops=1)
+        Filter: (moved_at < '2026-01-01 00:00:00+05:30'::timestamp with time zone)
+        Rows Removed by Filter: 29835
+        Buffers: shared hit=776
+Planning:
+  Buffers: shared hit=136
+Planning Time: 0.233 ms
+Execution Time: 20.635 ms

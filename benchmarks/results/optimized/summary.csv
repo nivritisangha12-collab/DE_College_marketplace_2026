@@ -1,0 +1,31 @@
+query_id,type,avg_ms,median_ms,min_ms,max_ms,scan_nodes
+R01,READ,0.086,0.085,0.073,0.101,Seq Scan on dark_stores
+R02,READ,0.411,0.389,0.373,0.470,Seq Scan on categories | Index Only Scan using idx_products_category on products | Index Only Scan using idx_store_inventory_product on store_inventory
+R03,READ,0.207,0.212,0.196,0.213,Bitmap Heap Scan on products | Bitmap Index Scan on idx_products_name_trgm | Index Only Scan using idx_store_inventory_product on store_inventory
+R04,READ,0.068,0.066,0.063,0.074,Index Only Scan using idx_store_inventory_product on store_inventory | Seq Scan on dark_stores
+R05,READ,0.057,0.053,0.052,0.065,Index Only Scan using idx_store_inventory_product on store_inventory
+R06,READ,0.020,0.018,0.018,0.023,Index Scan using idx_orders_customer_placed on orders
+R07,READ,0.019,0.017,0.015,0.025,Index Scan using idx_orders_open_store on orders
+R08,READ,1.066,1.034,1.015,1.148,Index Only Scan using idx_orders_june_sla on orders
+R09,READ,0.206,0.189,0.188,0.240,Seq Scan on products | Index Scan using idx_store_inventory_reorder on store_inventory
+R10,READ,0.686,0.678,0.674,0.706,Index Scan using idx_inv_movements_moved_at on inventory_movements | Seq Scan on products | Seq Scan on categories
+R11,READ,0.114,0.112,0.108,0.122,Bitmap Heap Scan on orders | Bitmap Index Scan on idx_orders_delivered_june
+R12,READ,1.078,0.984,0.958,1.291,Index Only Scan using idx_order_items_product_order on order_items | Index Only Scan using order_items_pkey on order_items
+R13,READ,34.889,34.993,34.344,35.330,Seq Scan on products | Seq Scan on order_items | Index Only Scan using idx_orders_placed_at_desc on orders
+R14,READ,16.275,16.360,16.060,16.406,Seq Scan on order_items | Index Scan using idx_orders_placed_range on orders
+R15,READ,0.096,0.091,0.089,0.109,Index Only Scan using idx_orders_placed_range on orders | Seq Scan on dark_stores
+R16,READ,21.418,21.625,20.838,21.791,Seq Scan on orders
+R17,READ,9.757,9.750,9.687,9.833,Index Scan using idx_orders_placed_range on orders | Seq Scan on dark_stores
+R18,READ,0.980,0.969,0.968,1.002,Bitmap Heap Scan on store_inventory | Bitmap Index Scan on store_inventory_pkey | Index Scan using idx_orders_placed_range on orders | Index Only Scan using order_items_pkey on order_items | Seq Scan on products
+R19,READ,16.688,16.646,16.567,16.852,Seq Scan on order_items | Index Only Scan using idx_orders_placed_at_desc on orders | Seq Scan on categories | Index Only Scan using idx_products_category on products
+R20,READ,1.428,1.393,1.344,1.547,Index Only Scan using idx_orders_placed_range on orders
+R21,READ,0.088,0.087,0.082,0.096,Index Scan using idx_orders_placed_range on orders | Bitmap Heap Scan on riders | Bitmap Index Scan on idx_riders_store_active
+R22,READ,5.247,5.208,5.163,5.371,Index Only Scan using idx_orders_placed_at_desc on orders | Index Scan using orders_pkey on orders
+R23,READ,0.025,0.024,0.023,0.027,Index Scan using products_sku_key on products
+R24,READ,0.046,0.045,0.040,0.053,Index Only Scan using idx_inv_movements_store_restock on inventory_movements
+R25,READ,9.315,9.160,8.873,9.913,Index Scan using idx_orders_placed_range on orders | Index Only Scan using idx_customers_city on customers
+W01,WRITE,0.709,0.698,0.678,0.750,(no scan)
+W02,WRITE,0.240,0.207,0.200,0.312,Index Only Scan using idx_orders_open_order_id on orders | Index Scan using order_items_pkey on order_items | Index Scan using store_inventory_pkey on store_inventory
+W03,WRITE,0.299,0.277,0.277,0.343,Index Only Scan using idx_orders_packing_min on orders | Index Scan using orders_pkey on orders | Index Only Scan using idx_riders_store_active on riders
+W04,WRITE,1.167,0.891,0.868,1.742,Index Scan using idx_store_inventory_reorder on store_inventory
+W05,WRITE,29.648,28.322,20.635,39.986,Seq Scan on inventory_movements

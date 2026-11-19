@@ -1,0 +1,72 @@
+=== R11 run 1 ===
+Sort  (cost=243.50..243.66 rows=65 width=44) (actual time=0.099..0.099 rows=15.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (delivered_at - picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=61
+  ->  GroupAggregate  (cost=239.41..241.54 rows=65 width=44) (actual time=0.075..0.089 rows=15.00 loops=1)
+        Group Key: rider_id
+        Buffers: shared hit=58
+        ->  Sort  (cost=239.41..239.57 rows=66 width=20) (actual time=0.066..0.068 rows=69.00 loops=1)
+              Sort Key: rider_id
+              Sort Method: quicksort  Memory: 27kB
+              Buffers: shared hit=58
+              ->  Bitmap Heap Scan on orders  (cost=5.26..237.41 rows=66 width=20) (actual time=0.015..0.058 rows=69.00 loops=1)
+                    Recheck Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Heap Blocks: exact=51
+                    Buffers: shared hit=55
+                    ->  Bitmap Index Scan on idx_orders_delivered_june  (cost=0.00..5.25 rows=66 width=0) (actual time=0.009..0.009 rows=69.00 loops=1)
+                          Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Index Searches: 1
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=352
+Planning Time: 0.547 ms
+Execution Time: 0.122 ms
+=== R11 run 2 ===
+Sort  (cost=243.50..243.66 rows=65 width=44) (actual time=0.090..0.090 rows=15.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (delivered_at - picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=61
+  ->  GroupAggregate  (cost=239.41..241.54 rows=65 width=44) (actual time=0.068..0.080 rows=15.00 loops=1)
+        Group Key: rider_id
+        Buffers: shared hit=58
+        ->  Sort  (cost=239.41..239.57 rows=66 width=20) (actual time=0.060..0.061 rows=69.00 loops=1)
+              Sort Key: rider_id
+              Sort Method: quicksort  Memory: 27kB
+              Buffers: shared hit=58
+              ->  Bitmap Heap Scan on orders  (cost=5.26..237.41 rows=66 width=20) (actual time=0.013..0.052 rows=69.00 loops=1)
+                    Recheck Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Heap Blocks: exact=51
+                    Buffers: shared hit=55
+                    ->  Bitmap Index Scan on idx_orders_delivered_june  (cost=0.00..5.25 rows=66 width=0) (actual time=0.008..0.008 rows=69.00 loops=1)
+                          Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Index Searches: 1
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=352
+Planning Time: 0.496 ms
+Execution Time: 0.112 ms
+=== R11 run 3 ===
+Sort  (cost=243.50..243.66 rows=65 width=44) (actual time=0.087..0.087 rows=15.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (delivered_at - picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=61
+  ->  GroupAggregate  (cost=239.41..241.54 rows=65 width=44) (actual time=0.065..0.078 rows=15.00 loops=1)
+        Group Key: rider_id
+        Buffers: shared hit=58
+        ->  Sort  (cost=239.41..239.57 rows=66 width=20) (actual time=0.058..0.059 rows=69.00 loops=1)
+              Sort Key: rider_id
+              Sort Method: quicksort  Memory: 27kB
+              Buffers: shared hit=58
+              ->  Bitmap Heap Scan on orders  (cost=5.26..237.41 rows=66 width=20) (actual time=0.012..0.050 rows=69.00 loops=1)
+                    Recheck Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Heap Blocks: exact=51
+                    Buffers: shared hit=55
+                    ->  Bitmap Index Scan on idx_orders_delivered_june  (cost=0.00..5.25 rows=66 width=0) (actual time=0.007..0.007 rows=69.00 loops=1)
+                          Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                          Index Searches: 1
+                          Buffers: shared hit=4
+Planning:
+  Buffers: shared hit=352
+Planning Time: 0.486 ms
+Execution Time: 0.108 ms
