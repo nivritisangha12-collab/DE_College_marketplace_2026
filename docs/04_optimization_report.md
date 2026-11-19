@@ -1,5 +1,7 @@
 # CP3 – Query Optimization & Indexing Report
 
+---
+
 ## 2. Benchmark Environment & Methodology
 
 The benchmarking methodology strictly mirrors the baseline protocol established in Phase 3 to ensure rigorous scientific comparability.
@@ -11,6 +13,8 @@ The benchmarking methodology strictly mirrors the baseline protocol established 
 - **Harness:** `./benchmarks/run_benchmark.sh blinkit_db optimized 3 sql/06_optimized_queries.sql`
 - **Measurement Standard:** `EXPLAIN (ANALYZE, BUFFERS)` executed for 3 consecutive iterations per query; average, median, minimum, and maximum execution times recorded.
 - **Write Safety:** Write operations (`W01`–`W05`) wrapped in `BEGIN ... ROLLBACK` transactions to prevent state mutations across runs.
+
+---
 
 ## 4. Indexing Strategy & Storage Analysis
 
@@ -30,6 +34,8 @@ The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avo
 - `idx_orders_placed_at_desc`: Pre-sorted composite index for deferred pagination joins.
 - `idx_orders_june_sla`: Partial covering index for SLA delivery performance monitoring.
 - `idx_inv_movements_store_restock`: Partial covering index for supply chain replenishment audits.
+
+---
 
 ## 5. Query Refactoring & Execution Plan Analysis
 
@@ -213,6 +219,8 @@ The secondary indexing strategy defined in `sql/05_indexes.sql` deliberately avo
 
 ---
 
+
+---
 
 ## 6. Verification and Correctness
 
