@@ -28,3 +28,24 @@ The large scale benchmark dataset represents a **20× increase in transactional 
 | `categories` | 12 | 12 | 1.00× | 16 kB | 32 kB |
 | `cities` | 10 | 10 | 1.00× | 16 kB | 32 kB |
 | **Total Database** | **1,084,442** | **21,863,503** | **20.16×** | **140 MB** | **3,636 MB (~3.64 GB)** |
+
+---
+
+## 3. Declarative Partitioning Strategy & Pruning Architecture
+
+To prevent severe table scan and B-tree degradation under 21.8 million records, declarative table partitioning was applied across the three high-volume tables:
+
+1. **`inventory_movements`: `PARTITION BY RANGE (moved_at)`**
+   - **Rationale:** High-throughput event ledger with strict retention policies.
+   - **Pruning Target:** Queries R10 and R24 filter on June 2026, while batch job W05 deletes movements older than 1 January 2026.
+   - **Partitions:** 12 monthly partitions for 2025, 7 monthly partitions for 2026, plus a `DEFAULT` partition.
+   - **Pruning Impact:** Prunes 17 of 18 partitions for monthly queries; retention delete isolates only 2025 partitions.
+
+2. **`orders`: `PARTITION BY RANGE (placed_at)`**
+   - **Rationale:** Time-series fulfillment lifecycle. Over 10 workload queries (R08, R11, R13, R14, R15, R17, R18, R19, R20, R21, R25) filter on temporal bounds.
+   - **PostgreSQL Primary Key Rule:** Any UNIQUE or PRIMARY KEY constraint on a partitioned table MUST contain all partition key columns. Therefore, the primary key was structured as `(order_id, placed_at)`.
+   - **Partitions:** 12 monthly partitions for 2025, 7 monthly partitions for 2026, plus `orders_default`.
+
+3. **`order_items`: `PARTITION BY HASH (order_id)`**
+   - **Rationale:** Massive 13.7M-row table. Uniformly distributing rows across 16 hash partitions reduces B-tree height and ensures queries filtering by `order_id` (e.g. W02 packing stock deductions) prune to a single partition.
+   - **Primary Key Rule:** `PRIMARY KEY (order_id, product_id)` naturally satisfies the requirement since `order_id` is part of the composite primary key.
