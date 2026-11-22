@@ -1,0 +1,60 @@
+=== R20 run 1 ===
+WindowAgg  (cost=20490.53..25581.76 rows=133892 width=68) (actual time=24.121..33.726 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2531, temp read=333 written=334
+  ->  GroupAggregate  (cost=20490.49..23573.38 rows=133892 width=36) (actual time=23.758..33.709 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2531, temp read=333 written=334
+        ->  Sort  (cost=20490.49..20848.66 rows=143268 width=9) (actual time=23.410..27.631 rows=142484.00 loops=1)
+              Sort Key: ((orders.placed_at)::date)
+              Sort Method: external merge  Disk: 2664kB
+              Buffers: shared hit=2531, temp read=333 written=334
+              ->  Seq Scan on orders_2026_06 orders  (cost=0.00..5770.77 rows=143268 width=9) (actual time=0.007..16.067 rows=142484.00 loops=1)
+                    Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Rows Removed by Filter: 22350
+                    Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=735 read=2
+Planning Time: 1.096 ms
+Execution Time: 34.315 ms
+=== R20 run 2 ===
+WindowAgg  (cost=20490.53..25581.76 rows=133892 width=68) (actual time=23.872..33.315 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2531, temp read=333 written=334
+  ->  GroupAggregate  (cost=20490.49..23573.38 rows=133892 width=36) (actual time=23.530..33.298 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2531, temp read=333 written=334
+        ->  Sort  (cost=20490.49..20848.66 rows=143268 width=9) (actual time=23.187..27.321 rows=142484.00 loops=1)
+              Sort Key: ((orders.placed_at)::date)
+              Sort Method: external merge  Disk: 2664kB
+              Buffers: shared hit=2531, temp read=333 written=334
+              ->  Seq Scan on orders_2026_06 orders  (cost=0.00..5770.77 rows=143268 width=9) (actual time=0.006..15.987 rows=142484.00 loops=1)
+                    Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Rows Removed by Filter: 22350
+                    Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=737
+Planning Time: 0.819 ms
+Execution Time: 33.840 ms
+=== R20 run 3 ===
+WindowAgg  (cost=20490.53..25581.76 rows=133892 width=68) (actual time=24.355..33.824 rows=30.00 loops=1)
+  Window: w1 AS (ORDER BY ((orders.placed_at)::date))
+  Storage: Memory  Maximum Storage: 17kB
+  Buffers: shared hit=2531, temp read=333 written=334
+  ->  GroupAggregate  (cost=20490.49..23573.38 rows=133892 width=36) (actual time=24.013..33.806 rows=30.00 loops=1)
+        Group Key: ((orders.placed_at)::date)
+        Buffers: shared hit=2531, temp read=333 written=334
+        ->  Sort  (cost=20490.49..20848.66 rows=143268 width=9) (actual time=23.668..27.765 rows=142484.00 loops=1)
+              Sort Key: ((orders.placed_at)::date)
+              Sort Method: external merge  Disk: 2664kB
+              Buffers: shared hit=2531, temp read=333 written=334
+              ->  Seq Scan on orders_2026_06 orders  (cost=0.00..5770.77 rows=143268 width=9) (actual time=0.007..16.436 rows=142484.00 loops=1)
+                    Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                    Rows Removed by Filter: 22350
+                    Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=737
+Planning Time: 0.806 ms
+Execution Time: 34.416 ms

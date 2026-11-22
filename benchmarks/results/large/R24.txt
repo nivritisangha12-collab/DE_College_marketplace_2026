@@ -1,0 +1,72 @@
+=== R24 run 1 ===
+Sort  (cost=5.17..5.20 rows=13 width=20) (actual time=0.578..0.579 rows=12.00 loops=1)
+  Sort Key: (sum(m.quantity)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=3 read=4
+  ->  HashAggregate  (cost=4.80..4.93 rows=13 width=20) (actual time=0.570..0.570 rows=12.00 loops=1)
+        Group Key: m.product_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared read=4
+        ->  Append  (cost=0.41..4.70 rows=13 width=8) (actual time=0.560..0.566 rows=16.00 loops=1)
+              Buffers: shared read=4
+              ->  Index Only Scan using inv_movements_2026_06_store_id_moved_at_product_id_quantity_idx on inv_movements_2026_06 m_1  (cost=0.41..4.64 rows=11 width=8) (actual time=0.559..0.560 rows=16.00 loops=1)
+                    Index Cond: ((store_id = 43) AND (moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared read=4
+              ->  Seq Scan on inv_movements_2026_07 m_2  (cost=0.00..0.00 rows=1 width=8) (actual time=0.003..0.003 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+              ->  Seq Scan on inv_movements_default m_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.001..0.001 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+Planning:
+  Buffers: shared hit=638 read=30
+Planning Time: 3.449 ms
+Execution Time: 0.603 ms
+=== R24 run 2 ===
+Sort  (cost=5.17..5.20 rows=13 width=20) (actual time=0.040..0.040 rows=12.00 loops=1)
+  Sort Key: (sum(m.quantity)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  HashAggregate  (cost=4.80..4.93 rows=13 width=20) (actual time=0.032..0.033 rows=12.00 loops=1)
+        Group Key: m.product_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=4
+        ->  Append  (cost=0.41..4.70 rows=13 width=8) (actual time=0.024..0.029 rows=16.00 loops=1)
+              Buffers: shared hit=4
+              ->  Index Only Scan using inv_movements_2026_06_store_id_moved_at_product_id_quantity_idx on inv_movements_2026_06 m_1  (cost=0.41..4.64 rows=11 width=8) (actual time=0.023..0.024 rows=16.00 loops=1)
+                    Index Cond: ((store_id = 43) AND (moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Seq Scan on inv_movements_2026_07 m_2  (cost=0.00..0.00 rows=1 width=8) (actual time=0.002..0.002 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+              ->  Seq Scan on inv_movements_default m_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+Planning:
+  Buffers: shared hit=668
+Planning Time: 0.753 ms
+Execution Time: 0.062 ms
+=== R24 run 3 ===
+Sort  (cost=5.17..5.20 rows=13 width=20) (actual time=0.044..0.044 rows=12.00 loops=1)
+  Sort Key: (sum(m.quantity)) DESC
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=7
+  ->  HashAggregate  (cost=4.80..4.93 rows=13 width=20) (actual time=0.035..0.036 rows=12.00 loops=1)
+        Group Key: m.product_id
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=4
+        ->  Append  (cost=0.41..4.70 rows=13 width=8) (actual time=0.025..0.030 rows=16.00 loops=1)
+              Buffers: shared hit=4
+              ->  Index Only Scan using inv_movements_2026_06_store_id_moved_at_product_id_quantity_idx on inv_movements_2026_06 m_1  (cost=0.41..4.64 rows=11 width=8) (actual time=0.024..0.025 rows=16.00 loops=1)
+                    Index Cond: ((store_id = 43) AND (moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone))
+                    Heap Fetches: 0
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Seq Scan on inv_movements_2026_07 m_2  (cost=0.00..0.00 rows=1 width=8) (actual time=0.003..0.003 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+              ->  Seq Scan on inv_movements_default m_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.001..0.001 rows=0.00 loops=1)
+                    Filter: ((moved_at >= '2026-06-24 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43) AND ((movement_type)::text = 'RESTOCK'::text))
+Planning:
+  Buffers: shared hit=668
+Planning Time: 0.772 ms
+Execution Time: 0.069 ms

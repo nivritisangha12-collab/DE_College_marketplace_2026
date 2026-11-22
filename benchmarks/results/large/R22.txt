@@ -1,0 +1,528 @@
+=== R22 run 1 ===
+Sort  (cost=9537.98..9538.04 rows=25 width=39) (actual time=23.582..23.586 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=1330 read=532 dirtied=2
+  ->  Nested Loop  (cost=5715.89..9537.40 rows=25 width=39) (actual time=19.343..23.578 rows=25.00 loops=1)
+        Buffers: shared hit=1330 read=532 dirtied=2
+        ->  Limit  (cost=5715.47..5716.90 rows=25 width=16) (actual time=12.912..12.917 rows=25.00 loops=1)
+              Buffers: shared hit=20 read=442 dirtied=2
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=16) (actual time=2.980..11.196 rows=100025.00 loops=1)
+                    Sort Key: orders.placed_at DESC
+                    Buffers: shared hit=20 read=442 dirtied=2
+                    ->  Index Only Scan using orders_2025_01_placed_at_order_id_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.293..0.293 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_02_placed_at_order_id_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.232..0.232 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_03_placed_at_order_id_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.228..0.228 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_04_placed_at_order_id_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.224..0.224 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_05_placed_at_order_id_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.227..0.227 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_06_placed_at_order_id_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.224..0.224 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_07_placed_at_order_id_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.225..0.225 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_08_placed_at_order_id_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.220..0.221 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_09_placed_at_order_id_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.218..0.218 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_10_placed_at_order_id_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.236..0.236 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_11_placed_at_order_id_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.211..0.211 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2025_12_placed_at_order_id_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.214..0.214 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=4
+                    ->  Index Only Scan using orders_2026_01_placed_at_order_id_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.038..0.038 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=2 read=2
+                    ->  Index Only Scan using orders_2026_02_placed_at_order_id_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.036..0.036 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=2 read=2
+                    ->  Index Only Scan using orders_2026_03_placed_at_order_id_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.036..0.036 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=2 read=2
+                    ->  Index Only Scan using orders_2026_04_placed_at_order_id_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.035..0.035 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=2 read=2
+                    ->  Index Only Scan using orders_2026_05_placed_at_order_id_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.036..0.036 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=2 read=2
+                    ->  Index Only Scan using orders_2026_06_placed_at_order_id_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.026..4.738 rows=100025.00 loops=1)
+                          Heap Fetches: 104
+                          Index Searches: 1
+                          Buffers: shared hit=8 read=383 dirtied=1
+                    ->  Index Only Scan using orders_2026_07_placed_at_order_id_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=16) (actual time=0.018..0.018 rows=0.00 loops=1)
+                          Heap Fetches: 3
+                          Index Searches: 1
+                          Buffers: shared hit=1 read=1 dirtied=1
+                    ->  Index Only Scan using orders_default_placed_at_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=16) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+        ->  Append  (cost=0.42..152.61 rows=20 width=39) (actual time=0.425..0.426 rows=1.00 loops=25)
+              Buffers: shared hit=1310 read=90
+              ->  Index Scan using orders_2025_01_order_id_idx1 on orders_2025_01 o_1  (cost=0.42..8.44 rows=1 width=39) (actual time=0.025..0.025 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_02_order_id_idx1 on orders_2025_02 o_2  (cost=0.42..8.44 rows=1 width=39) (actual time=0.025..0.025 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_03_order_id_idx1 on orders_2025_03 o_3  (cost=0.42..8.44 rows=1 width=39) (actual time=0.025..0.025 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_04_order_id_idx1 on orders_2025_04 o_4  (cost=0.42..8.44 rows=1 width=39) (actual time=0.023..0.023 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_05_order_id_idx1 on orders_2025_05 o_5  (cost=0.42..8.44 rows=1 width=39) (actual time=0.024..0.024 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_06_order_id_idx1 on orders_2025_06 o_6  (cost=0.42..8.44 rows=1 width=39) (actual time=0.019..0.019 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_07_order_id_idx1 on orders_2025_07 o_7  (cost=0.42..8.44 rows=1 width=39) (actual time=0.026..0.026 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_08_order_id_idx1 on orders_2025_08 o_8  (cost=0.42..8.44 rows=1 width=39) (actual time=0.023..0.023 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_09_order_id_idx1 on orders_2025_09 o_9  (cost=0.42..8.44 rows=1 width=39) (actual time=0.022..0.022 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_10_order_id_idx1 on orders_2025_10 o_10  (cost=0.42..8.44 rows=1 width=39) (actual time=0.023..0.023 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_11_order_id_idx1 on orders_2025_11 o_11  (cost=0.42..8.44 rows=1 width=39) (actual time=0.026..0.026 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2025_12_order_id_idx1 on orders_2025_12 o_12  (cost=0.42..8.44 rows=1 width=39) (actual time=0.028..0.028 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_01_order_id_idx1 on orders_2026_01 o_13  (cost=0.42..8.44 rows=1 width=39) (actual time=0.026..0.026 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_02_order_id_idx1 on orders_2026_02 o_14  (cost=0.42..8.44 rows=1 width=39) (actual time=0.026..0.026 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_03_order_id_idx1 on orders_2026_03 o_15  (cost=0.42..8.44 rows=1 width=39) (actual time=0.017..0.017 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_04_order_id_idx1 on orders_2026_04 o_16  (cost=0.42..8.44 rows=1 width=39) (actual time=0.023..0.023 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_05_order_id_idx1 on orders_2026_05 o_17  (cost=0.42..8.44 rows=1 width=39) (actual time=0.025..0.025 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=70 read=5
+              ->  Index Scan using orders_2026_06_order_id_idx1 on orders_2026_06 o_18  (cost=0.42..8.44 rows=1 width=39) (actual time=0.018..0.018 rows=1.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=96 read=4
+              ->  Index Scan using orders_2026_07_order_id_idx1 on orders_2026_07 o_19  (cost=0.14..0.64 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=24 read=1
+              ->  Seq Scan on orders_default o_20  (cost=0.00..0.00 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Filter: (orders.order_id = order_id)
+Planning:
+  Buffers: shared hit=5409 read=239
+Planning Time: 9.316 ms
+Execution Time: 23.680 ms
+=== R22 run 2 ===
+Sort  (cost=9537.98..9538.04 rows=25 width=39) (actual time=9.552..9.554 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=1859
+  ->  Nested Loop  (cost=5715.89..9537.40 rows=25 width=39) (actual time=9.312..9.547 rows=25.00 loops=1)
+        Buffers: shared hit=1859
+        ->  Limit  (cost=5715.47..5716.90 rows=25 width=16) (actual time=9.230..9.234 rows=25.00 loops=1)
+              Buffers: shared hit=459
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=16) (actual time=0.447..7.507 rows=100025.00 loops=1)
+                    Sort Key: orders.placed_at DESC
+                    Buffers: shared hit=459
+                    ->  Index Only Scan using orders_2025_01_placed_at_order_id_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.027..0.027 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_02_placed_at_order_id_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.025..0.025 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_03_placed_at_order_id_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_04_placed_at_order_id_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_05_placed_at_order_id_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_06_placed_at_order_id_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_07_placed_at_order_id_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_08_placed_at_order_id_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.022..0.022 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_09_placed_at_order_id_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_10_placed_at_order_id_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_11_placed_at_order_id_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.022..0.022 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_12_placed_at_order_id_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.037..0.037 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_01_placed_at_order_id_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.025..0.025 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_02_placed_at_order_id_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.022..0.022 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_03_placed_at_order_id_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.028..0.028 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_04_placed_at_order_id_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.022..0.022 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_05_placed_at_order_id_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_06_placed_at_order_id_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.025..3.561 rows=100025.00 loops=1)
+                          Heap Fetches: 101
+                          Index Searches: 1
+                          Buffers: shared hit=389
+                    ->  Index Only Scan using orders_2026_07_placed_at_order_id_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=16) (actual time=0.003..0.003 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+                    ->  Index Only Scan using orders_default_placed_at_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=16) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+        ->  Append  (cost=0.42..152.61 rows=20 width=39) (actual time=0.011..0.012 rows=1.00 loops=25)
+              Buffers: shared hit=1400
+              ->  Index Scan using orders_2025_01_order_id_idx1 on orders_2025_01 o_1  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_02_order_id_idx1 on orders_2025_02 o_2  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_03_order_id_idx1 on orders_2025_03 o_3  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_04_order_id_idx1 on orders_2025_04 o_4  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_05_order_id_idx1 on orders_2025_05 o_5  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_06_order_id_idx1 on orders_2025_06 o_6  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_07_order_id_idx1 on orders_2025_07 o_7  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_08_order_id_idx1 on orders_2025_08 o_8  (cost=0.42..8.44 rows=1 width=39) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_09_order_id_idx1 on orders_2025_09 o_9  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_10_order_id_idx1 on orders_2025_10 o_10  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_11_order_id_idx1 on orders_2025_11 o_11  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_12_order_id_idx1 on orders_2025_12 o_12  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_01_order_id_idx1 on orders_2026_01 o_13  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_02_order_id_idx1 on orders_2026_02 o_14  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_03_order_id_idx1 on orders_2026_03 o_15  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_04_order_id_idx1 on orders_2026_04 o_16  (cost=0.42..8.44 rows=1 width=39) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_05_order_id_idx1 on orders_2026_05 o_17  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_06_order_id_idx1 on orders_2026_06 o_18  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=1.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=100
+              ->  Index Scan using orders_2026_07_order_id_idx1 on orders_2026_07 o_19  (cost=0.14..0.64 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=25
+              ->  Seq Scan on orders_default o_20  (cost=0.00..0.00 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Filter: (orders.order_id = order_id)
+Planning:
+  Buffers: shared hit=5648
+Planning Time: 7.114 ms
+Execution Time: 9.642 ms
+=== R22 run 3 ===
+Sort  (cost=9537.98..9538.04 rows=25 width=39) (actual time=9.600..9.602 rows=25.00 loops=1)
+  Sort Key: o.placed_at DESC
+  Sort Method: quicksort  Memory: 26kB
+  Buffers: shared hit=1859
+  ->  Nested Loop  (cost=5715.89..9537.40 rows=25 width=39) (actual time=9.358..9.595 rows=25.00 loops=1)
+        Buffers: shared hit=1859
+        ->  Limit  (cost=5715.47..5716.90 rows=25 width=16) (actual time=9.271..9.274 rows=25.00 loops=1)
+              Buffers: shared hit=459
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=16) (actual time=0.470..7.543 rows=100025.00 loops=1)
+                    Sort Key: orders.placed_at DESC
+                    Buffers: shared hit=459
+                    ->  Index Only Scan using orders_2025_01_placed_at_order_id_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.026..0.026 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_02_placed_at_order_id_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.025..0.025 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_03_placed_at_order_id_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_04_placed_at_order_id_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_05_placed_at_order_id_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.023..0.023 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_06_placed_at_order_id_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_07_placed_at_order_id_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.030..0.030 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_08_placed_at_order_id_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.025..0.025 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_09_placed_at_order_id_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.037..0.037 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_10_placed_at_order_id_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_11_placed_at_order_id_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2025_12_placed_at_order_id_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.031..0.031 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_01_placed_at_order_id_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.025..0.025 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_02_placed_at_order_id_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_03_placed_at_order_id_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=16) (actual time=0.028..0.028 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_04_placed_at_order_id_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=16) (actual time=0.022..0.022 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_05_placed_at_order_id_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=16) (actual time=0.024..0.024 rows=1.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=4
+                    ->  Index Only Scan using orders_2026_06_placed_at_order_id_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=16) (actual time=0.026..3.590 rows=100025.00 loops=1)
+                          Heap Fetches: 101
+                          Index Searches: 1
+                          Buffers: shared hit=389
+                    ->  Index Only Scan using orders_2026_07_placed_at_order_id_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=16) (actual time=0.003..0.003 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+                    ->  Index Only Scan using orders_default_placed_at_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=16) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+        ->  Append  (cost=0.42..152.61 rows=20 width=39) (actual time=0.012..0.013 rows=1.00 loops=25)
+              Buffers: shared hit=1400
+              ->  Index Scan using orders_2025_01_order_id_idx1 on orders_2025_01 o_1  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_02_order_id_idx1 on orders_2025_02 o_2  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_03_order_id_idx1 on orders_2025_03 o_3  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_04_order_id_idx1 on orders_2025_04 o_4  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_05_order_id_idx1 on orders_2025_05 o_5  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_06_order_id_idx1 on orders_2025_06 o_6  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_07_order_id_idx1 on orders_2025_07 o_7  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_08_order_id_idx1 on orders_2025_08 o_8  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_09_order_id_idx1 on orders_2025_09 o_9  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_10_order_id_idx1 on orders_2025_10 o_10  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_11_order_id_idx1 on orders_2025_11 o_11  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2025_12_order_id_idx1 on orders_2025_12 o_12  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_01_order_id_idx1 on orders_2026_01 o_13  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_02_order_id_idx1 on orders_2026_02 o_14  (cost=0.42..8.44 rows=1 width=39) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_03_order_id_idx1 on orders_2026_03 o_15  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_04_order_id_idx1 on orders_2026_04 o_16  (cost=0.42..8.44 rows=1 width=39) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_05_order_id_idx1 on orders_2026_05 o_17  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=75
+              ->  Index Scan using orders_2026_06_order_id_idx1 on orders_2026_06 o_18  (cost=0.42..8.44 rows=1 width=39) (actual time=0.001..0.001 rows=1.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=100
+              ->  Index Scan using orders_2026_07_order_id_idx1 on orders_2026_07 o_19  (cost=0.14..0.64 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Index Cond: (order_id = orders.order_id)
+                    Index Searches: 25
+                    Buffers: shared hit=25
+              ->  Seq Scan on orders_default o_20  (cost=0.00..0.00 rows=1 width=118) (actual time=0.000..0.000 rows=0.00 loops=25)
+                    Filter: (orders.order_id = order_id)
+Planning:
+  Buffers: shared hit=5648
+Planning Time: 7.105 ms
+Execution Time: 9.698 ms

@@ -1,0 +1,78 @@
+=== R08 run 1 ===
+Sort  (cost=7338.19..7344.07 rows=2354 width=44) (actual time=19.672..19.723 rows=2034.00 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE ((orders.delivered_at - orders.placed_at) > ((orders.promised_minutes)::double precision * '00:01:00'::interval))))::numeric) / (count(*))::numeric), 1)) DESC
+  Sort Method: quicksort  Memory: 128kB
+  Buffers: shared hit=2531 dirtied=1
+  ->  Finalize HashAggregate  (cost=7153.39..7206.35 rows=2354 width=44) (actual time=19.134..19.457 rows=2034.00 loops=1)
+        Group Key: orders.store_id
+        Batches: 1  Memory Usage: 217kB
+        Buffers: shared hit=2528 dirtied=1
+        ->  Gather  (cost=6699.63..7123.37 rows=4002 width=20) (actual time=18.618..18.840 rows=4050.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2528 dirtied=1
+              ->  Partial HashAggregate  (cost=5699.63..5723.17 rows=2354 width=20) (actual time=16.601..16.691 rows=2025.00 loops=2)
+                    Group Key: orders.store_id
+                    Batches: 1  Memory Usage: 217kB
+                    Buffers: shared hit=2528 dirtied=1
+                    Worker 0:  Batches: 1  Memory Usage: 217kB
+                    ->  Parallel Seq Scan on orders_2026_06 orders  (cost=0.00..4224.82 rows=84275 width=24) (actual time=0.004..8.391 rows=71242.00 loops=2)
+                          Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                          Rows Removed by Filter: 11175
+                          Buffers: shared hit=2528 dirtied=1
+Planning:
+  Buffers: shared hit=723 read=4
+Planning Time: 1.327 ms
+Execution Time: 19.809 ms
+=== R08 run 2 ===
+Sort  (cost=7338.19..7344.07 rows=2354 width=44) (actual time=22.031..22.422 rows=2034.00 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE ((orders.delivered_at - orders.placed_at) > ((orders.promised_minutes)::double precision * '00:01:00'::interval))))::numeric) / (count(*))::numeric), 1)) DESC
+  Sort Method: quicksort  Memory: 128kB
+  Buffers: shared hit=2531
+  ->  Finalize HashAggregate  (cost=7153.39..7206.35 rows=2354 width=44) (actual time=21.114..21.964 rows=2034.00 loops=1)
+        Group Key: orders.store_id
+        Batches: 1  Memory Usage: 217kB
+        Buffers: shared hit=2528
+        ->  Gather  (cost=6699.63..7123.37 rows=4002 width=20) (actual time=20.342..20.993 rows=4050.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2528
+              ->  Partial HashAggregate  (cost=5699.63..5723.17 rows=2354 width=20) (actual time=16.919..17.059 rows=2025.00 loops=2)
+                    Group Key: orders.store_id
+                    Batches: 1  Memory Usage: 217kB
+                    Buffers: shared hit=2528
+                    Worker 0:  Batches: 1  Memory Usage: 217kB
+                    ->  Parallel Seq Scan on orders_2026_06 orders  (cost=0.00..4224.82 rows=84275 width=24) (actual time=0.005..7.989 rows=71242.00 loops=2)
+                          Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                          Rows Removed by Filter: 11175
+                          Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=727
+Planning Time: 1.177 ms
+Execution Time: 22.543 ms
+=== R08 run 3 ===
+Sort  (cost=7338.19..7344.07 rows=2354 width=44) (actual time=17.363..17.415 rows=2034.00 loops=1)
+  Sort Key: (round(((100.0 * (count(*) FILTER (WHERE ((orders.delivered_at - orders.placed_at) > ((orders.promised_minutes)::double precision * '00:01:00'::interval))))::numeric) / (count(*))::numeric), 1)) DESC
+  Sort Method: quicksort  Memory: 128kB
+  Buffers: shared hit=2531
+  ->  Finalize HashAggregate  (cost=7153.39..7206.35 rows=2354 width=44) (actual time=16.838..17.150 rows=2034.00 loops=1)
+        Group Key: orders.store_id
+        Batches: 1  Memory Usage: 217kB
+        Buffers: shared hit=2528
+        ->  Gather  (cost=6699.63..7123.37 rows=4002 width=20) (actual time=16.329..16.548 rows=4050.00 loops=1)
+              Workers Planned: 1
+              Workers Launched: 1
+              Buffers: shared hit=2528
+              ->  Partial HashAggregate  (cost=5699.63..5723.17 rows=2354 width=20) (actual time=15.154..15.242 rows=2025.00 loops=2)
+                    Group Key: orders.store_id
+                    Batches: 1  Memory Usage: 217kB
+                    Buffers: shared hit=2528
+                    Worker 0:  Batches: 1  Memory Usage: 217kB
+                    ->  Parallel Seq Scan on orders_2026_06 orders  (cost=0.00..4224.82 rows=84275 width=24) (actual time=0.004..7.127 rows=71242.00 loops=2)
+                          Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                          Rows Removed by Filter: 11175
+                          Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=727
+Planning Time: 0.800 ms
+Execution Time: 17.497 ms

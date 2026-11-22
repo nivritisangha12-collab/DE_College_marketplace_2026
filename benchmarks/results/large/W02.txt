@@ -1,0 +1,534 @@
+=== W02 run 1 ===
+Update on store_inventory si  (cost=6.74..916.06 rows=0 width=0) (actual time=5.005..5.006 rows=0.00 loops=1)
+  Buffers: shared hit=69 read=68 dirtied=15
+  InitPlan 2
+    ->  Result  (cost=5.87..5.88 rows=1 width=8) (actual time=3.235..3.235 rows=1.00 loops=1)
+          Buffers: shared hit=5 read=36
+          InitPlan 1
+            ->  Limit  (cost=5.79..5.87 rows=1 width=8) (actual time=3.234..3.234 rows=1.00 loops=1)
+                  Buffers: shared hit=5 read=36
+                  ->  Merge Append  (cost=5.79..219.46 rows=2849 width=8) (actual time=3.233..3.234 rows=1.00 loops=1)
+                        Sort Key: orders.order_id DESC
+                        Buffers: shared hit=5 read=36
+                        ->  Index Only Scan using orders_2025_01_store_id_order_id_idx on orders_2025_01 orders_1  (cost=0.29..7.14 rows=163 width=8) (actual time=0.094..0.094 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_02_store_id_order_id_idx on orders_2025_02 orders_2  (cost=0.28..6.80 rows=144 width=8) (actual time=0.244..0.244 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_03_store_id_order_id_idx on orders_2025_03 orders_3  (cost=0.29..7.12 rows=162 width=8) (actual time=0.114..0.114 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_04_store_id_order_id_idx on orders_2025_04 orders_4  (cost=0.28..7.08 rows=160 width=8) (actual time=0.163..0.163 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_05_store_id_order_id_idx on orders_2025_05 orders_5  (cost=0.28..7.22 rows=168 width=8) (actual time=0.100..0.100 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_06_store_id_order_id_idx on orders_2025_06 orders_6  (cost=0.28..7.03 rows=157 width=8) (actual time=0.234..0.234 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_07_store_id_order_id_idx on orders_2025_07 orders_7  (cost=0.28..6.98 rows=154 width=8) (actual time=0.275..0.275 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_08_store_id_order_id_idx on orders_2025_08 orders_8  (cost=0.28..6.98 rows=154 width=8) (actual time=0.096..0.096 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_09_store_id_order_id_idx on orders_2025_09 orders_9  (cost=0.28..7.10 rows=161 width=8) (actual time=0.039..0.039 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_10_store_id_order_id_idx on orders_2025_10 orders_10  (cost=0.29..7.37 rows=176 width=8) (actual time=0.445..0.445 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_11_store_id_order_id_idx on orders_2025_11 orders_11  (cost=0.28..6.92 rows=151 width=8) (actual time=0.099..0.099 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2025_12_store_id_order_id_idx on orders_2025_12 orders_12  (cost=0.29..7.07 rows=159 width=8) (actual time=0.226..0.226 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_01_store_id_order_id_idx on orders_2026_01 orders_13  (cost=0.29..7.17 rows=165 width=8) (actual time=0.183..0.183 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_02_store_id_order_id_idx on orders_2026_02 orders_14  (cost=0.28..6.85 rows=147 width=8) (actual time=0.159..0.159 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_03_store_id_order_id_idx on orders_2026_03 orders_15  (cost=0.28..6.89 rows=149 width=8) (actual time=0.177..0.177 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_04_store_id_order_id_idx on orders_2026_04 orders_16  (cost=0.28..7.22 rows=168 width=8) (actual time=0.120..0.120 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_05_store_id_order_id_idx on orders_2026_05 orders_17  (cost=0.28..7.05 rows=158 width=8) (actual time=0.093..0.093 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared read=2
+                        ->  Index Only Scan using orders_2026_06_store_id_order_id_idx on orders_2026_06 orders_18  (cost=0.28..6.92 rows=151 width=8) (actual time=0.359..0.359 rows=1.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=1 read=2
+                        ->  Index Only Scan using orders_2026_07_store_id_order_id_idx on orders_2026_07 orders_19  (cost=0.14..8.15 rows=1 width=8) (actual time=0.009..0.009 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 3
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_default_store_id_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=8) (actual time=0.002..0.002 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+  ->  Nested Loop  (cost=0.86..910.19 rows=56 width=28) (actual time=3.481..4.293 rows=5.00 loops=1)
+        Buffers: shared hit=12 read=53
+        ->  Append  (cost=0.42..248.60 rows=80 width=18) (actual time=3.250..3.252 rows=5.00 loops=1)
+              Buffers: shared hit=5 read=40
+              ->  Index Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..15.51 rows=5 width=18) (actual time=0.013..0.014 rows=5.00 loops=1)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 1
+                    Buffers: shared read=4
+              ->  Index Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+        ->  Memoize  (cost=0.44..8.46 rows=1 width=14) (actual time=0.208..0.208 rows=1.00 loops=5)
+              Cache Key: oi.product_id
+              Cache Mode: logical
+              Hits: 0  Misses: 5  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+              Buffers: shared hit=7 read=13
+              ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.45 rows=1 width=14) (actual time=0.207..0.207 rows=1.00 loops=5)
+                    Index Cond: ((product_id = oi.product_id) AND (store_id = 43))
+                    Index Searches: 5
+                    Buffers: shared hit=7 read=13
+Planning:
+  Buffers: shared hit=6801 read=199
+Planning Time: 11.551 ms
+Execution Time: 5.847 ms
+=== W02 run 2 ===
+Update on store_inventory si  (cost=6.74..916.06 rows=0 width=0) (actual time=0.301..0.303 rows=0.00 loops=1)
+  Buffers: shared hit=140 read=1 dirtied=1
+  InitPlan 2
+    ->  Result  (cost=5.87..5.88 rows=1 width=8) (actual time=0.146..0.147 rows=1.00 loops=1)
+          Buffers: shared hit=40
+          InitPlan 1
+            ->  Limit  (cost=5.79..5.87 rows=1 width=8) (actual time=0.145..0.146 rows=1.00 loops=1)
+                  Buffers: shared hit=40
+                  ->  Merge Append  (cost=5.79..219.46 rows=2849 width=8) (actual time=0.144..0.145 rows=1.00 loops=1)
+                        Sort Key: orders.order_id DESC
+                        Buffers: shared hit=40
+                        ->  Index Only Scan using orders_2025_01_store_id_order_id_idx on orders_2025_01 orders_1  (cost=0.29..7.14 rows=163 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_02_store_id_order_id_idx on orders_2025_02 orders_2  (cost=0.28..6.80 rows=144 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_03_store_id_order_id_idx on orders_2025_03 orders_3  (cost=0.29..7.12 rows=162 width=8) (actual time=0.007..0.007 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_04_store_id_order_id_idx on orders_2025_04 orders_4  (cost=0.28..7.08 rows=160 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_05_store_id_order_id_idx on orders_2025_05 orders_5  (cost=0.28..7.22 rows=168 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_06_store_id_order_id_idx on orders_2025_06 orders_6  (cost=0.28..7.03 rows=157 width=8) (actual time=0.021..0.021 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_07_store_id_order_id_idx on orders_2025_07 orders_7  (cost=0.28..6.98 rows=154 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_08_store_id_order_id_idx on orders_2025_08 orders_8  (cost=0.28..6.98 rows=154 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_09_store_id_order_id_idx on orders_2025_09 orders_9  (cost=0.28..7.10 rows=161 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_10_store_id_order_id_idx on orders_2025_10 orders_10  (cost=0.29..7.37 rows=176 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_11_store_id_order_id_idx on orders_2025_11 orders_11  (cost=0.28..6.92 rows=151 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_12_store_id_order_id_idx on orders_2025_12 orders_12  (cost=0.29..7.07 rows=159 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_01_store_id_order_id_idx on orders_2026_01 orders_13  (cost=0.29..7.17 rows=165 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_02_store_id_order_id_idx on orders_2026_02 orders_14  (cost=0.28..6.85 rows=147 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_03_store_id_order_id_idx on orders_2026_03 orders_15  (cost=0.28..6.89 rows=149 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_04_store_id_order_id_idx on orders_2026_04 orders_16  (cost=0.28..7.22 rows=168 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_05_store_id_order_id_idx on orders_2026_05 orders_17  (cost=0.28..7.05 rows=158 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_06_store_id_order_id_idx on orders_2026_06 orders_18  (cost=0.28..6.92 rows=151 width=8) (actual time=0.026..0.026 rows=1.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=3
+                        ->  Index Only Scan using orders_2026_07_store_id_order_id_idx on orders_2026_07 orders_19  (cost=0.14..8.15 rows=1 width=8) (actual time=0.007..0.007 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=1
+                        ->  Index Only Scan using orders_default_store_id_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=8) (actual time=0.003..0.003 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+  ->  Nested Loop  (cost=0.86..910.19 rows=56 width=28) (actual time=0.168..0.190 rows=5.00 loops=1)
+        Buffers: shared hit=64
+        ->  Append  (cost=0.42..248.60 rows=80 width=18) (actual time=0.155..0.157 rows=5.00 loops=1)
+              Buffers: shared hit=44
+              ->  Index Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..15.51 rows=5 width=18) (actual time=0.007..0.008 rows=5.00 loops=1)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+        ->  Memoize  (cost=0.44..8.46 rows=1 width=14) (actual time=0.006..0.006 rows=1.00 loops=5)
+              Cache Key: oi.product_id
+              Cache Mode: logical
+              Hits: 0  Misses: 5  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+              Buffers: shared hit=20
+              ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.45 rows=1 width=14) (actual time=0.006..0.006 rows=1.00 loops=5)
+                    Index Cond: ((product_id = oi.product_id) AND (store_id = 43))
+                    Index Searches: 5
+                    Buffers: shared hit=20
+Planning:
+  Buffers: shared hit=7000
+Planning Time: 11.037 ms
+Execution Time: 0.448 ms
+=== W02 run 3 ===
+Update on store_inventory si  (cost=6.74..916.06 rows=0 width=0) (actual time=0.465..0.467 rows=0.00 loops=1)
+  Buffers: shared hit=140 read=1 dirtied=1
+  InitPlan 2
+    ->  Result  (cost=5.87..5.88 rows=1 width=8) (actual time=0.120..0.122 rows=1.00 loops=1)
+          Buffers: shared hit=40
+          InitPlan 1
+            ->  Limit  (cost=5.79..5.87 rows=1 width=8) (actual time=0.119..0.121 rows=1.00 loops=1)
+                  Buffers: shared hit=40
+                  ->  Merge Append  (cost=5.79..219.46 rows=2849 width=8) (actual time=0.119..0.120 rows=1.00 loops=1)
+                        Sort Key: orders.order_id DESC
+                        Buffers: shared hit=40
+                        ->  Index Only Scan using orders_2025_01_store_id_order_id_idx on orders_2025_01 orders_1  (cost=0.29..7.14 rows=163 width=8) (actual time=0.004..0.004 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_02_store_id_order_id_idx on orders_2025_02 orders_2  (cost=0.28..6.80 rows=144 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_03_store_id_order_id_idx on orders_2025_03 orders_3  (cost=0.29..7.12 rows=162 width=8) (actual time=0.007..0.007 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_04_store_id_order_id_idx on orders_2025_04 orders_4  (cost=0.28..7.08 rows=160 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_05_store_id_order_id_idx on orders_2025_05 orders_5  (cost=0.28..7.22 rows=168 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_06_store_id_order_id_idx on orders_2025_06 orders_6  (cost=0.28..7.03 rows=157 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_07_store_id_order_id_idx on orders_2025_07 orders_7  (cost=0.28..6.98 rows=154 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_08_store_id_order_id_idx on orders_2025_08 orders_8  (cost=0.28..6.98 rows=154 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_09_store_id_order_id_idx on orders_2025_09 orders_9  (cost=0.28..7.10 rows=161 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_10_store_id_order_id_idx on orders_2025_10 orders_10  (cost=0.29..7.37 rows=176 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_11_store_id_order_id_idx on orders_2025_11 orders_11  (cost=0.28..6.92 rows=151 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2025_12_store_id_order_id_idx on orders_2025_12 orders_12  (cost=0.29..7.07 rows=159 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_01_store_id_order_id_idx on orders_2026_01 orders_13  (cost=0.29..7.17 rows=165 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_02_store_id_order_id_idx on orders_2026_02 orders_14  (cost=0.28..6.85 rows=147 width=8) (actual time=0.006..0.006 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_03_store_id_order_id_idx on orders_2026_03 orders_15  (cost=0.28..6.89 rows=149 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_04_store_id_order_id_idx on orders_2026_04 orders_16  (cost=0.28..7.22 rows=168 width=8) (actual time=0.005..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_05_store_id_order_id_idx on orders_2026_05 orders_17  (cost=0.28..7.05 rows=158 width=8) (actual time=0.004..0.005 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+                        ->  Index Only Scan using orders_2026_06_store_id_order_id_idx on orders_2026_06 orders_18  (cost=0.28..6.92 rows=151 width=8) (actual time=0.024..0.024 rows=1.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=3
+                        ->  Index Only Scan using orders_2026_07_store_id_order_id_idx on orders_2026_07 orders_19  (cost=0.14..8.15 rows=1 width=8) (actual time=0.004..0.004 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=1
+                        ->  Index Only Scan using orders_default_store_id_order_id_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=8) (actual time=0.003..0.003 rows=0.00 loops=1)
+                              Index Cond: (store_id = 43)
+                              Heap Fetches: 0
+                              Index Searches: 1
+                              Buffers: shared hit=2
+  ->  Nested Loop  (cost=0.86..910.19 rows=56 width=28) (actual time=0.144..0.167 rows=5.00 loops=1)
+        Buffers: shared hit=64
+        ->  Append  (cost=0.42..248.60 rows=80 width=18) (actual time=0.132..0.134 rows=5.00 loops=1)
+              Buffers: shared hit=44
+              ->  Index Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..15.51 rows=5 width=18) (actual time=0.007..0.008 rows=5.00 loops=1)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 1
+                    Buffers: shared hit=4
+              ->  Index Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+              ->  Index Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..15.51 rows=5 width=18) (never executed)
+                    Index Cond: (order_id = (InitPlan 2).col1)
+                    Index Searches: 0
+        ->  Memoize  (cost=0.44..8.46 rows=1 width=14) (actual time=0.006..0.006 rows=1.00 loops=5)
+              Cache Key: oi.product_id
+              Cache Mode: logical
+              Hits: 0  Misses: 5  Evictions: 0  Overflows: 0  Memory Usage: 1kB
+              Buffers: shared hit=20
+              ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.45 rows=1 width=14) (actual time=0.006..0.006 rows=1.00 loops=5)
+                    Index Cond: ((product_id = oi.product_id) AND (store_id = 43))
+                    Index Searches: 5
+                    Buffers: shared hit=20
+Planning:
+  Buffers: shared hit=7000
+Planning Time: 10.895 ms
+Execution Time: 0.602 ms

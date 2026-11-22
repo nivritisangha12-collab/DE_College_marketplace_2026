@@ -1,0 +1,150 @@
+=== R17 run 1 ===
+Sort  (cost=145527.56..145532.56 rows=2000 width=44) (actual time=230.106..230.109 rows=60.00 loops=1)
+  Sort Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=10 read=15275 written=1
+  ->  HashAggregate  (cost=145392.90..145417.90 rows=2000 width=44) (actual time=230.078..230.094 rows=60.00 loops=1)
+        Group Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+        Batches: 1  Memory Usage: 121kB
+        Buffers: shared hit=4 read=15275 written=1
+        ->  Hash Join  (cost=103906.65..138609.26 rows=904486 width=44) (actual time=226.380..229.125 rows=14124.00 loops=1)
+              Hash Cond: (o.store_id = s.store_id)
+              Buffers: shared hit=4 read=15275 written=1
+              ->  HashAggregate  (cost=103827.65..127106.93 rows=904486 width=44) (actual time=226.164..227.881 rows=14124.00 loops=1)
+                    Group Key: o.store_id, (date_trunc('month'::text, o.placed_at))
+                    Planned Partitions: 64  Batches: 1  Memory Usage: 5393kB
+                    Buffers: shared hit=4 read=15250 written=1
+                    ->  Append  (cost=0.00..37630.78 rows=994507 width=15) (actual time=0.149..152.755 rows=994505.00 loops=1)
+                          Buffers: shared hit=4 read=15250 written=1
+                          ->  Seq Scan on orders_2026_01 o_1  (cost=0.00..5592.77 rows=170330 width=15) (actual time=0.148..21.059 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2612
+                          ->  Seq Scan on orders_2026_02 o_2  (cost=0.00..5052.31 rows=153846 width=15) (actual time=0.195..19.035 rows=153846.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2360
+                          ->  Seq Scan on orders_2026_03 o_3  (cost=0.00..5592.76 rows=170329 width=15) (actual time=0.187..20.651 rows=170329.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2612 written=1
+                          ->  Seq Scan on orders_2026_04 o_4  (cost=0.00..5412.63 rows=164836 width=15) (actual time=0.194..19.672 rows=164836.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2528
+                          ->  Seq Scan on orders_2026_05 o_5  (cost=0.00..5593.77 rows=170330 width=15) (actual time=0.175..20.226 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2613
+                          ->  Seq Scan on orders_2026_06 o_6  (cost=0.00..5412.60 rows=164834 width=15) (actual time=0.174..18.981 rows=164834.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=4 read=2524
+                          ->  Seq Scan on orders_2026_07 o_7  (cost=0.00..1.41 rows=1 width=15) (actual time=0.274..0.274 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=1
+                          ->  Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=15) (actual time=0.004..0.004 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              ->  Hash  (cost=49.00..49.00 rows=2400 width=8) (actual time=0.210..0.210 rows=2400.00 loops=1)
+                    Buckets: 4096  Batches: 1  Memory Usage: 126kB
+                    Buffers: shared read=25
+                    ->  Seq Scan on dark_stores s  (cost=0.00..49.00 rows=2400 width=8) (actual time=0.023..0.128 rows=2400.00 loops=1)
+                          Buffers: shared read=25
+Planning:
+  Buffers: shared hit=2666 read=32
+Planning Time: 6.655 ms
+Execution Time: 230.201 ms
+=== R17 run 2 ===
+Sort  (cost=145527.56..145532.56 rows=2000 width=44) (actual time=221.353..221.356 rows=60.00 loops=1)
+  Sort Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=11197 read=4088
+  ->  HashAggregate  (cost=145392.90..145417.90 rows=2000 width=44) (actual time=221.325..221.339 rows=60.00 loops=1)
+        Group Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+        Batches: 1  Memory Usage: 121kB
+        Buffers: shared hit=11191 read=4088
+        ->  Hash Join  (cost=103906.65..138609.26 rows=904486 width=44) (actual time=217.806..220.357 rows=14124.00 loops=1)
+              Hash Cond: (o.store_id = s.store_id)
+              Buffers: shared hit=11191 read=4088
+              ->  HashAggregate  (cost=103827.65..127106.93 rows=904486 width=44) (actual time=217.546..219.060 rows=14124.00 loops=1)
+                    Group Key: o.store_id, (date_trunc('month'::text, o.placed_at))
+                    Planned Partitions: 64  Batches: 1  Memory Usage: 5393kB
+                    Buffers: shared hit=11191 read=4063
+                    ->  Append  (cost=0.00..37630.78 rows=994507 width=15) (actual time=0.022..146.159 rows=994505.00 loops=1)
+                          Buffers: shared hit=11191 read=4063
+                          ->  Seq Scan on orders_2026_01 o_1  (cost=0.00..5592.77 rows=170330 width=15) (actual time=0.021..20.370 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared read=2612
+                          ->  Seq Scan on orders_2026_02 o_2  (cost=0.00..5052.31 rows=153846 width=15) (actual time=0.028..17.972 rows=153846.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=909 read=1451
+                          ->  Seq Scan on orders_2026_03 o_3  (cost=0.00..5592.76 rows=170329 width=15) (actual time=0.008..19.198 rows=170329.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2612
+                          ->  Seq Scan on orders_2026_04 o_4  (cost=0.00..5412.63 rows=164836 width=15) (actual time=0.010..18.614 rows=164836.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2528
+                          ->  Seq Scan on orders_2026_05 o_5  (cost=0.00..5593.77 rows=170330 width=15) (actual time=0.004..19.156 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2613
+                          ->  Seq Scan on orders_2026_06 o_6  (cost=0.00..5412.60 rows=164834 width=15) (actual time=0.004..18.626 rows=164834.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2528
+                          ->  Seq Scan on orders_2026_07 o_7  (cost=0.00..1.41 rows=1 width=15) (actual time=0.011..0.011 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=1
+                          ->  Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=15) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              ->  Hash  (cost=49.00..49.00 rows=2400 width=8) (actual time=0.252..0.252 rows=2400.00 loops=1)
+                    Buckets: 4096  Batches: 1  Memory Usage: 126kB
+                    Buffers: shared read=25
+                    ->  Seq Scan on dark_stores s  (cost=0.00..49.00 rows=2400 width=8) (actual time=0.025..0.150 rows=2400.00 loops=1)
+                          Buffers: shared read=25
+Planning:
+  Buffers: shared hit=2662 read=36
+Planning Time: 3.749 ms
+Execution Time: 221.454 ms
+=== R17 run 3 ===
+Sort  (cost=145527.56..145532.56 rows=2000 width=44) (actual time=225.039..225.042 rows=60.00 loops=1)
+  Sort Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+  Sort Method: quicksort  Memory: 27kB
+  Buffers: shared hit=15285
+  ->  HashAggregate  (cost=145392.90..145417.90 rows=2000 width=44) (actual time=225.012..225.028 rows=60.00 loops=1)
+        Group Key: s.city_id, (date_trunc('month'::text, o.placed_at))
+        Batches: 1  Memory Usage: 121kB
+        Buffers: shared hit=15279
+        ->  Hash Join  (cost=103906.65..138609.26 rows=904486 width=44) (actual time=221.368..224.035 rows=14124.00 loops=1)
+              Hash Cond: (o.store_id = s.store_id)
+              Buffers: shared hit=15279
+              ->  HashAggregate  (cost=103827.65..127106.93 rows=904486 width=44) (actual time=221.159..222.763 rows=14124.00 loops=1)
+                    Group Key: o.store_id, (date_trunc('month'::text, o.placed_at))
+                    Planned Partitions: 64  Batches: 1  Memory Usage: 5393kB
+                    Buffers: shared hit=15254
+                    ->  Append  (cost=0.00..37630.78 rows=994507 width=15) (actual time=0.008..147.993 rows=994505.00 loops=1)
+                          Buffers: shared hit=15254
+                          ->  Seq Scan on orders_2026_01 o_1  (cost=0.00..5592.77 rows=170330 width=15) (actual time=0.007..20.444 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2612
+                          ->  Seq Scan on orders_2026_02 o_2  (cost=0.00..5052.31 rows=153846 width=15) (actual time=0.005..18.226 rows=153846.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2360
+                          ->  Seq Scan on orders_2026_03 o_3  (cost=0.00..5592.76 rows=170329 width=15) (actual time=0.005..19.658 rows=170329.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2612
+                          ->  Seq Scan on orders_2026_04 o_4  (cost=0.00..5412.63 rows=164836 width=15) (actual time=0.009..18.960 rows=164836.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2528
+                          ->  Seq Scan on orders_2026_05 o_5  (cost=0.00..5593.77 rows=170330 width=15) (actual time=0.005..19.641 rows=170330.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2613
+                          ->  Seq Scan on orders_2026_06 o_6  (cost=0.00..5412.60 rows=164834 width=15) (actual time=0.010..19.038 rows=164834.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=2528
+                          ->  Seq Scan on orders_2026_07 o_7  (cost=0.00..1.41 rows=1 width=15) (actual time=0.011..0.011 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+                                Buffers: shared hit=1
+                          ->  Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=15) (actual time=0.003..0.003 rows=0.00 loops=1)
+                                Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2027-01-01 00:00:00+05:30'::timestamp with time zone))
+              ->  Hash  (cost=49.00..49.00 rows=2400 width=8) (actual time=0.198..0.198 rows=2400.00 loops=1)
+                    Buckets: 4096  Batches: 1  Memory Usage: 126kB
+                    Buffers: shared hit=25
+                    ->  Seq Scan on dark_stores s  (cost=0.00..49.00 rows=2400 width=8) (actual time=0.003..0.095 rows=2400.00 loops=1)
+                          Buffers: shared hit=25
+Planning:
+  Buffers: shared hit=2698
+Planning Time: 3.503 ms
+Execution Time: 225.142 ms

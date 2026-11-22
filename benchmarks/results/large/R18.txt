@@ -1,0 +1,378 @@
+=== R18 run 1 ===
+Sort  (cost=82376.51..82376.52 rows=1 width=32) (actual time=35.087..35.117 rows=614.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 55kB
+  Buffers: shared hit=12790 read=2116 dirtied=10
+  ->  Nested Loop  (cost=80547.13..82376.50 rows=1 width=32) (actual time=33.801..35.046 rows=614.00 loops=1)
+        Buffers: shared hit=12787 read=2116 dirtied=10
+        ->  Hash Anti Join  (cost=80546.85..82376.10 rows=1 width=8) (actual time=33.783..34.720 rows=614.00 loops=1)
+              Hash Cond: (si.product_id = oi.product_id)
+              Buffers: shared hit=10969 read=2092 dirtied=10
+              ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.43..1823.27 rows=1026 width=8) (actual time=0.242..1.047 rows=975.00 loops=1)
+                    Index Cond: (store_id = 43)
+                    Filter: (quantity_on_hand > 0)
+                    Rows Removed by Filter: 75
+                    Index Searches: 1
+                    Buffers: shared hit=612 read=24 dirtied=10
+              ->  Hash  (cost=80024.61..80024.61 rows=41745 width=4) (actual time=33.503..33.521 rows=14950.00 loops=1)
+                    Buckets: 65536  Batches: 1  Memory Usage: 1038kB
+                    Buffers: shared hit=10357 read=2068
+                    ->  Gather  (cost=1000.42..80024.61 rows=41745 width=4) (actual time=0.317..32.966 rows=14950.00 loops=1)
+                          Workers Planned: 2
+                          Workers Launched: 2
+                          Buffers: shared hit=10357 read=2068
+                          ->  Nested Loop  (cost=0.42..74850.11 rows=17394 width=4) (actual time=0.145..30.283 rows=4983.33 loops=3)
+                                Buffers: shared hit=10357 read=2068
+                                ->  Parallel Append  (cost=0.00..3990.43 rows=1355 width=8) (actual time=0.008..2.611 rows=1090.67 loops=3)
+                                      Buffers: shared hit=2529
+                                      ->  Parallel Seq Scan on orders_2026_06 o_1  (cost=0.00..3982.42 rows=1910 width=8) (actual time=0.007..2.570 rows=1090.67 loops=3)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Rows Removed by Filter: 53854
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_07 o_2  (cost=0.00..1.24 rows=1 width=8) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                ->  Append  (cost=0.42..51.49 rows=80 width=12) (actual time=0.025..0.025 rows=4.57 loops=3272)
+                                      Buffers: shared hit=7828 read=2068
+                                      ->  Index Only Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..3.20 rows=5 width=12) (actual time=0.035..0.035 rows=4.52 loops=205)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 205
+                                            Buffers: shared hit=491 read=129
+                                      ->  Index Only Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..3.20 rows=5 width=12) (actual time=0.019..0.019 rows=4.50 loops=204)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 204
+                                            Buffers: shared hit=484 read=133
+                                      ->  Index Only Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..3.19 rows=5 width=12) (actual time=0.027..0.027 rows=4.65 loops=211)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 211
+                                            Buffers: shared hit=508 read=130
+                                      ->  Index Only Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..3.19 rows=5 width=12) (actual time=0.014..0.014 rows=4.55 loops=236)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 236
+                                            Buffers: shared hit=574 read=139
+                                      ->  Index Only Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..3.19 rows=5 width=12) (actual time=0.024..0.024 rows=4.54 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=477 read=134
+                                      ->  Index Only Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..3.19 rows=5 width=12) (actual time=0.026..0.026 rows=4.58 loops=216)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 216
+                                            Buffers: shared hit=519 read=134
+                                      ->  Index Only Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..3.19 rows=5 width=12) (actual time=0.024..0.025 rows=4.57 loops=203)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 203
+                                            Buffers: shared hit=484 read=130
+                                      ->  Index Only Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..3.20 rows=5 width=12) (actual time=0.014..0.014 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=497 read=129
+                                      ->  Index Only Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..3.19 rows=5 width=12) (actual time=0.029..0.029 rows=4.54 loops=206)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 206
+                                            Buffers: shared hit=495 read=128
+                                      ->  Index Only Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..3.19 rows=5 width=12) (actual time=0.018..0.018 rows=4.59 loops=213)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 213
+                                            Buffers: shared hit=513 read=131
+                                      ->  Index Only Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..3.19 rows=5 width=12) (actual time=0.025..0.025 rows=4.50 loops=184)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 184
+                                            Buffers: shared hit=432 read=125
+                                      ->  Index Only Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..3.19 rows=5 width=12) (actual time=0.023..0.024 rows=4.63 loops=199)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 199
+                                            Buffers: shared hit=479 read=123
+                                      ->  Index Only Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..3.19 rows=5 width=12) (actual time=0.026..0.026 rows=4.59 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=489 read=122
+                                      ->  Index Only Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..3.20 rows=5 width=12) (actual time=0.036..0.036 rows=4.55 loops=197)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 197
+                                            Buffers: shared hit=470 read=126
+                                      ->  Index Only Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..3.20 rows=5 width=12) (actual time=0.026..0.026 rows=4.67 loops=180)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 180
+                                            Buffers: shared hit=422 read=123
+                                      ->  Index Only Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..3.20 rows=5 width=12) (actual time=0.025..0.025 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=494 read=132
+        ->  Index Scan using products_pkey on products p  (cost=0.28..0.40 rows=1 width=28) (actual time=0.000..0.000 rows=1.00 loops=614)
+              Index Cond: (product_id = si.product_id)
+              Index Searches: 614
+              Buffers: shared hit=1818 read=24
+Planning:
+  Buffers: shared hit=2732 read=105
+Planning Time: 11.555 ms
+Execution Time: 35.200 ms
+=== R18 run 2 ===
+Sort  (cost=82376.51..82376.52 rows=1 width=32) (actual time=9.875..10.464 rows=614.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 55kB
+  Buffers: shared hit=14310 read=281
+  ->  Nested Loop  (cost=80547.13..82376.50 rows=1 width=32) (actual time=9.261..10.390 rows=614.00 loops=1)
+        Buffers: shared hit=14307 read=281
+        ->  Hash Anti Join  (cost=80546.85..82376.10 rows=1 width=8) (actual time=9.244..10.083 rows=614.00 loops=1)
+              Hash Cond: (si.product_id = oi.product_id)
+              Buffers: shared hit=12465 read=281
+              ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.43..1823.27 rows=1026 width=8) (actual time=0.010..0.168 rows=975.00 loops=1)
+                    Index Cond: (store_id = 43)
+                    Filter: (quantity_on_hand > 0)
+                    Rows Removed by Filter: 75
+                    Index Searches: 1
+                    Buffers: shared hit=319 read=2
+              ->  Hash  (cost=80024.61..80024.61 rows=41745 width=4) (actual time=9.196..9.773 rows=14950.00 loops=1)
+                    Buckets: 65536  Batches: 1  Memory Usage: 1038kB
+                    Buffers: shared hit=12146 read=279
+                    ->  Gather  (cost=1000.42..80024.61 rows=41745 width=4) (actual time=0.200..9.202 rows=14950.00 loops=1)
+                          Workers Planned: 2
+                          Workers Launched: 2
+                          Buffers: shared hit=12146 read=279
+                          ->  Nested Loop  (cost=0.42..74850.11 rows=17394 width=4) (actual time=0.044..6.528 rows=4983.33 loops=3)
+                                Buffers: shared hit=12146 read=279
+                                ->  Parallel Append  (cost=0.00..3990.43 rows=1355 width=8) (actual time=0.007..2.551 rows=1090.67 loops=3)
+                                      Buffers: shared hit=2529
+                                      ->  Parallel Seq Scan on orders_2026_06 o_1  (cost=0.00..3982.42 rows=1910 width=8) (actual time=0.006..2.512 rows=1090.67 loops=3)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Rows Removed by Filter: 53854
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_07 o_2  (cost=0.00..1.24 rows=1 width=8) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                ->  Append  (cost=0.42..51.49 rows=80 width=12) (actual time=0.003..0.003 rows=4.57 loops=3272)
+                                      Buffers: shared hit=9617 read=279
+                                      ->  Index Only Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..3.20 rows=5 width=12) (actual time=0.003..0.003 rows=4.52 loops=205)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 205
+                                            Buffers: shared hit=600 read=20
+                                      ->  Index Only Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..3.20 rows=5 width=12) (actual time=0.003..0.003 rows=4.50 loops=204)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 204
+                                            Buffers: shared hit=604 read=13
+                                      ->  Index Only Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.65 loops=211)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 211
+                                            Buffers: shared hit=622 read=16
+                                      ->  Index Only Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.55 loops=236)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 236
+                                            Buffers: shared hit=697 read=16
+                                      ->  Index Only Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.54 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=590 read=21
+                                      ->  Index Only Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.58 loops=216)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 216
+                                            Buffers: shared hit=641 read=12
+                                      ->  Index Only Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.57 loops=203)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 203
+                                            Buffers: shared hit=591 read=23
+                                      ->  Index Only Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..3.20 rows=5 width=12) (actual time=0.003..0.003 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=609 read=17
+                                      ->  Index Only Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.54 loops=206)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 206
+                                            Buffers: shared hit=608 read=15
+                                      ->  Index Only Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.59 loops=213)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 213
+                                            Buffers: shared hit=626 read=18
+                                      ->  Index Only Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.50 loops=184)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 184
+                                            Buffers: shared hit=536 read=21
+                                      ->  Index Only Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.63 loops=199)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 199
+                                            Buffers: shared hit=589 read=13
+                                      ->  Index Only Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..3.19 rows=5 width=12) (actual time=0.003..0.003 rows=4.59 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=593 read=18
+                                      ->  Index Only Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..3.20 rows=5 width=12) (actual time=0.003..0.003 rows=4.55 loops=197)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 197
+                                            Buffers: shared hit=575 read=21
+                                      ->  Index Only Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..3.20 rows=5 width=12) (actual time=0.004..0.004 rows=4.67 loops=180)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 180
+                                            Buffers: shared hit=524 read=21
+                                      ->  Index Only Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..3.20 rows=5 width=12) (actual time=0.003..0.003 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=612 read=14
+        ->  Index Scan using products_pkey on products p  (cost=0.28..0.40 rows=1 width=28) (actual time=0.000..0.000 rows=1.00 loops=614)
+              Index Cond: (product_id = si.product_id)
+              Index Searches: 614
+              Buffers: shared hit=1842
+Planning:
+  Buffers: shared hit=2789 read=48
+Planning Time: 3.964 ms
+Execution Time: 10.548 ms
+=== R18 run 3 ===
+Sort  (cost=82376.51..82376.52 rows=1 width=32) (actual time=8.578..8.854 rows=614.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 55kB
+  Buffers: shared hit=14591
+  ->  Nested Loop  (cost=80547.13..82376.50 rows=1 width=32) (actual time=7.987..8.785 rows=614.00 loops=1)
+        Buffers: shared hit=14588
+        ->  Hash Anti Join  (cost=80546.85..82376.10 rows=1 width=8) (actual time=7.974..8.495 rows=614.00 loops=1)
+              Hash Cond: (si.product_id = oi.product_id)
+              Buffers: shared hit=12746
+              ->  Index Scan using store_inventory_pkey on store_inventory si  (cost=0.43..1823.27 rows=1026 width=8) (actual time=0.007..0.157 rows=975.00 loops=1)
+                    Index Cond: (store_id = 43)
+                    Filter: (quantity_on_hand > 0)
+                    Rows Removed by Filter: 75
+                    Index Searches: 1
+                    Buffers: shared hit=321
+              ->  Hash  (cost=80024.61..80024.61 rows=41745 width=4) (actual time=7.930..8.193 rows=14950.00 loops=1)
+                    Buckets: 65536  Batches: 1  Memory Usage: 1038kB
+                    Buffers: shared hit=12425
+                    ->  Gather  (cost=1000.42..80024.61 rows=41745 width=4) (actual time=0.206..7.721 rows=14950.00 loops=1)
+                          Workers Planned: 2
+                          Workers Launched: 2
+                          Buffers: shared hit=12425
+                          ->  Nested Loop  (cost=0.42..74850.11 rows=17394 width=4) (actual time=0.035..5.510 rows=4983.33 loops=3)
+                                Buffers: shared hit=12425
+                                ->  Parallel Append  (cost=0.00..3990.43 rows=1355 width=8) (actual time=0.007..2.492 rows=1090.67 loops=3)
+                                      Buffers: shared hit=2529
+                                      ->  Parallel Seq Scan on orders_2026_06 o_1  (cost=0.00..3982.42 rows=1910 width=8) (actual time=0.006..2.455 rows=1090.67 loops=3)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Rows Removed by Filter: 53854
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_07 o_2  (cost=0.00..1.24 rows=1 width=8) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=8) (actual time=0.000..0.000 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (store_id = 43))
+                                ->  Append  (cost=0.42..51.49 rows=80 width=12) (actual time=0.002..0.002 rows=4.57 loops=3272)
+                                      Buffers: shared hit=9896
+                                      ->  Index Only Scan using order_items_p0_pkey on order_items_p0 oi_1  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.52 loops=205)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 205
+                                            Buffers: shared hit=620
+                                      ->  Index Only Scan using order_items_p1_pkey on order_items_p1 oi_2  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.50 loops=204)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 204
+                                            Buffers: shared hit=617
+                                      ->  Index Only Scan using order_items_p2_pkey on order_items_p2 oi_3  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.65 loops=211)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 211
+                                            Buffers: shared hit=638
+                                      ->  Index Only Scan using order_items_p3_pkey on order_items_p3 oi_4  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.55 loops=236)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 236
+                                            Buffers: shared hit=713
+                                      ->  Index Only Scan using order_items_p4_pkey on order_items_p4 oi_5  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.54 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=611
+                                      ->  Index Only Scan using order_items_p5_pkey on order_items_p5 oi_6  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.58 loops=216)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 216
+                                            Buffers: shared hit=653
+                                      ->  Index Only Scan using order_items_p6_pkey on order_items_p6 oi_7  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.57 loops=203)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 203
+                                            Buffers: shared hit=614
+                                      ->  Index Only Scan using order_items_p7_pkey on order_items_p7 oi_8  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=626
+                                      ->  Index Only Scan using order_items_p8_pkey on order_items_p8 oi_9  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.54 loops=206)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 206
+                                            Buffers: shared hit=623
+                                      ->  Index Only Scan using order_items_p9_pkey on order_items_p9 oi_10  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.59 loops=213)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 213
+                                            Buffers: shared hit=644
+                                      ->  Index Only Scan using order_items_p10_pkey on order_items_p10 oi_11  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.50 loops=184)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 184
+                                            Buffers: shared hit=557
+                                      ->  Index Only Scan using order_items_p11_pkey on order_items_p11 oi_12  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.63 loops=199)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 199
+                                            Buffers: shared hit=602
+                                      ->  Index Only Scan using order_items_p12_pkey on order_items_p12 oi_13  (cost=0.42..3.19 rows=5 width=12) (actual time=0.002..0.002 rows=4.59 loops=202)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 202
+                                            Buffers: shared hit=611
+                                      ->  Index Only Scan using order_items_p13_pkey on order_items_p13 oi_14  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.55 loops=197)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 197
+                                            Buffers: shared hit=596
+                                      ->  Index Only Scan using order_items_p14_pkey on order_items_p14 oi_15  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.67 loops=180)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 180
+                                            Buffers: shared hit=545
+                                      ->  Index Only Scan using order_items_p15_pkey on order_items_p15 oi_16  (cost=0.42..3.20 rows=5 width=12) (actual time=0.002..0.002 rows=4.56 loops=207)
+                                            Index Cond: (order_id = o.order_id)
+                                            Heap Fetches: 0
+                                            Index Searches: 207
+                                            Buffers: shared hit=626
+        ->  Index Scan using products_pkey on products p  (cost=0.28..0.40 rows=1 width=28) (actual time=0.000..0.000 rows=1.00 loops=614)
+              Index Cond: (product_id = si.product_id)
+              Index Searches: 614
+              Buffers: shared hit=1842
+Planning:
+  Buffers: shared hit=2837
+Planning Time: 3.992 ms
+Execution Time: 8.953 ms

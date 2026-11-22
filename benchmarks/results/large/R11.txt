@@ -1,0 +1,54 @@
+=== R11 run 1 ===
+Sort  (cost=323.14..327.92 rows=1912 width=44) (actual time=1.346..1.347 rows=19.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (orders.delivered_at - orders.picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=6 read=26
+  ->  HashAggregate  (cost=190.25..218.93 rows=1912 width=44) (actual time=1.325..1.337 rows=19.00 loops=1)
+        Group Key: orders.rider_id
+        Batches: 1  Memory Usage: 97kB
+        Buffers: shared hit=3 read=26
+        ->  Index Only Scan using orders_2026_06_store_id_placed_at_rider_id_delivered_at_pic_idx on orders_2026_06 orders  (cost=0.42..147.91 rows=2822 width=20) (actual time=0.357..0.696 rows=3267.00 loops=1)
+              Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 3
+              Index Searches: 1
+              Buffers: shared hit=3 read=26
+Planning:
+  Buffers: shared hit=742
+Planning Time: 0.843 ms
+Execution Time: 1.379 ms
+=== R11 run 2 ===
+Sort  (cost=323.14..327.92 rows=1912 width=44) (actual time=0.600..0.601 rows=19.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (orders.delivered_at - orders.picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=32
+  ->  HashAggregate  (cost=190.25..218.93 rows=1912 width=44) (actual time=0.576..0.590 rows=19.00 loops=1)
+        Group Key: orders.rider_id
+        Batches: 1  Memory Usage: 97kB
+        Buffers: shared hit=29
+        ->  Index Only Scan using orders_2026_06_store_id_placed_at_rider_id_delivered_at_pic_idx on orders_2026_06 orders  (cost=0.42..147.91 rows=2822 width=20) (actual time=0.007..0.165 rows=3267.00 loops=1)
+              Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 3
+              Index Searches: 1
+              Buffers: shared hit=29
+Planning:
+  Buffers: shared hit=742
+Planning Time: 0.857 ms
+Execution Time: 0.630 ms
+=== R11 run 3 ===
+Sort  (cost=323.14..327.92 rows=1912 width=44) (actual time=0.602..0.603 rows=19.00 loops=1)
+  Sort Key: (round(avg((EXTRACT(epoch FROM (orders.delivered_at - orders.picked_up_at)) / '60'::numeric)), 1))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=32
+  ->  HashAggregate  (cost=190.25..218.93 rows=1912 width=44) (actual time=0.580..0.592 rows=19.00 loops=1)
+        Group Key: orders.rider_id
+        Batches: 1  Memory Usage: 97kB
+        Buffers: shared hit=29
+        ->  Index Only Scan using orders_2026_06_store_id_placed_at_rider_id_delivered_at_pic_idx on orders_2026_06 orders  (cost=0.42..147.91 rows=2822 width=20) (actual time=0.008..0.170 rows=3267.00 loops=1)
+              Index Cond: ((store_id = 43) AND (placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 3
+              Index Searches: 1
+              Buffers: shared hit=29
+Planning:
+  Buffers: shared hit=742
+Planning Time: 0.808 ms
+Execution Time: 0.635 ms

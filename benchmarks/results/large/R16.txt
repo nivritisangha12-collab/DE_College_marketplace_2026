@@ -1,0 +1,297 @@
+=== R16 run 1 ===
+Sort  (cost=224391.56..224392.06 rows=200 width=24) (actual time=528.988..528.990 rows=6.00 loops=1)
+  Sort Key: (date_trunc('month'::text, min(orders.placed_at)))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=9 read=11556 dirtied=1
+  ->  HashAggregate  (cost=224381.91..224383.91 rows=200 width=24) (actual time=528.981..528.984 rows=6.00 loops=1)
+        Group Key: date_trunc('month'::text, min(orders.placed_at))
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=6 read=11556 dirtied=1
+        ->  GroupAggregate  (cost=8.25..210874.66 rows=771843 width=13) (actual time=5.221..487.057 rows=800000.00 loops=1)
+              Group Key: orders.customer_id
+              Buffers: shared hit=6 read=11556 dirtied=1
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=12) (actual time=5.214..301.645 rows=3000000.00 loops=1)
+                    Sort Key: orders.customer_id
+                    Buffers: shared hit=6 read=11556 dirtied=1
+                    ->  Index Only Scan using orders_2025_01_customer_id_placed_at_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.332..7.336 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_02_customer_id_placed_at_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.305..6.992 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=593
+                    ->  Index Only Scan using orders_2025_03_customer_id_placed_at_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.347..7.727 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_04_customer_id_placed_at_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.310..7.148 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=635
+                    ->  Index Only Scan using orders_2025_05_customer_id_placed_at_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.326..7.344 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_06_customer_id_placed_at_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.311..7.239 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=635
+                    ->  Index Only Scan using orders_2025_07_customer_id_placed_at_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.315..7.303 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_08_customer_id_placed_at_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.308..7.530 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_09_customer_id_placed_at_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.309..7.168 rows=164834.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=635
+                    ->  Index Only Scan using orders_2025_10_customer_id_placed_at_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.287..7.526 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2025_11_customer_id_placed_at_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.267..6.958 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=635
+                    ->  Index Only Scan using orders_2025_12_customer_id_placed_at_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.335..7.450 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2026_01_customer_id_placed_at_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.251..7.271 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2026_02_customer_id_placed_at_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.251..6.656 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=593
+                    ->  Index Only Scan using orders_2026_03_customer_id_placed_at_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.251..7.338 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2026_04_customer_id_placed_at_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.271..7.236 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=635
+                    ->  Index Only Scan using orders_2026_05_customer_id_placed_at_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.251..7.244 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=656
+                    ->  Index Only Scan using orders_2026_06_customer_id_placed_at_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.177..7.567 rows=164834.00 loops=1)
+                          Heap Fetches: 104
+                          Index Searches: 1
+                          Buffers: shared hit=5 read=634 dirtied=1
+                    ->  Index Only Scan using orders_2026_07_customer_id_placed_at_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=12) (actual time=0.005..0.005 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared read=1
+                    ->  Index Only Scan using orders_default_customer_id_placed_at_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=12) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=5055 read=280
+Planning Time: 30.323 ms
+Execution Time: 529.060 ms
+=== R16 run 2 ===
+Sort  (cost=224391.56..224392.06 rows=200 width=24) (actual time=518.834..518.836 rows=6.00 loops=1)
+  Sort Key: (date_trunc('month'::text, min(orders.placed_at)))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=11563
+  ->  HashAggregate  (cost=224381.91..224383.91 rows=200 width=24) (actual time=518.825..518.827 rows=6.00 loops=1)
+        Group Key: date_trunc('month'::text, min(orders.placed_at))
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=11560
+        ->  GroupAggregate  (cost=8.25..210874.66 rows=771843 width=13) (actual time=0.447..468.838 rows=800000.00 loops=1)
+              Group Key: orders.customer_id
+              Buffers: shared hit=11560
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=12) (actual time=0.441..275.797 rows=3000000.00 loops=1)
+                    Sort Key: orders.customer_id
+                    Buffers: shared hit=11560
+                    ->  Index Only Scan using orders_2025_01_customer_id_placed_at_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.026..5.637 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_02_customer_id_placed_at_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.025..5.655 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=593
+                    ->  Index Only Scan using orders_2025_03_customer_id_placed_at_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.023..5.765 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_04_customer_id_placed_at_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.023..5.735 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_05_customer_id_placed_at_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.024..5.700 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_06_customer_id_placed_at_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.023..5.502 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_07_customer_id_placed_at_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.024..5.758 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_08_customer_id_placed_at_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.025..5.921 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_09_customer_id_placed_at_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.026..5.611 rows=164834.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_10_customer_id_placed_at_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.023..5.862 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_11_customer_id_placed_at_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.024..5.495 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_12_customer_id_placed_at_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.023..6.014 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_01_customer_id_placed_at_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.025..5.717 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_02_customer_id_placed_at_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.022..5.146 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=593
+                    ->  Index Only Scan using orders_2026_03_customer_id_placed_at_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.028..5.712 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_04_customer_id_placed_at_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.023..5.661 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2026_05_customer_id_placed_at_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.023..5.699 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_06_customer_id_placed_at_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.024..5.576 rows=164834.00 loops=1)
+                          Heap Fetches: 101
+                          Index Searches: 1
+                          Buffers: shared hit=637
+                    ->  Index Only Scan using orders_2026_07_customer_id_placed_at_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=12) (actual time=0.004..0.004 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+                    ->  Index Only Scan using orders_default_customer_id_placed_at_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=12) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=5335
+Planning Time: 6.731 ms
+Execution Time: 518.911 ms
+=== R16 run 3 ===
+Sort  (cost=224391.56..224392.06 rows=200 width=24) (actual time=502.985..502.987 rows=6.00 loops=1)
+  Sort Key: (date_trunc('month'::text, min(orders.placed_at)))
+  Sort Method: quicksort  Memory: 25kB
+  Buffers: shared hit=11563
+  ->  HashAggregate  (cost=224381.91..224383.91 rows=200 width=24) (actual time=502.976..502.979 rows=6.00 loops=1)
+        Group Key: date_trunc('month'::text, min(orders.placed_at))
+        Batches: 1  Memory Usage: 32kB
+        Buffers: shared hit=11560
+        ->  GroupAggregate  (cost=8.25..210874.66 rows=771843 width=13) (actual time=0.447..461.817 rows=800000.00 loops=1)
+              Group Key: orders.customer_id
+              Buffers: shared hit=11560
+              ->  Merge Append  (cost=8.25..171226.34 rows=3000028 width=12) (actual time=0.439..279.049 rows=3000000.00 loops=1)
+                    Sort Key: orders.customer_id
+                    Buffers: shared hit=11560
+                    ->  Index Only Scan using orders_2025_01_customer_id_placed_at_idx on orders_2025_01 orders_1  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.026..5.545 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_02_customer_id_placed_at_idx on orders_2025_02 orders_2  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.024..5.322 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=593
+                    ->  Index Only Scan using orders_2025_03_customer_id_placed_at_idx on orders_2025_03 orders_3  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.023..5.669 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_04_customer_id_placed_at_idx on orders_2025_04 orders_4  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.023..5.500 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_05_customer_id_placed_at_idx on orders_2025_05 orders_5  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.028..5.515 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_06_customer_id_placed_at_idx on orders_2025_06 orders_6  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.023..5.401 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_07_customer_id_placed_at_idx on orders_2025_07 orders_7  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.024..5.526 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_08_customer_id_placed_at_idx on orders_2025_08 orders_8  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.023..5.682 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_09_customer_id_placed_at_idx on orders_2025_09 orders_9  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.023..5.422 rows=164834.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_10_customer_id_placed_at_idx on orders_2025_10 orders_10  (cost=0.42..5187.39 rows=170331 width=12) (actual time=0.023..5.647 rows=170331.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2025_11_customer_id_placed_at_idx on orders_2025_11 orders_11  (cost=0.42..5020.95 rows=164835 width=12) (actual time=0.029..5.412 rows=164835.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2025_12_customer_id_placed_at_idx on orders_2025_12 orders_12  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.022..5.646 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_01_customer_id_placed_at_idx on orders_2026_01 orders_13  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.022..5.648 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_02_customer_id_placed_at_idx on orders_2026_02 orders_14  (cost=0.42..4688.11 rows=153846 width=12) (actual time=0.022..5.040 rows=153846.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=593
+                    ->  Index Only Scan using orders_2026_03_customer_id_placed_at_idx on orders_2026_03 orders_15  (cost=0.42..5187.35 rows=170329 width=12) (actual time=0.028..5.563 rows=170329.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_04_customer_id_placed_at_idx on orders_2026_04 orders_16  (cost=0.42..5020.96 rows=164836 width=12) (actual time=0.022..5.455 rows=164836.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=635
+                    ->  Index Only Scan using orders_2026_05_customer_id_placed_at_idx on orders_2026_05 orders_17  (cost=0.42..5187.37 rows=170330 width=12) (actual time=0.024..5.545 rows=170330.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=656
+                    ->  Index Only Scan using orders_2026_06_customer_id_placed_at_idx on orders_2026_06 orders_18  (cost=0.42..5020.93 rows=164834 width=12) (actual time=0.024..5.432 rows=164834.00 loops=1)
+                          Heap Fetches: 101
+                          Index Searches: 1
+                          Buffers: shared hit=637
+                    ->  Index Only Scan using orders_2026_07_customer_id_placed_at_idx on orders_2026_07 orders_19  (cost=0.14..12.54 rows=27 width=12) (actual time=0.003..0.004 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+                    ->  Index Only Scan using orders_default_customer_id_placed_at_idx on orders_default orders_20  (cost=0.12..8.14 rows=1 width=12) (actual time=0.002..0.002 rows=0.00 loops=1)
+                          Heap Fetches: 0
+                          Index Searches: 1
+                          Buffers: shared hit=1
+Planning:
+  Buffers: shared hit=5335
+Planning Time: 6.679 ms
+Execution Time: 503.082 ms

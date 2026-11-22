@@ -1,0 +1,69 @@
+=== R04 run 1 ===
+Sort  (cost=2107.83..2108.26 rows=172 width=21) (actual time=18.049..18.053 rows=173.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 31kB
+  Buffers: shared hit=749 read=195
+  ->  Nested Loop  (cost=6.62..2101.44 rows=172 width=21) (actual time=0.292..18.010 rows=173.00 loops=1)
+        Buffers: shared hit=746 read=195
+        ->  Bitmap Heap Scan on dark_stores s  (cost=6.19..34.28 rows=247 width=15) (actual time=0.282..0.351 rows=247.00 loops=1)
+              Recheck Cond: (city_id = 1)
+              Heap Blocks: exact=25
+              Buffers: shared hit=9 read=18
+              ->  Bitmap Index Scan on idx_dark_stores_city  (cost=0.00..6.13 rows=247 width=0) (actual time=0.277..0.277 rows=247.00 loops=1)
+                    Index Cond: (city_id = 1)
+                    Index Searches: 1
+                    Buffers: shared read=2
+        ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.37 rows=1 width=14) (actual time=0.071..0.071 rows=0.70 loops=247)
+              Index Cond: ((product_id = 1236) AND (store_id = s.store_id))
+              Index Searches: 247
+              Buffers: shared hit=737 read=177
+Planning:
+  Buffers: shared hit=251 read=4
+Planning Time: 1.200 ms
+Execution Time: 18.086 ms
+=== R04 run 2 ===
+Sort  (cost=2107.83..2108.26 rows=172 width=21) (actual time=0.324..0.328 rows=173.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 31kB
+  Buffers: shared hit=944
+  ->  Nested Loop  (cost=6.62..2101.44 rows=172 width=21) (actual time=0.018..0.304 rows=173.00 loops=1)
+        Buffers: shared hit=941
+        ->  Bitmap Heap Scan on dark_stores s  (cost=6.19..34.28 rows=247 width=15) (actual time=0.012..0.039 rows=247.00 loops=1)
+              Recheck Cond: (city_id = 1)
+              Heap Blocks: exact=25
+              Buffers: shared hit=27
+              ->  Bitmap Index Scan on idx_dark_stores_city  (cost=0.00..6.13 rows=247 width=0) (actual time=0.006..0.007 rows=247.00 loops=1)
+                    Index Cond: (city_id = 1)
+                    Index Searches: 1
+                    Buffers: shared hit=2
+        ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.37 rows=1 width=14) (actual time=0.001..0.001 rows=0.70 loops=247)
+              Index Cond: ((product_id = 1236) AND (store_id = s.store_id))
+              Index Searches: 247
+              Buffers: shared hit=914
+Planning:
+  Buffers: shared hit=255
+Planning Time: 0.473 ms
+Execution Time: 0.358 ms
+=== R04 run 3 ===
+Sort  (cost=2107.83..2108.26 rows=172 width=21) (actual time=0.313..0.316 rows=173.00 loops=1)
+  Sort Key: si.quantity_on_hand DESC
+  Sort Method: quicksort  Memory: 31kB
+  Buffers: shared hit=944
+  ->  Nested Loop  (cost=6.62..2101.44 rows=172 width=21) (actual time=0.018..0.292 rows=173.00 loops=1)
+        Buffers: shared hit=941
+        ->  Bitmap Heap Scan on dark_stores s  (cost=6.19..34.28 rows=247 width=15) (actual time=0.011..0.038 rows=247.00 loops=1)
+              Recheck Cond: (city_id = 1)
+              Heap Blocks: exact=25
+              Buffers: shared hit=27
+              ->  Bitmap Index Scan on idx_dark_stores_city  (cost=0.00..6.13 rows=247 width=0) (actual time=0.006..0.006 rows=247.00 loops=1)
+                    Index Cond: (city_id = 1)
+                    Index Searches: 1
+                    Buffers: shared hit=2
+        ->  Index Scan using idx_store_inventory_product on store_inventory si  (cost=0.43..8.37 rows=1 width=14) (actual time=0.001..0.001 rows=0.70 loops=247)
+              Index Cond: ((product_id = 1236) AND (store_id = s.store_id))
+              Index Searches: 247
+              Buffers: shared hit=914
+Planning:
+  Buffers: shared hit=255
+Planning Time: 0.465 ms
+Execution Time: 0.344 ms

@@ -1,0 +1,198 @@
+=== R25 run 1 ===
+Limit  (cost=46887.87..46887.92 rows=20 width=44) (actual time=77.201..77.528 rows=20.00 loops=1)
+  Buffers: shared hit=3785 read=11721
+  ->  Sort  (cost=46887.87..47091.47 rows=81440 width=44) (actual time=77.201..77.527 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, (sum(o.total_amount)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=3785 read=11721
+        ->  GroupAggregate  (cost=32838.23..44720.78 rows=81440 width=44) (actual time=56.700..74.604 rows=74546.00 loops=1)
+              Group Key: c.customer_id
+              Buffers: shared hit=3779 read=11721
+              ->  Gather Merge  (cost=32838.23..43045.47 rows=87641 width=9) (actual time=56.690..62.308 rows=95091.00 loops=1)
+                    Workers Planned: 2
+                    Workers Launched: 2
+                    Buffers: shared hit=3779 read=11721
+                    ->  Sort  (cost=31838.21..31929.50 rows=36517 width=9) (actual time=54.525..55.159 rows=31697.00 loops=3)
+                          Sort Key: c.customer_id
+                          Sort Method: quicksort  Memory: 1790kB
+                          Buffers: shared hit=3779 read=11721
+                          Worker 0:  Sort Method: quicksort  Memory: 1707kB
+                          Worker 1:  Sort Method: quicksort  Memory: 1780kB
+                          ->  Parallel Hash Join  (cost=2306.42..29070.90 rows=36517 width=9) (actual time=3.983..52.146 rows=31697.00 loops=3)
+                                Hash Cond: (o.customer_id = c.customer_id)
+                                Buffers: shared hit=3765 read=11721
+                                ->  Parallel Append  (cost=0.00..25822.86 rows=358715 width=9) (actual time=0.029..34.023 rows=286744.33 loops=3)
+                                      Buffers: shared hit=3762 read=11492
+                                      ->  Parallel Seq Scan on orders_2026_05 o_5  (cost=0.00..4115.91 rows=86842 width=9) (actual time=0.004..12.187 rows=147367.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22963
+                                            Buffers: shared hit=1217 read=1396
+                                      ->  Parallel Seq Scan on orders_2026_01 o_1  (cost=0.00..4114.91 rows=86731 width=9) (actual time=0.038..15.071 rows=147326.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 23004
+                                            Buffers: shared read=2612
+                                      ->  Parallel Seq Scan on orders_2026_03 o_3  (cost=0.00..4114.90 rows=86734 width=9) (actual time=0.065..6.232 rows=73677.00 loops=2)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 11488
+                                            Buffers: shared read=2612
+                                      ->  Parallel Seq Scan on orders_2026_04 o_4  (cost=0.00..3982.44 rows=83785 width=9) (actual time=0.042..6.044 rows=71309.50 loops=2)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 11108
+                                            Buffers: shared read=2528
+                                      ->  Parallel Seq Scan on orders_2026_06 o_6  (cost=0.00..3982.42 rows=84275 width=9) (actual time=0.003..11.066 rows=142484.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22350
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_02 o_2  (cost=0.00..3717.46 rows=78051 width=9) (actual time=0.040..10.896 rows=133083.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 20763
+                                            Buffers: shared hit=16 read=2344
+                                      ->  Parallel Seq Scan on orders_2026_07 o_7  (cost=0.00..1.24 rows=1 width=20) (actual time=0.003..0.003 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=20) (actual time=0.001..0.001 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                ->  Parallel Hash  (cost=1882.25..1882.25 rows=33933 width=4) (actual time=3.916..3.916 rows=27466.67 loops=3)
+                                      Buckets: 131072  Batches: 1  Memory Usage: 4288kB
+                                      Buffers: shared hit=3 read=229
+                                      ->  Parallel Index Only Scan using idx_customers_city on customers c  (cost=0.42..1882.25 rows=33933 width=4) (actual time=0.160..2.644 rows=27466.67 loops=3)
+                                            Index Cond: (city_id = 2)
+                                            Heap Fetches: 0
+                                            Index Searches: 1
+                                            Buffers: shared hit=3 read=229
+Planning:
+  Buffers: shared hit=2664 read=22
+Planning Time: 5.199 ms
+Execution Time: 77.572 ms
+=== R25 run 2 ===
+Limit  (cost=46887.87..46887.92 rows=20 width=44) (actual time=78.772..78.846 rows=20.00 loops=1)
+  Buffers: shared hit=2552 read=12955 written=3
+  ->  Sort  (cost=46887.87..47091.47 rows=81440 width=44) (actual time=78.772..78.845 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, (sum(o.total_amount)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=2552 read=12955 written=3
+        ->  GroupAggregate  (cost=32838.23..44720.78 rows=81440 width=44) (actual time=54.503..75.486 rows=74546.00 loops=1)
+              Group Key: c.customer_id
+              Buffers: shared hit=2546 read=12955 written=3
+              ->  Gather Merge  (cost=32838.23..43045.47 rows=87641 width=9) (actual time=54.492..60.105 rows=95091.00 loops=1)
+                    Workers Planned: 2
+                    Workers Launched: 2
+                    Buffers: shared hit=2546 read=12955 written=3
+                    ->  Sort  (cost=31838.21..31929.50 rows=36517 width=9) (actual time=52.511..53.150 rows=31697.00 loops=3)
+                          Sort Key: c.customer_id
+                          Sort Method: quicksort  Memory: 1765kB
+                          Buffers: shared hit=2546 read=12955 written=3
+                          Worker 0:  Sort Method: quicksort  Memory: 1784kB
+                          Worker 1:  Sort Method: quicksort  Memory: 1728kB
+                          ->  Parallel Hash Join  (cost=2306.42..29070.90 rows=36517 width=9) (actual time=2.386..50.005 rows=31697.00 loops=3)
+                                Hash Cond: (o.customer_id = c.customer_id)
+                                Buffers: shared hit=2532 read=12955 written=3
+                                ->  Parallel Append  (cost=0.00..25822.86 rows=358715 width=9) (actual time=0.042..33.635 rows=286744.33 loops=3)
+                                      Buffers: shared hit=2529 read=12725 written=3
+                                      ->  Parallel Seq Scan on orders_2026_05 o_5  (cost=0.00..4115.91 rows=86842 width=9) (actual time=0.039..12.050 rows=147367.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22963
+                                            Buffers: shared read=2613
+                                      ->  Parallel Seq Scan on orders_2026_01 o_1  (cost=0.00..4114.91 rows=86731 width=9) (actual time=0.053..12.549 rows=147326.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 23004
+                                            Buffers: shared read=2612 written=1
+                                      ->  Parallel Seq Scan on orders_2026_03 o_3  (cost=0.00..4114.90 rows=86734 width=9) (actual time=0.041..6.134 rows=73677.00 loops=2)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 11488
+                                            Buffers: shared read=2612 written=1
+                                      ->  Parallel Seq Scan on orders_2026_04 o_4  (cost=0.00..3982.44 rows=83785 width=9) (actual time=0.040..6.432 rows=71309.50 loops=2)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 11108
+                                            Buffers: shared read=2528 written=1
+                                      ->  Parallel Seq Scan on orders_2026_06 o_6  (cost=0.00..3982.42 rows=84275 width=9) (actual time=0.004..11.418 rows=142484.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22350
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_02 o_2  (cost=0.00..3717.46 rows=78051 width=9) (actual time=0.029..11.579 rows=133083.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 20763
+                                            Buffers: shared read=2360
+                                      ->  Parallel Seq Scan on orders_2026_07 o_7  (cost=0.00..1.24 rows=1 width=20) (actual time=0.004..0.004 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=20) (actual time=0.002..0.002 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                ->  Parallel Hash  (cost=1882.25..1882.25 rows=33933 width=4) (actual time=2.299..2.299 rows=27466.67 loops=3)
+                                      Buckets: 131072  Batches: 1  Memory Usage: 4288kB
+                                      Buffers: shared hit=3 read=230
+                                      ->  Parallel Index Only Scan using idx_customers_city on customers c  (cost=0.42..1882.25 rows=33933 width=4) (actual time=0.040..1.141 rows=27466.67 loops=3)
+                                            Index Cond: (city_id = 2)
+                                            Heap Fetches: 0
+                                            Index Searches: 1
+                                            Buffers: shared hit=3 read=230
+Planning:
+  Buffers: shared hit=2667 read=19
+Planning Time: 3.696 ms
+Execution Time: 78.893 ms
+=== R25 run 3 ===
+Limit  (cost=46887.87..46887.92 rows=20 width=44) (actual time=73.011..73.069 rows=20.00 loops=1)
+  Buffers: shared hit=10740 read=4766
+  ->  Sort  (cost=46887.87..47091.47 rows=81440 width=44) (actual time=73.010..73.067 rows=20.00 loops=1)
+        Sort Key: (count(*)) DESC, (sum(o.total_amount)) DESC
+        Sort Method: top-N heapsort  Memory: 27kB
+        Buffers: shared hit=10740 read=4766
+        ->  GroupAggregate  (cost=32838.23..44720.78 rows=81440 width=44) (actual time=52.230..69.975 rows=74546.00 loops=1)
+              Group Key: c.customer_id
+              Buffers: shared hit=10734 read=4766
+              ->  Gather Merge  (cost=32838.23..43045.47 rows=87641 width=9) (actual time=52.219..57.508 rows=95091.00 loops=1)
+                    Workers Planned: 2
+                    Workers Launched: 2
+                    Buffers: shared hit=10734 read=4766
+                    ->  Sort  (cost=31838.21..31929.50 rows=36517 width=9) (actual time=50.624..51.265 rows=31697.00 loops=3)
+                          Sort Key: c.customer_id
+                          Sort Method: quicksort  Memory: 1757kB
+                          Buffers: shared hit=10734 read=4766
+                          Worker 0:  Sort Method: quicksort  Memory: 1753kB
+                          Worker 1:  Sort Method: quicksort  Memory: 1767kB
+                          ->  Parallel Hash Join  (cost=2306.42..29070.90 rows=36517 width=9) (actual time=2.559..48.340 rows=31697.00 loops=3)
+                                Hash Cond: (o.customer_id = c.customer_id)
+                                Buffers: shared hit=10720 read=4766
+                                ->  Parallel Append  (cost=0.00..25822.86 rows=358715 width=9) (actual time=0.045..32.812 rows=286744.33 loops=3)
+                                      Buffers: shared hit=10717 read=4537
+                                      ->  Parallel Seq Scan on orders_2026_05 o_5  (cost=0.00..4115.91 rows=86842 width=9) (actual time=0.041..12.108 rows=147367.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22963
+                                            Buffers: shared hit=1086 read=1527
+                                      ->  Parallel Seq Scan on orders_2026_01 o_1  (cost=0.00..4114.91 rows=86731 width=9) (actual time=0.062..12.472 rows=147326.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 23004
+                                            Buffers: shared hit=1121 read=1491
+                                      ->  Parallel Seq Scan on orders_2026_03 o_3  (cost=0.00..4114.90 rows=86734 width=9) (actual time=0.003..3.870 rows=49118.00 loops=3)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 7658
+                                            Buffers: shared hit=2612
+                                      ->  Parallel Seq Scan on orders_2026_04 o_4  (cost=0.00..3982.44 rows=83785 width=9) (actual time=0.004..5.863 rows=71309.50 loops=2)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 11108
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_06 o_6  (cost=0.00..3982.42 rows=84275 width=9) (actual time=0.004..11.199 rows=142484.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 22350
+                                            Buffers: shared hit=2528
+                                      ->  Parallel Seq Scan on orders_2026_02 o_2  (cost=0.00..3717.46 rows=78051 width=9) (actual time=0.024..11.010 rows=133083.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Rows Removed by Filter: 20763
+                                            Buffers: shared hit=841 read=1519
+                                      ->  Parallel Seq Scan on orders_2026_07 o_7  (cost=0.00..1.24 rows=1 width=20) (actual time=0.004..0.004 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                            Buffers: shared hit=1
+                                      ->  Parallel Seq Scan on orders_default o_8  (cost=0.00..0.00 rows=1 width=20) (actual time=0.001..0.001 rows=0.00 loops=1)
+                                            Filter: ((placed_at >= '2026-01-01 00:00:00+05:30'::timestamp with time zone) AND ((status)::text = 'DELIVERED'::text))
+                                ->  Parallel Hash  (cost=1882.25..1882.25 rows=33933 width=4) (actual time=2.468..2.469 rows=27466.67 loops=3)
+                                      Buckets: 131072  Batches: 1  Memory Usage: 4320kB
+                                      Buffers: shared hit=3 read=229
+                                      ->  Parallel Index Only Scan using idx_customers_city on customers c  (cost=0.42..1882.25 rows=33933 width=4) (actual time=0.038..1.256 rows=27466.67 loops=3)
+                                            Index Cond: (city_id = 2)
+                                            Heap Fetches: 0
+                                            Index Searches: 1
+                                            Buffers: shared hit=3 read=229
+Planning:
+  Buffers: shared hit=2667 read=19
+Planning Time: 3.710 ms
+Execution Time: 73.113 ms

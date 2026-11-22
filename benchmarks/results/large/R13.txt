@@ -1,0 +1,164 @@
+=== R13 run 1 ===
+Seq Scan on products p  (cost=6194.43..336731816.93 rows=731 width=28) (actual time=4924.678..4926.219 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=2548 read=50797 written=640, temp read=120155 written=481
+  SubPlan 1
+    ->  Materialize  (cost=6194.43..449867.15 rows=2117892 width=4) (actual time=0.013..1.884 rows=66652.35 loops=1463)
+          Storage: Disk  Maximum Storage: 4096kB
+          Buffers: shared hit=2528 read=50797 written=640, temp read=120155 written=481
+          ->  Gather  (cost=6194.43..431003.69 rows=2117892 width=4) (actual time=17.276..317.161 rows=388664.00 loops=1)
+                Workers Planned: 2
+                Workers Launched: 2
+                Buffers: shared hit=2528 read=50797 written=640
+                ->  Parallel Hash Join  (cost=5194.43..218214.49 rows=882455 width=4) (actual time=15.656..373.054 rows=131190.67 loops=3)
+                      Hash Cond: (oi.order_id = o.order_id)
+                      Buffers: shared hit=2528 read=50797 written=640
+                      ->  Parallel Append  (cost=0.00..186417.32 rows=5709822 width=12) (actual time=0.514..213.685 rows=2292689.33 loops=3)
+                            Buffers: shared read=50797 written=640
+                            ->  Parallel Seq Scan on order_items_p7 oi_8  (cost=0.00..9927.42 rows=359042 width=12) (actual time=0.352..61.835 rows=861700.00 loops=1)
+                                  Buffers: shared read=6337 written=94
+                            ->  Parallel Seq Scan on order_items_p1 oi_2  (cost=0.00..9909.00 rows=358400 width=12) (actual time=0.583..59.465 rows=860160.00 loops=1)
+                                  Buffers: shared read=6325 written=94
+                            ->  Parallel Seq Scan on order_items_p13 oi_14  (cost=0.00..9894.60 rows=357860 width=12) (actual time=0.144..39.474 rows=858863.00 loops=1)
+                                  Buffers: shared read=6316
+                            ->  Parallel Seq Scan on order_items_p14 oi_15  (cost=0.00..9891.74 rows=357774 width=12) (actual time=0.122..43.333 rows=858657.00 loops=1)
+                                  Buffers: shared read=6314 written=88
+                            ->  Parallel Seq Scan on order_items_p15 oi_16  (cost=0.00..9885.16 rows=357516 width=12) (actual time=0.086..32.023 rows=858038.00 loops=1)
+                                  Buffers: shared read=6310
+                            ->  Parallel Seq Scan on order_items_p9 oi_10  (cost=0.00..9877.46 rows=357246 width=12) (actual time=0.205..32.614 rows=857390.00 loops=1)
+                                  Buffers: shared read=6305 written=88
+                            ->  Parallel Seq Scan on order_items_p4 oi_5  (cost=0.00..9872.67 rows=357067 width=12) (actual time=0.232..1.278 rows=18721.00 loops=1)
+                                  Buffers: shared read=223
+                            ->  Parallel Seq Scan on order_items_p0 oi_1  (cost=0.00..9872.64 rows=357064 width=12) (actual time=0.154..2.902 rows=6426.00 loops=1)
+                                  Buffers: shared read=127 written=88
+                            ->  Parallel Seq Scan on order_items_p10 oi_11  (cost=0.00..9869.79 rows=356979 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p3 oi_4  (cost=0.00..9863.72 rows=356772 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p11 oi_12  (cost=0.00..9850.95 rows=356295 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p12 oi_13  (cost=0.00..9841.55 rows=355955 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p6 oi_7  (cost=0.00..9833.69 rows=355669 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p5 oi_6  (cost=0.00..9832.20 rows=355620 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p8 oi_9  (cost=0.00..9829.04 rows=355504 width=12) (actual time=0.179..40.038 rows=845971.00 loops=1)
+                                  Buffers: shared read=6274 written=94
+                            ->  Parallel Seq Scan on order_items_p2 oi_3  (cost=0.00..9816.59 rows=355059 width=12) (actual time=0.607..59.803 rows=852142.00 loops=1)
+                                  Buffers: shared read=6266 written=94
+                      ->  Parallel Hash  (cost=3982.42..3982.42 rows=96961 width=8) (actual time=5.557..5.557 rows=54944.67 loops=3)
+                            Buckets: 262144  Batches: 1  Memory Usage: 0kB
+                            Buffers: shared hit=2528
+                            ->  Parallel Seq Scan on orders_2026_06 o  (cost=0.00..3982.42 rows=96961 width=8) (actual time=0.003..2.991 rows=54944.67 loops=3)
+                                  Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                                  Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=2220
+Planning Time: 3.062 ms
+Execution Time: 4927.011 ms
+=== R13 run 2 ===
+Seq Scan on products p  (cost=6194.43..336731816.93 rows=731 width=28) (actual time=4750.073..4752.239 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=3321 read=62045, temp read=121317 written=508
+  SubPlan 1
+    ->  Materialize  (cost=6194.43..449867.15 rows=2117892 width=4) (actual time=0.011..1.780 rows=67318.28 loops=1463)
+          Storage: Disk  Maximum Storage: 4096kB
+          Buffers: shared hit=3301 read=62045, temp read=121317 written=508
+          ->  Gather  (cost=6194.43..431003.69 rows=2117892 width=4) (actual time=14.969..225.331 rows=410005.00 loops=1)
+                Workers Planned: 2
+                Workers Launched: 2
+                Buffers: shared hit=3301 read=62045
+                ->  Parallel Hash Join  (cost=5194.43..218214.49 rows=882455 width=4) (actual time=13.144..344.853 rows=138473.33 loops=3)
+                      Hash Cond: (oi.order_id = o.order_id)
+                      Buffers: shared hit=3301 read=62045
+                      ->  Parallel Append  (cost=0.00..186417.32 rows=5709822 width=12) (actual time=0.086..206.026 rows=2839765.00 loops=3)
+                            Buffers: shared hit=773 read=62045
+                            ->  Parallel Seq Scan on order_items_p7 oi_8  (cost=0.00..9927.42 rows=359042 width=12) (actual time=0.104..34.781 rows=861700.00 loops=1)
+                                  Buffers: shared hit=94 read=6243
+                            ->  Parallel Seq Scan on order_items_p1 oi_2  (cost=0.00..9909.00 rows=358400 width=12) (actual time=0.102..35.526 rows=860160.00 loops=1)
+                                  Buffers: shared hit=94 read=6231
+                            ->  Parallel Seq Scan on order_items_p13 oi_14  (cost=0.00..9894.60 rows=357860 width=12) (actual time=0.085..30.492 rows=858863.00 loops=1)
+                                  Buffers: shared hit=94 read=6222
+                            ->  Parallel Seq Scan on order_items_p14 oi_15  (cost=0.00..9891.74 rows=357774 width=12) (actual time=0.064..30.611 rows=858657.00 loops=1)
+                                  Buffers: shared hit=94 read=6220
+                            ->  Parallel Seq Scan on order_items_p15 oi_16  (cost=0.00..9885.16 rows=357516 width=12) (actual time=0.114..38.199 rows=858038.00 loops=1)
+                                  Buffers: shared hit=94 read=6216
+                            ->  Parallel Seq Scan on order_items_p9 oi_10  (cost=0.00..9877.46 rows=357246 width=12) (actual time=0.059..36.967 rows=857390.00 loops=1)
+                                  Buffers: shared hit=94 read=6211
+                            ->  Parallel Seq Scan on order_items_p4 oi_5  (cost=0.00..9872.67 rows=357067 width=12) (actual time=0.009..31.922 rows=823068.00 loops=1)
+                                  Buffers: shared hit=6 read=6136
+                            ->  Parallel Seq Scan on order_items_p0 oi_1  (cost=0.00..9872.64 rows=357064 width=12) (actual time=0.004..30.753 rows=835704.00 loops=1)
+                                  Buffers: shared hit=15 read=6207
+                            ->  Parallel Seq Scan on order_items_p10 oi_11  (cost=0.00..9869.79 rows=356979 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p3 oi_4  (cost=0.00..9863.72 rows=356772 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p11 oi_12  (cost=0.00..9850.95 rows=356295 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p12 oi_13  (cost=0.00..9841.55 rows=355955 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p6 oi_7  (cost=0.00..9833.69 rows=355669 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p5 oi_6  (cost=0.00..9832.20 rows=355620 width=12) (actual time=0.720..1.244 rows=363.00 loops=1)
+                                  Buffers: shared read=7
+                            ->  Parallel Seq Scan on order_items_p8 oi_9  (cost=0.00..9829.04 rows=355504 width=12) (actual time=0.025..30.342 rows=853210.00 loops=1)
+                                  Buffers: shared hit=94 read=6180
+                            ->  Parallel Seq Scan on order_items_p2 oi_3  (cost=0.00..9816.59 rows=355059 width=12) (actual time=0.049..32.566 rows=852142.00 loops=1)
+                                  Buffers: shared hit=94 read=6172
+                      ->  Parallel Hash  (cost=3982.42..3982.42 rows=96961 width=8) (actual time=7.377..7.378 rows=54944.67 loops=3)
+                            Buckets: 262144  Batches: 1  Memory Usage: 0kB
+                            Buffers: shared hit=2528
+                            ->  Parallel Seq Scan on orders_2026_06 o  (cost=0.00..3982.42 rows=96961 width=8) (actual time=0.003..3.591 rows=54944.67 loops=3)
+                                  Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                                  Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=2220
+Planning Time: 3.455 ms
+Execution Time: 4752.565 ms
+=== R13 run 3 ===
+Seq Scan on products p  (cost=6194.43..336731816.93 rows=731 width=28) (actual time=4727.425..4729.579 rows=0.00 loops=1)
+  Filter: (is_active AND (NOT (ANY (product_id = (SubPlan 1).col1))))
+  Rows Removed by Filter: 1500
+  Buffers: shared hit=4329 read=55565, temp read=120760 written=544
+  SubPlan 1
+    ->  Materialize  (cost=6194.43..449867.15 rows=2117892 width=4) (actual time=0.009..1.757 rows=67010.77 loops=1463)
+          Storage: Disk  Maximum Storage: 4332kB
+          Buffers: shared hit=4309 read=55565, temp read=120760 written=544
+          ->  Gather  (cost=6194.43..431003.69 rows=2117892 width=4) (actual time=11.978..196.833 rows=439770.00 loops=1)
+                Workers Planned: 2
+                Workers Launched: 2
+                Buffers: shared hit=4309 read=55565
+                ->  Parallel Hash Join  (cost=5194.43..218214.49 rows=882455 width=4) (actual time=10.214..276.915 rows=148393.00 loops=3)
+                      Hash Cond: (oi.order_id = o.order_id)
+                      Buffers: shared hit=4309 read=55565
+                      ->  Parallel Append  (cost=0.00..186417.32 rows=5709822 width=12) (actual time=0.086..176.068 rows=2592850.00 loops=3)
+                            Buffers: shared hit=1781 read=55565
+                            ->  Parallel Seq Scan on order_items_p7 oi_8  (cost=0.00..9927.42 rows=359042 width=12) (actual time=0.117..28.869 rows=861700.00 loops=1)
+                                  Buffers: shared hit=188 read=6149
+                            ->  Parallel Seq Scan on order_items_p1 oi_2  (cost=0.00..9909.00 rows=358400 width=12) (actual time=0.086..28.787 rows=860160.00 loops=1)
+                                  Buffers: shared hit=188 read=6137
+                            ->  Parallel Seq Scan on order_items_p13 oi_14  (cost=0.00..9894.60 rows=357860 width=12) (actual time=0.066..28.717 rows=858863.00 loops=1)
+                                  Buffers: shared hit=188 read=6128
+                            ->  Parallel Seq Scan on order_items_p14 oi_15  (cost=0.00..9891.74 rows=357774 width=12) (actual time=0.055..28.604 rows=858657.00 loops=1)
+                                  Buffers: shared hit=188 read=6126
+                            ->  Parallel Seq Scan on order_items_p15 oi_16  (cost=0.00..9885.16 rows=357516 width=12) (actual time=0.057..28.714 rows=858038.00 loops=1)
+                                  Buffers: shared hit=188 read=6122
+                            ->  Parallel Seq Scan on order_items_p9 oi_10  (cost=0.00..9877.46 rows=357246 width=12) (actual time=0.041..30.677 rows=857390.00 loops=1)
+                                  Buffers: shared hit=188 read=6117
+                            ->  Parallel Seq Scan on order_items_p4 oi_5  (cost=0.00..9872.67 rows=357067 width=12) (actual time=0.004..2.793 rows=71406.00 loops=1)
+                                  Buffers: shared hit=97 read=509
+                            ->  Parallel Seq Scan on order_items_p0 oi_1  (cost=0.00..9872.64 rows=357064 width=12) (actual time=0.008..37.698 rows=846621.00 loops=1)
+                                  Buffers: shared hit=176 read=6113
+                            ->  Parallel Seq Scan on order_items_p10 oi_11  (cost=0.00..9869.79 rows=356979 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p3 oi_4  (cost=0.00..9863.72 rows=356772 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p11 oi_12  (cost=0.00..9850.95 rows=356295 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p12 oi_13  (cost=0.00..9841.55 rows=355955 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p6 oi_7  (cost=0.00..9833.69 rows=355669 width=12) (never executed)
+                            ->  Parallel Seq Scan on order_items_p5 oi_6  (cost=0.00..9832.20 rows=355620 width=12) (actual time=0.008..0.021 rows=363.00 loops=1)
+                                  Buffers: shared hit=4
+                            ->  Parallel Seq Scan on order_items_p8 oi_9  (cost=0.00..9829.04 rows=355504 width=12) (actual time=0.020..29.285 rows=853210.00 loops=1)
+                                  Buffers: shared hit=188 read=6086
+                            ->  Parallel Seq Scan on order_items_p2 oi_3  (cost=0.00..9816.59 rows=355059 width=12) (actual time=0.052..28.610 rows=852142.00 loops=1)
+                                  Buffers: shared hit=188 read=6078
+                      ->  Parallel Hash  (cost=3982.42..3982.42 rows=96961 width=8) (actual time=5.612..5.612 rows=54944.67 loops=3)
+                            Buckets: 262144  Batches: 1  Memory Usage: 0kB
+                            Buffers: shared hit=2528
+                            ->  Parallel Seq Scan on orders_2026_06 o  (cost=0.00..3982.42 rows=96961 width=8) (actual time=0.003..3.033 rows=54944.67 loops=3)
+                                  Filter: ((placed_at >= '2026-06-01 00:00:00+05:30'::timestamp with time zone) AND (placed_at < '2026-07-01 00:00:00+05:30'::timestamp with time zone))
+                                  Buffers: shared hit=2528
+Planning:
+  Buffers: shared hit=2220
+Planning Time: 3.371 ms
+Execution Time: 4732.203 ms

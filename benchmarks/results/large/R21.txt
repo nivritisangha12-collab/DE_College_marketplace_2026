@@ -1,0 +1,78 @@
+=== R21 run 1 ===
+Nested Loop Anti Join  (cost=0.71..158.15 rows=28 width=16) (actual time=0.596..3.371 rows=22.00 loops=1)
+  Buffers: shared hit=76 read=35
+  ->  Index Only Scan using idx_riders_store_active on riders r  (cost=0.29..4.83 rows=31 width=16) (actual time=0.241..0.243 rows=28.00 loops=1)
+        Index Cond: (store_id = 43)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=1 read=2
+  ->  Append  (cost=0.42..5.02 rows=4 width=4) (actual time=0.112..0.112 rows=0.21 loops=28)
+        Buffers: shared hit=75 read=33
+        ->  Index Only Scan using orders_2026_06_rider_id_placed_at_idx on orders_2026_06 o_1  (cost=0.42..4.46 rows=2 width=4) (actual time=0.111..0.111 rows=0.21 loops=28)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 1
+              Index Searches: 28
+              Buffers: shared hit=54 read=32
+        ->  Index Only Scan using orders_2026_07_rider_id_placed_at_idx on orders_2026_07 o_2  (cost=0.14..0.54 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 0
+              Index Searches: 22
+              Buffers: shared hit=21 read=1
+        ->  Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Filter: ((placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (rider_id = r.rider_id))
+Planning:
+  Buffers: shared hit=1315 read=11
+Planning Time: 2.962 ms
+Execution Time: 3.389 ms
+=== R21 run 2 ===
+Nested Loop Anti Join  (cost=0.71..158.15 rows=28 width=16) (actual time=0.015..0.093 rows=22.00 loops=1)
+  Buffers: shared hit=111
+  ->  Index Only Scan using idx_riders_store_active on riders r  (cost=0.29..4.83 rows=31 width=16) (actual time=0.004..0.005 rows=28.00 loops=1)
+        Index Cond: (store_id = 43)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=3
+  ->  Append  (cost=0.42..5.02 rows=4 width=4) (actual time=0.003..0.003 rows=0.21 loops=28)
+        Buffers: shared hit=108
+        ->  Index Only Scan using orders_2026_06_rider_id_placed_at_idx on orders_2026_06 o_1  (cost=0.42..4.46 rows=2 width=4) (actual time=0.002..0.002 rows=0.21 loops=28)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 1
+              Index Searches: 28
+              Buffers: shared hit=86
+        ->  Index Only Scan using orders_2026_07_rider_id_placed_at_idx on orders_2026_07 o_2  (cost=0.14..0.54 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 0
+              Index Searches: 22
+              Buffers: shared hit=22
+        ->  Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Filter: ((placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (rider_id = r.rider_id))
+Planning:
+  Buffers: shared hit=1326
+Planning Time: 1.566 ms
+Execution Time: 0.110 ms
+=== R21 run 3 ===
+Nested Loop Anti Join  (cost=0.71..158.15 rows=28 width=16) (actual time=0.017..0.109 rows=22.00 loops=1)
+  Buffers: shared hit=111
+  ->  Index Only Scan using idx_riders_store_active on riders r  (cost=0.29..4.83 rows=31 width=16) (actual time=0.004..0.005 rows=28.00 loops=1)
+        Index Cond: (store_id = 43)
+        Heap Fetches: 0
+        Index Searches: 1
+        Buffers: shared hit=3
+  ->  Append  (cost=0.42..5.02 rows=4 width=4) (actual time=0.004..0.004 rows=0.21 loops=28)
+        Buffers: shared hit=108
+        ->  Index Only Scan using orders_2026_06_rider_id_placed_at_idx on orders_2026_06 o_1  (cost=0.42..4.46 rows=2 width=4) (actual time=0.003..0.003 rows=0.21 loops=28)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 1
+              Index Searches: 28
+              Buffers: shared hit=86
+        ->  Index Only Scan using orders_2026_07_rider_id_placed_at_idx on orders_2026_07 o_2  (cost=0.14..0.54 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Index Cond: ((rider_id = r.rider_id) AND (placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone))
+              Heap Fetches: 0
+              Index Searches: 22
+              Buffers: shared hit=22
+        ->  Seq Scan on orders_default o_3  (cost=0.00..0.00 rows=1 width=4) (actual time=0.000..0.000 rows=0.00 loops=22)
+              Filter: ((placed_at >= '2026-06-30 00:00:00+05:30'::timestamp with time zone) AND (rider_id = r.rider_id))
+Planning:
+  Buffers: shared hit=1326
+Planning Time: 1.633 ms
+Execution Time: 0.127 ms
