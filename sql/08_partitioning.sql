@@ -323,3 +323,16 @@ END $$;
 -- -----------------------------------------------------------------------------
 
 ANALYZE;
+
+
+-- -----------------------------------------------------------------------------
+-- Partition Pruning Rationale & Workload Predicate Mapping
+-- -----------------------------------------------------------------------------
+-- 1. R08, R11, R13, R14, R19, R20: Filter by placed_at >= '2026-06-01' AND < '2026-07-01'
+--    -> Prunes 17 of 18 partitions, isolating orders_2026_06.
+-- 2. R15: Filter by placed_at >= '2026-06-29' AND < '2026-06-30'
+--    -> Prunes all except orders_2026_06.
+-- 3. R10, R24: Filter by moved_at in June 2026
+--    -> Prunes all except inv_movements_2026_06.
+-- 4. W05: Filter by moved_at < '2026-01-01'
+--    -> Prunes all 2026 partitions, operating exclusively on 2025 partitions.
