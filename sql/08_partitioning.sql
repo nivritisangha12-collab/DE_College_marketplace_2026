@@ -120,8 +120,16 @@ BEGIN
         DROP TABLE inventory_movements_old CASCADE;
 
         -- Local Partitioned Indexes
+        CREATE INDEX idx_inv_movements_store_restock 
+            ON inventory_movements (store_id, moved_at, product_id, quantity) 
+            WHERE movement_type = 'RESTOCK';
 
+        CREATE INDEX idx_inv_movements_moved_at 
+            ON inventory_movements (moved_at);
 
+        CREATE INDEX idx_inv_movements_wastage 
+            ON inventory_movements (moved_at, movement_type, product_id, quantity) 
+            WHERE movement_type IN ('EXPIRY', 'DAMAGE');
 
         RAISE NOTICE 'inventory_movements successfully partitioned by RANGE (moved_at).';
     END IF;
@@ -202,15 +210,43 @@ BEGIN
         DROP TABLE orders_old CASCADE;
 
         -- Local Partitioned Indexes
+        CREATE INDEX idx_orders_customer_placed 
+            ON orders (customer_id, placed_at DESC);
 
+        CREATE INDEX idx_orders_open_store 
+            ON orders (store_id, placed_at) 
+            WHERE status IN ('PLACED', 'PACKING', 'OUT_FOR_DELIVERY');
 
+        CREATE INDEX idx_orders_june_sla 
+            ON orders (placed_at, store_id) 
+            INCLUDE (delivered_at, promised_minutes) 
+            WHERE status = 'DELIVERED';
 
+        CREATE INDEX idx_orders_delivered_june 
+            ON orders (store_id, placed_at, rider_id) 
+            INCLUDE (delivered_at, picked_up_at) 
+            WHERE status = 'DELIVERED';
 
+        CREATE INDEX idx_orders_placed_range 
+            ON orders (placed_at) 
+            INCLUDE (store_id, total_amount, small_cart_fee, status);
 
+        CREATE INDEX idx_orders_rider_placed 
+            ON orders (rider_id, placed_at);
 
+        CREATE INDEX idx_orders_placed_at_desc 
+            ON orders (placed_at DESC, order_id);
 
+        CREATE INDEX idx_orders_open_order_id 
+            ON orders (store_id, order_id DESC) 
+            WHERE status IN ('PLACED', 'PACKING');
 
+        CREATE INDEX idx_orders_packing_min 
+            ON orders (order_id) 
+            WHERE status = 'PACKING';
 
+        CREATE INDEX idx_orders_order_id 
+            ON orders (order_id);
 
         RAISE NOTICE 'orders successfully partitioned by RANGE (placed_at).';
     END IF;
@@ -270,7 +306,13 @@ BEGIN
         DROP TABLE order_items_old CASCADE;
 
         -- Local Partitioned Indexes
+        CREATE INDEX idx_order_items_product_order 
+            ON order_items (product_id, order_id) 
+            INCLUDE (quantity_delivered, quantity_ordered);
 
+        CREATE INDEX idx_order_items_substitute 
+            ON order_items (substitute_product_id) 
+            WHERE substitute_product_id IS NOT NULL;
 
         RAISE NOTICE 'order_items successfully partitioned by HASH (order_id).';
     END IF;
