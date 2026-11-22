@@ -336,3 +336,19 @@ ANALYZE;
 --    -> Prunes all except inv_movements_2026_06.
 -- 4. W05: Filter by moved_at < '2026-01-01'
 --    -> Prunes all 2026 partitions, operating exclusively on 2025 partitions.
+
+
+-- -----------------------------------------------------------------------------
+-- Catalog Verification Checks
+-- -----------------------------------------------------------------------------
+SELECT parent.relname AS partitioned_table,
+       count(child.oid) AS partition_count,
+       pg_size_pretty(sum(pg_relation_size(child.oid))) AS heap_size,
+       pg_size_pretty(sum(pg_total_relation_size(child.oid))) AS total_size
+FROM pg_inherits
+JOIN pg_class parent ON pg_inherits.inhparent = parent.oid
+JOIN pg_class child ON pg_inherits.inhrelid = child.oid
+JOIN pg_namespace n ON n.oid = parent.relnamespace
+WHERE n.nspname = 'blinkit'
+GROUP BY parent.relname
+ORDER BY parent.relname;
