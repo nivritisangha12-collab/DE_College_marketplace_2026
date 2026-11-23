@@ -12,12 +12,19 @@
 | `seed_data.zip` | 10 CSV files (675,000 orders): the production export for Phase 2 |
 | `sql/01_schema.sql` | Relational DDL with primary/foreign keys and domain constraints |
 | `sql/02_load_data.sql` | Automated bulk data ingestion script using `\copy` and `ANALYZE` |
+| `sql/05_indexes.sql` | CP3 optimization indexes (composite, partial, covering, GIN trigram) |
+| `sql/06_optimized_queries.sql` | CP3 optimized 30-query workload with identical result sets |
+| `sql/08_partitioning.sql` | CP4 declarative table partitioning (RANGE & HASH) and migration script |
 | `queries/workload_30.sql` | The 30 benchmark queries for Phase 3 (25 reads, 5 writes; do not edit) |
 | `benchmarks/run_benchmark.sh` | Timing script: 3 runs per query, average/median, raw plans saved |
 | `benchmarks/results/baseline/` | Baseline execution plans and timing summary (`summary.csv`) |
+| `benchmarks/results/optimized/` | Optimized execution plans and timing summary (`summary.csv`) |
+| `benchmarks/results/large/` | Large scale (20×) execution plans and timing summary (`summary.csv`) |
 | `docs/01_problem_understanding.md` | Phase 1 problem analysis, query classification, and stakeholder mapping |
 | `docs/02_schema_design.md` | Phase 2 schema design, data dictionary, normal forms, and integrity checks |
 | `docs/03_baseline_timings.md` | Phase 3 baseline benchmark timing table and scan node analysis |
+| `docs/04_optimization_report.md` | Phase 4 query optimization, before/after plans, and indexing trade-offs |
+| `docs/05_scalability_report.md` | Phase 5 scalability report, partition pruning analysis, and 100× architecture |
 | `diagrams/` | ER diagram source (`er_diagram.mmd`) and rendered image (`er_diagram.png`) |
 | `team.json` | Team identification, member roles, and metadata |
 | `CHECKPOINTS.md` | Checkpoint dates and the files each one needs (DE and AP repos) |
