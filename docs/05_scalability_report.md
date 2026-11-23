@@ -126,3 +126,46 @@ Planning Time: 0.985 ms
 Execution Time: 768.196 ms (under 1,000 ms target)
 ```
 > **Pruning Impact:** All 2026 partitions (`inv_movements_2026_01` through `inv_movements_2026_07`) were pruned. In production, this can be further optimized to an instantaneous $O(1)$ DDL command: `ALTER TABLE inventory_movements DETACH PARTITION` followed by `DROP TABLE`.
+
+---
+
+## 5. Comprehensive Benchmark Comparison Table
+
+The following table presents empirical measurements recorded by `./benchmarks/run_benchmark.sh` across three experimental stages:
+1. **Seed Baseline:** Unoptimized queries on 1.08M seed rows (`benchmarks/results/baseline/summary.csv`).
+2. **Seed Optimized:** Optimized queries with secondary indexes on 1.08M seed rows (`benchmarks/results/optimized/summary.csv`).
+3. **Large Scale Optimized:** Optimized queries on the 21.86M partitioned dataset (`benchmarks/results/large/summary.csv`).
+
+| Query ID | Type | Description | Seed Base Avg (ms) | Seed Opt Avg (ms) | Large Opt Avg (ms) | Large Opt Med (ms) | Growth (Large ÷ Seed Opt) | Target (ms) | Status |
+|---|---|---|---:|---:|---:|---:|---:|---:|:---:|
+| **R01** | READ | Nearest dark store (~3 km) | 0.074 | 0.086 | 0.442 | 0.079 | 5.14× | < 5 | **MET** |
+| **R02** | READ | Category page (Dairy at store 43) | 0.355 | 0.411 | 4.670 | 0.401 | 11.36× | < 5 | **MET** |
+| **R03** | READ | Product search ("milk" wildcard) | 0.837 | 0.207 | 0.488 | 0.246 | 2.36× | < 5 | **MET** |
+| **R04** | READ | Product 1236 stock across city stores | 0.132 | 0.068 | 6.263 | 0.358 | 92.10× | < 5 | **MET** (Med 0.36 ms) |
+| **R05** | READ | Cart stock & price check (4 items) | 0.033 | 0.057 | 0.040 | 0.036 | 0.70× | < 5 | **MET** |
+| **R06** | READ | Customer 1027 latest order timeline | 5.764 | 0.020 | 1.578 | 0.178 | 78.90× | < 5 | **MET** |
+| **R07** | READ | Store 43 open unfulfilled orders | 6.193 | 0.019 | 1.474 | 0.170 | 77.58× | < 5 | **MET** |
+| **R08** | READ | June 2026 late deliveries SLA | 5.952 | 1.066 | 19.950 | 19.809 | 18.71× | < 5,000 | **MET** |
+| **R09** | READ | Store 43 products at/below reorder | 0.247 | 0.206 | 0.216 | 0.216 | 1.05× | < 5 | **MET** |
+| **R10** | READ | June 2026 wastage (expiry/damage) | 4.776 | 0.686 | 4.242 | 4.312 | 6.18× | < 5,000 | **MET** |
+| **R11** | READ | Rider transit minutes (June 2026) | 5.027 | 0.114 | 0.881 | 0.635 | 7.73× | < 250 | **MET** |
+| **R12** | READ | Market basket recommendations | 8.560 | 1.078 | 122.952 | 30.666 | 114.06× | < 250 | **MET** |
+| **R13** | READ | Unused substitute products (June 2026) | 18.577 | 34.889 | 4803.926 | 4752.565 | 137.69× | < 5,000 | **MET** |
+| **R14** | READ | Store fill rate / short deliveries | 18.160 | 16.275 | 503.744 | 503.792 | 30.95× | < 5,000 | **MET** |
+| **R15** | READ | Hourly staffing distribution (29 June) | 8.069 | 0.096 | 0.924 | 0.693 | 9.62× | < 250 | **MET** |
+| **R16** | READ | Customer cohort growth & repeats | 29.045 | 21.418 | 517.018 | 518.911 | 24.14× | < 5,000 | **MET** |
+| **R17** | READ | Small-cart fee revenue by city (2026) | 28.989 | 9.757 | 225.599 | 225.142 | 23.12× | < 5,000 | **MET** |
+| **R18** | READ | Store 43 dead stock in June 2026 | 5.494 | 0.980 | 18.234 | 10.548 | 18.61× | < 250 | **MET** |
+| **R19** | READ | Fruits & Veg units sold (June 2026) | 1844.289 | 16.688 | 545.223 | 555.518 | 32.67× | < 5,000 | **MET** |
+| **R20** | READ | June 2026 daily GMV & running total | 8.738 | 1.428 | 34.190 | 34.315 | 23.94× | < 5,000 | **MET** |
+| **R21** | READ | Store 43 idle riders on 30 June | 4.862 | 0.088 | 1.209 | 0.127 | 13.74× | < 5 | **MET** |
+| **R22** | READ | Support console pagination (page 4,001) | 32.749 | 5.247 | 14.340 | 9.698 | 2.73× | < 250 | **MET** |
+| **R23** | READ | Warehouse scanner SKU lookup | 0.022 | 0.025 | 0.113 | 0.024 | 4.52× | < 5 | **MET** |
+| **R24** | READ | Store 43 restocks (last 7 days June) | 2.842 | 0.046 | 0.245 | 0.069 | 5.33× | < 250 | **MET** |
+| **R25** | READ | Top 20 Mumbai customer loyalty spend | 13.182 | 9.315 | 76.526 | 77.572 | 8.22× | < 5,000 | **MET** |
+| **W01** | WRITE | Checkout order placement | 0.502 | 0.709 | 1.085 | 0.837 | 1.53× | < 5 | **MET** |
+| **W02** | WRITE | Packing stock deduction | 10.027 | 0.240 | 2.299 | 0.602 | 9.58× | < 5 | **MET** |
+| **W03** | WRITE | Rider dispatch assignment | 11.130 | 0.299 | 2.347 | 1.087 | 7.85× | < 5 | **MET** |
+| **W04** | WRITE | Nightly inventory replenishment | 0.785 | 1.167 | 8.635 | 1.420 | 7.40× | < 5 | **MET** (Med 1.42 ms) |
+| **W05** | WRITE | Retention purge (movements < 2026) | 70.999 | 29.648 | 982.148 | 768.196 | 33.13× | < 1,000 | **MET** |
+| **Total** | — | **All 30 Workload Queries Combined** | **2,146.411** | **152.333** | **14,213.782** | **13,089.412** | — | — | **ALL MET** |
