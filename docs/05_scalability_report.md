@@ -169,3 +169,41 @@ The following table presents empirical measurements recorded by `./benchmarks/ru
 | **W04** | WRITE | Nightly inventory replenishment | 0.785 | 1.167 | 8.635 | 1.420 | 7.40× | < 5 | **MET** (Med 1.42 ms) |
 | **W05** | WRITE | Retention purge (movements < 2026) | 70.999 | 29.648 | 982.148 | 768.196 | 33.13× | < 1,000 | **MET** |
 | **Total** | — | **All 30 Workload Queries Combined** | **2,146.411** | **152.333** | **14,213.782** | **13,089.412** | — | — | **ALL MET** |
+
+---
+
+## 6. Workload Growth & Algorithmic Analysis
+
+Analyzing query latency growth relative to the 20× increase in data volume reveals four distinct complexity classes:
+
+### Group 1: Constant & Logarithmic Scaling ($O(1)$ to $O(\log N)$)
+*Growth Factor: 0.70× to 5.5×*
+- **Queries:** **R01**, **R03**, **R05**, **R09**, **R22**, **R23**, **W01**.
+- **Underlying Mechanism:** These operations rely on primary key lookups, selective index scans, or partitioned B-tree index navigations. Because B-tree depth scales logarithmically ($h \propto \log_B N$), expanding a table from 150k to 3M rows increases tree depth by at most 1 level. For example:
+  - SKU lookup (**R23**) rose from 0.025 ms to 0.024 ms median (0.113 ms avg).
+  - Cart item price/stock lookup (**R05**) took 0.036 ms median on 2.52M inventory rows.
+  - High-offset pagination (**R22**): By leveraging the deferred join pattern (`SELECT order_id FROM orders ORDER BY placed_at DESC OFFSET 100000 LIMIT 25`), latency only grew from 5.2 ms to 14.3 ms (2.73× growth for 20× data).
+
+### Group 2: Linear Partition-Protected Scaling ($O(K)$ where $K$ is Monthly Partition Volume)
+*Growth Factor: 5× to 20×*
+- **Queries:** **R08**, **R10**, **R11**, **R15**, **R20**, **R24**, **R25**.
+- **Underlying Mechanism:** Although these queries compute aggregate metrics over date ranges, declarative partitioning restricts physical scanning strictly to the active target partition.
+  - In **R08** and **R20**, PostgreSQL prunes 17 of the 18 monthly partitions, reading only `orders_2026_06` (~166,000 rows instead of 3,000,000 rows).
+  - In **R10** and **R24**, scans hit exclusively `inv_movements_2026_06`, completing in 4.2 ms and 0.24 ms respectively.
+  - Growth strictly mirrors the 20× growth of a single month's volume, preventing global database scans.
+
+### Group 3: Cross-Partition Multi-Index Scans ($O(P \cdot \log N)$ where $P$ is Number of Partitions)
+*Growth Factor: 10× to 80×*
+- **Queries:** **R06**, **R07**, **W02**, **W03**.
+- **Underlying Mechanism:** When a query filters on customer or store ID without specifying a date bound, PostgreSQL must search the corresponding local index across all concrete partitions before merging results:
+  - In **R06** (`WHERE customer_id = 1027 ORDER BY placed_at DESC LIMIT 1`), the planner performs an index seek across 18 partition B-trees and executes an `Append` / `Merge Append` to find the latest order.
+  - In **R07** and **W02**, store open orders (`WHERE store_id = 43 AND status IN (...)`) scan the 18 partition indexes.
+  - Despite touching 18 partition trees, execution times remain under **1.6 ms** due to index compactness and selective heap fetches.
+
+### Group 4: High-Volume Analytical & Self-Join Scaling ($O(N \log N)$ to $O(N)$)
+*Growth Factor: 25× to 138×*
+- **Queries:** **R12**, **R13**, **R14**, **R16**, **R17**, **R19**, **W05**.
+- **Underlying Mechanism:** These operations either join across multiple unpruned partitioned tables or aggregate across millions of line items:
+  - **R12 (Market Basket Recommendations):** Self-joins `order_items` against itself on `order_id` for product 1236. Across 13.7 million rows, finding all co-purchased items took **122.9 ms** (median 30.6 ms), well within the 250 ms interactive operations target.
+  - **R13 (Unused Substitutes):** Involves an anti-join (`NOT IN`) over all June 2026 order item substitutes. Scanning the 16 hash partitions of `order_items` took **4,803 ms**, remaining under the 5,000 ms analytical SLA.
+  - **W05 (Data Retention Deletion):** Deletes 1,203,297 rows prior to 2026. Because `inventory_movements` is partitioned by `RANGE (moved_at)`, the query engine pruned all 2026 partitions and performed the deletion exclusively on the twelve 2025 partitions, completing in **768 ms** median (under the 1,000 ms batch SLA).
